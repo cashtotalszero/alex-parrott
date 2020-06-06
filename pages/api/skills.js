@@ -1,0 +1,142 @@
+import { SKILL_NAMES, SKILL_TYPES, SKILL_KEYWORDS, SKILL_LEVELS } from '../../constants/skills';
+
+const dataDefs = [
+  {
+    name: SKILL_NAMES.JS,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.LANGUAGES,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.REACT,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.FE_FRAMEWORK,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}`,
+  },
+  {
+    name: SKILL_NAMES.NODE,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.BE_FRAMEWORK,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.EXPRESS,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.BE_FRAMEWORK,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.REDUX,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.JS_LIB,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}`,
+  },
+  {
+    name: SKILL_NAMES.VUE,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.FE_FRAMEWORK,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}`,
+  },
+  {
+    name: SKILL_NAMES.STYLED_COMPONENTS,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.CSS,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}`,
+  },
+  {
+    name: SKILL_NAMES.MONGO,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.DB,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.POSTGRESQL,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.DB,
+    keywords: `${SKILL_KEYWORDS.SQL} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.REACT_NATIVE,
+    level: SKILL_LEVELS.HALO,
+    type: SKILL_TYPES.NATIVE,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.IOS} ${SKILL_KEYWORDS.ANDROID}`,
+  },
+  {
+    name: SKILL_NAMES.APOLLO,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.JS_LIB,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}  ${SKILL_KEYWORDS.GQL}`,
+  },
+  {
+    name: SKILL_NAMES.THREE,
+    level: SKILL_LEVELS.FLUSHED,
+    type: SKILL_TYPES.JS_LIB,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}  ${SKILL_KEYWORDS.VR}  ${SKILL_KEYWORDS.THREE_D}`,
+  },
+  {
+    name: SKILL_NAMES.GQL,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.LANGUAGES,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.SQL,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.LANGUAGES,
+    keywords: `${SKILL_KEYWORDS.SQL} ${SKILL_KEYWORDS.BE}`,
+  },
+  {
+    name: SKILL_NAMES.C_SHARP,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.LANGUAGES,
+    keywords: `${SKILL_KEYWORDS.UNITY} ${SKILL_KEYWORDS.VR}`,
+  },
+  { name: SKILL_NAMES.GO, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.LANGUAGES, keywords: `${SKILL_KEYWORDS.BE}` },
+  {
+    name: SKILL_NAMES.UNITY,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.NATIVE,
+    keywords: `${SKILL_KEYWORDS.IOS} ${SKILL_KEYWORDS.ANDROID} ${SKILL_KEYWORDS.VR} ${SKILL_KEYWORDS.THREE_D}`,
+  },
+  {
+    name: SKILL_NAMES.ELECTRON,
+    level: SKILL_LEVELS.FLUSHED,
+    type: SKILL_TYPES.NATIVE,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}, ${SKILL_KEYWORDS.IOS}`,
+  },
+  { name: SKILL_NAMES.JEST, level: SKILL_LEVELS.HALO, type: SKILL_TYPES.TEST },
+  { name: SKILL_NAMES.ENZYME, level: SKILL_LEVELS.HALO, type: SKILL_TYPES.TEST },
+  { name: SKILL_NAMES.MOCHA, level: SKILL_LEVELS.HALO, type: SKILL_TYPES.TEST },
+  {
+    name: SKILL_NAMES.TS,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.LANGUAGES,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE} ${SKILL_KEYWORDS.BE}`,
+  },
+  { name: SKILL_NAMES.SASS, level: SKILL_LEVELS.HALO, type: SKILL_TYPES.CSS },
+  {
+    name: SKILL_NAMES.ETHEREUM,
+    level: SKILL_LEVELS.FLUSHED,
+    type: SKILL_TYPES.JS_LIB,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE} ${SKILL_KEYWORDS.BLOCKCHAIN}`,
+  },
+  {
+    name: SKILL_NAMES.JQUERY,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.JS_LIB,
+    keywords: `${SKILL_KEYWORDS.JS} ${SKILL_KEYWORDS.FE}`,
+  },
+  { name: SKILL_NAMES.DOCKER, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.DEV_OPS },
+  { name: SKILL_NAMES.K8S, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.DEV_OPS },
+  { name: SKILL_NAMES.AWS, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.DEV_OPS, keywords: `${SKILL_KEYWORDS.BE}` },
+  { name: SKILL_NAMES.AZURE, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.DEV_OPS, keywords: `${SKILL_KEYWORDS.BE}` },
+  { name: SKILL_NAMES.XCODE, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.NATIVE },
+  { name: SKILL_NAMES.ANDROID, level: SKILL_LEVELS.FLUSHED, type: SKILL_TYPES.NATIVE },
+  { name: SKILL_NAMES.HTML, level: SKILL_LEVELS.HALO, type: SKILL_TYPES.LANGUAGES, keywords: `${SKILL_KEYWORDS.FE}` },
+  { name: SKILL_NAMES.CSS, level: SKILL_LEVELS.HALO, type: SKILL_TYPES.LANGUAGES, keywords: `${SKILL_KEYWORDS.FE}` },
+];
+
+export default (req, res) => {
+  res.statusCode = 200;
+  res.json(dataDefs);
+};
