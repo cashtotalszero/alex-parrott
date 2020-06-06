@@ -15,28 +15,14 @@ const Container = styled.div`
   }
 `;
 
-const CircularImage = styled.div`
-  overflow: hidden;
-  border-radius: 50%;
-  max-width: 400px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-
-  img {
-    transform: scale(1.1);
-  }
-`;
-
 const Page = () => (
   <Container>
     <CustomHead />
     <Card maxWidth="800px">
       <div>
-        <CircularImage>
-          <Image imageSrc="/fail.jpg" imageAlt="alex" width="100%%" />
-        </CircularImage>
+        <TextBlock contents={[{ type: BOLD, text: '404' }, { text: ' | This page could not be found' }]} />
+        <Image imageSrc="/rant.jpg" imageAlt="alex" width="100%" />
       </div>
-
-      <TextBlock contents={[{ type: BOLD, text: '404' }, { text: ' | This page could not be found' }]} />
     </Card>
   </Container>
 );
