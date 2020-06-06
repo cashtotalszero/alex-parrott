@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { LINKEDIN_BIO } from '../constants/urls';
 
-const ImageContainer = styled.div`
+const LinkContainer = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-left: 5px;
 `;
 
 const Container = styled.div`
@@ -21,13 +23,9 @@ const Container = styled.div`
 const Footer = () => (
   <Container>
     {'Find me on  '}
-    <ImageContainer>
+    <LinkContainer href={LINKEDIN_BIO}>
       <img src="/LI-Logo-black.png" alt="linkedin" style={{ width: '75px' }} />
-    </ImageContainer>
-    {'All code for this site is on '}
-    <ImageContainer>
-      <img src="/Github_Logo.png" alt="github" style={{ width: '75px' }} />
-    </ImageContainer>
+    </LinkContainer>
   </Container>
 );
 
