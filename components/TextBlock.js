@@ -29,7 +29,7 @@ const StyledAnchor = styled.span`
 
 const TextBlock = ({ contents }) => (
   <p style={{ position: 'relative' }}>
-    {contents.map(({ type, text, href, unicode, label }) => {
+    {contents.map(({ type, text, href, unicode, label, onClick }) => {
       switch (type) {
         case TEXT:
           return `${text}`;
@@ -38,7 +38,7 @@ const TextBlock = ({ contents }) => (
         case LINK:
           return (
             <StyledAnchor>
-              <a href={href}>{`${text}`}</a>
+              <a href={href} onClick={onClick}>{`${text}`}</a>
             </StyledAnchor>
           );
         case EMOJI:

@@ -12,7 +12,7 @@ const colour2 = '#715b81';
 const colour3 = '#8affea';
 const colour4 = '#ff0505';
 const colour5 = '#c5cae1';
-const black = '#000';
+const black = '#0e1111';
 const white = '#fff';
 
 const theme = {
