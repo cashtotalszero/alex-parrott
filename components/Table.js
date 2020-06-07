@@ -22,8 +22,9 @@ const TableStyles = styled.div`
 
   th {
     font-family: 'Lexend Tera';
-    background-color: ${({ theme }) => `${theme.colors.palette5}`};
+    background-color: ${({ theme }) => `${theme.colors.palette2}`};
     line-height: 1.2rem;
+    color: white;
   }
 
   td,

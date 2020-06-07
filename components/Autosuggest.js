@@ -11,8 +11,12 @@ const AutosuggestWrapper = styled.div`
     cursor: pointer;
   }
 
+  .react-autosuggest__suggestion {
+    color: ${({ theme }) => `${theme.colors.black}`};
+  }
+
   .react-autosuggest__suggestion:hover {
-    background-color: ${({ theme }) => `${theme.colors.palette1}`};
+    background-color: ${({ theme }) => `${theme.colors.palette5}`};
     color: ${({ theme }) => `${theme.colors.white}`};
   }
 `;

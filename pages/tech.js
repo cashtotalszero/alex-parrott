@@ -77,7 +77,7 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
     <Container>
       <CustomHead />
 
-      <Card maxWidth="800px">
+      <Card maxWidth="950px">
         <h1>Tech I use</h1>
 
         {!hasError && (

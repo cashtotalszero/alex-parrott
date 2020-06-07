@@ -7,13 +7,27 @@ import { useStore } from '../store';
 import Header from '../components/Header';
 import Footer from '../components/AppFooter';
 
-const colour1 = '#3b66db';
-const colour2 = '#715b81';
-const colour3 = '#8affea';
-const colour4 = '#ff0505';
-const colour5 = '#c5cae1';
+// const colour1 = '#3b66db';
+// const colour2 = '#715b81';
+// const colour3 = '#8affea';
+// const colour4 = '#ff0505';
+// const colour5 = '#c5cae1';
 const black = '#0e1111';
 const white = '#fff';
+
+// const colour1 = '#476C9B';
+// const colour2 = '#468C98';
+// const colour3 = '#4F6D7A';
+// const colour4 = '#D1495B';
+// const colour5 = '#EAEBED';
+
+const colour4 = '#931621';
+const colour5 = '#3F84E5';
+const colour2 = '#373E40';
+const colour3 = '#B7D5D4';
+const colour1 = '#008080';
+// const white = '#F1FFFA';
+// const color6 = '#E8EEF2';
 
 const theme = {
   colors: {

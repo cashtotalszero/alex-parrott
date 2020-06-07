@@ -120,6 +120,11 @@ const Header = () => (
         </NavLink>
       </StyledListItem>
       <StyledListItem>
+        <NavLink href="/opinion">
+          <a>Opinion</a>
+        </NavLink>
+      </StyledListItem>
+      <StyledListItem>
         <NavLink href="/contact">
           <a>Contact</a>
         </NavLink>

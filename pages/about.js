@@ -17,7 +17,7 @@ const Container = styled.div`
 const Who = () => (
   <Container>
     <CustomHead />
-    <Card maxWidth="800px">
+    <Card maxWidth="950px">
       <h1>About Me</h1>
       <Image imageSrc="/alex.png" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" />
 
