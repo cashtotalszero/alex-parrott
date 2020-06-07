@@ -27,7 +27,7 @@ const colour2 = '#373E40';
 const colour3 = '#B7D5D4';
 const colour1 = '#008080';
 // const white = '#F1FFFA';
-// const color6 = '#E8EEF2';
+const colour6 = '#E8EEF2';
 
 const theme = {
   colors: {
@@ -37,6 +37,7 @@ const theme = {
     palette3: `${colour3}`,
     palette4: `${colour4}`,
     palette5: `${colour5}`,
+    palette6: `${colour6}`,
     black: `${black}`,
     white: `${white}`,
   },
