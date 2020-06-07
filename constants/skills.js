@@ -32,6 +32,7 @@ export const SKILL_NAMES = {
   ANDROID: 'Android Studio',
   HTML: 'HTML',
   CSS: 'CSS',
+  NEXT: 'Next.js',
 };
 
 export const SKILL_TYPES = {

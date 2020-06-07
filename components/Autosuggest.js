@@ -15,7 +15,7 @@ const AutosuggestWrapper = styled.div`
     color: ${({ theme }) => `${theme.colors.black}`};
   }
 
-  .react-autosuggest__suggestion:hover {
+  .react-autosuggest__suggestion--highlighted {
     background-color: ${({ theme }) => `${theme.colors.palette5}`};
     color: ${({ theme }) => `${theme.colors.white}`};
   }

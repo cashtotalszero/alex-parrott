@@ -9,7 +9,7 @@ const StyledPagination = styled.div`
 `;
 
 const StyledButtonsWrapper = styled.div`
-  padding: 10px 0;
+  padding: 20px 0;
 `;
 
 const StyledButton = styled.button`

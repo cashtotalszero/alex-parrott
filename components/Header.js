@@ -85,6 +85,12 @@ const Title = styled.h1`
     padding-top: 10px;
     margin-bottom: 10px;
   }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 1rem;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 const StyledNav = styled.nav`
