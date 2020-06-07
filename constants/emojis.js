@@ -13,7 +13,6 @@ export const INDIA = '\u{1F1EE}\u{1F1F3}';
 export const JAPAN = '\u{1F1EF}\u{1F1F5}';
 export const CHINA = '\u{1F1E8}\u{1F1F3}';
 export const NEPAL = '\u{1F1F3}\u{1F1F5}';
-
 export const MEXICO = '\u{1F1F2}\u{1F1FD}';
 export const USA = '\u{1F1FA}\u{1F1F8}';
 export const CANADA = '\u{1F1E8}\u{1F1E6}';
