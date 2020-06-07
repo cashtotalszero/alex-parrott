@@ -67,10 +67,12 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
   ];
 
   useEffect(() => {
-    fetchSkills();
+    if (!skills.length) {
+      fetchSkills();
+    }
   }, []);
 
-  const showTable = !isLoading && !hasError && skills.length;
+  const showTable = !isLoading && !hasError && !!skills.length;
   const showSpinner = isLoading && !hasError;
 
   return (

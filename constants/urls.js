@@ -15,3 +15,8 @@ export const ESA_SUMMER_OF_CODE =
   'https://www.esa.int/Enabling_Support/Space_Engineering_Technology/SOCIS_The_ESA_Summer_of_Code_in_Space';
 export const PERVASIVE_MEDIA = 'https://www.watershed.co.uk/studio/';
 export const AUDI_BETA_BLOG = 'https://content.somoglobal.com/audi_online_re-imagined';
+
+export const WES_BOS = 'https://wesbos.com/';
+export const DAN_ABRAMOV = 'https://overreacted.io/';
+export const STEPHEN_GRIDER = 'https://www.udemy.com/user/sgslo/';
+export const KRISTA_KING = 'https://www.kristakingmath.com/';

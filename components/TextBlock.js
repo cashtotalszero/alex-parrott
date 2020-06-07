@@ -11,6 +11,10 @@ export const EMOJI = 'emoji';
 const StyledAnchor = styled.span`
   position: relative;
 
+  a {
+    font-weight: ${({ bold }) => (bold ? 700 : '')};
+  }
+
   a:before {
     height: 5px;
     position: absolute;
@@ -29,7 +33,7 @@ const StyledAnchor = styled.span`
 
 const TextBlock = ({ contents }) => (
   <p style={{ position: 'relative' }}>
-    {contents.map(({ type, text, href, unicode, label, onClick }) => {
+    {contents.map(({ type, text, href, unicode, label, onClick, bold }) => {
       switch (type) {
         case TEXT:
           return `${text}`;
@@ -37,7 +41,7 @@ const TextBlock = ({ contents }) => (
           return <strong>{`${text}`}</strong>;
         case LINK:
           return (
-            <StyledAnchor>
+            <StyledAnchor bold={bold}>
               <a href={href} onClick={onClick}>{`${text}`}</a>
             </StyledAnchor>
           );
