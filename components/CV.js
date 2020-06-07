@@ -29,10 +29,9 @@ const CV_ITEM_11 = 11;
 const CV_ITEM_12 = 12;
 const CV_ITEM_13 = 13;
 const CV_ITEM_14 = 14;
-const CV_ITEM_15 = 15;
-export const DEFAULT_CV_ITEM = CV_ITEM_6;
+export const DEFAULT_CV_ITEM = CV_ITEM_5;
 export const CV_ITEM_FIRST = CV_ITEM_1;
-export const CV_ITEM_LAST = CV_ITEM_15;
+export const CV_ITEM_LAST = CV_ITEM_14;
 
 const ImgContainer = styled.div`
   max-width: 80%;
@@ -61,24 +60,25 @@ const getYearInfo = (year) => {
       };
     case CV_ITEM_2:
       return {
-        title: '2005',
-        text: <p>I co-founded music promotion company Monkey! Knife! Fight!</p>,
+        title: '2005-2007',
+        text: <p>I co-founded and ran music promotion company Monkey! Knife! Fight!</p>,
         imgUrl: '/monkey.jpg',
         imageAlt: 'Monkey Knife Fight poster',
       };
     case CV_ITEM_3:
       return {
-        title: '2006-07',
+        title: '2006-08',
         text: (
           <>
             <TextBlock
               contents={[
-                { text: 'I went traveling. A lot. ' },
+                { text: 'I went traveling and worked abroad. A lot. ' },
                 { type: EMOJI, unicode: INDIA, label: 'India' },
                 { type: EMOJI, unicode: JAPAN, label: 'Japan' },
                 { type: EMOJI, unicode: CHINA, label: 'China' },
                 { type: EMOJI, unicode: NEPAL, label: 'Nepal' },
                 { type: EMOJI, unicode: USA, label: 'Usa' },
+                { type: EMOJI, unicode: CANADA, label: 'Canada' },
                 { type: EMOJI, unicode: MEXICO, label: 'Mexico' },
               ]}
             />
@@ -95,17 +95,6 @@ const getYearInfo = (year) => {
       };
     case CV_ITEM_4:
       return {
-        title: '2007',
-        text: (
-          <TextBlock
-            contents={[{ text: 'I moved to Vancouver, Canada. ' }, { type: EMOJI, unicode: CANADA, label: 'Canada' }]}
-          />
-        ),
-        imgUrl: '/travel.png',
-        imageAlt: 'Me in Vancouver',
-      };
-    case CV_ITEM_5:
-      return {
         title: '2009-2012',
         text: (
           <TextBlock
@@ -119,14 +108,14 @@ const getYearInfo = (year) => {
         imgUrl: '/LBG_logo.png',
         imgAlt: 'Lloyds Banking Group',
       };
-    case CV_ITEM_6:
+    case CV_ITEM_5:
       return {
         title: '2012',
         text: <p>I started learning JavaScript.</p>,
         imgUrl: '/JavaScript-logo.png',
         imgAlt: 'JS logo',
       };
-    case CV_ITEM_7:
+    case CV_ITEM_6:
       return {
         title: '2013',
         text: (
@@ -143,14 +132,14 @@ const getYearInfo = (year) => {
         imgUrl: '/esa-logo.png',
         imgAlt: 'European Space Agency',
       };
-    case CV_ITEM_8:
+    case CV_ITEM_7:
       return {
         title: '2014',
         text: <p>I graduated from the University of Bristol with a MSc Masters Degree in Computer Science.</p>,
         imgUrl: '/UOB_logo.png',
         imgAlt: 'University of Bristol',
       };
-    case CV_ITEM_9:
+    case CV_ITEM_8:
       return {
         title: 'Late 2014',
         text: (
@@ -165,7 +154,7 @@ const getYearInfo = (year) => {
         imgUrl: '/Red7Mobile-logo.jpg',
         imgAlt: 'Red7Mobile',
       };
-    case CV_ITEM_10:
+    case CV_ITEM_9:
       return {
         title: '2015',
         text: (
@@ -180,7 +169,7 @@ const getYearInfo = (year) => {
         imgUrl: '/Somo_logo.png',
         imgAlt: 'Somo',
       };
-    case CV_ITEM_11:
+    case CV_ITEM_10:
       return {
         title: '2016',
         text: (
@@ -198,14 +187,14 @@ const getYearInfo = (year) => {
         imgUrl: '/alex_vr.jpg',
         imgAlt: 'Me working in VR',
       };
-    case CV_ITEM_12:
+    case CV_ITEM_11:
       return {
         title: '2017',
         text: <p>I went freelance. I decided to specialise in building React and Node apps.</p>,
         imgUrl: '/react_logo.png',
         imgAlt: 'React logo',
       };
-    case CV_ITEM_13:
+    case CV_ITEM_12:
       return {
         title: '2018',
         text: (
@@ -231,7 +220,7 @@ const getYearInfo = (year) => {
         imgUrl: '/audi_beta_dadi_awards.png',
         imgAlt: 'Audi Beta Website',
       };
-    case CV_ITEM_14:
+    case CV_ITEM_13:
       return {
         title: '2019',
         text: (
@@ -258,7 +247,7 @@ const getYearInfo = (year) => {
         imgUrl: '/BJSS_logo.png',
         imgAlt: 'BJSS logo',
       };
-    case CV_ITEM_15:
+    case CV_ITEM_14:
       return {
         title: 'Now',
         text: (

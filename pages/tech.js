@@ -45,6 +45,10 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
       accessor: 'type',
     },
     {
+      Header: 'Language',
+      accessor: 'lang',
+    },
+    {
       Header: 'Skill level',
       accessor: 'level',
       Cell: ({ value }) => {
@@ -59,10 +63,6 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
             return <Emoji unicode={SMILING_FACE} label="Smiling face" />;
         }
       },
-    },
-    {
-      Header: 'Keywords',
-      accessor: 'keywords',
     },
   ];
 
@@ -105,9 +105,7 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
           </SpinnerWrapper>
         )}
 
-        {showTable && (
-          <Table columnDefs={columnDefs} tableData={skills} initialState={{ hiddenColumns: ['keywords'] }} />
-        )}
+        {showTable && <Table columnDefs={columnDefs} tableData={skills} />}
 
         {hasError && (
           <TextBlock

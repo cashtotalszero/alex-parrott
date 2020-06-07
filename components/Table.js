@@ -59,7 +59,7 @@ function GlobalFilter({ setGlobalFilter }) {
             setGlobalFilter(val || undefined);
           }, 250);
         }}
-        placeholder="e.g. frontend"
+        placeholder="e.g. React"
       />
     </span>
   );

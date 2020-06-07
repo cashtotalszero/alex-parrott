@@ -1,15 +1,6 @@
 import styled from 'styled-components';
-import { LINKEDIN_BIO } from '../constants/urls';
 
-const LinkContainer = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-left: 5px;
-`;
-
-const Container = styled.div`
+const StyledFooter = styled.div`
   display: flex;
   justify-content: center;
   box-shadow: ${({ theme }) => `0px -5px ${theme.colors.palette2}`};
@@ -20,13 +11,6 @@ const Container = styled.div`
   line-height: 2rem;
 `;
 
-const Footer = () => (
-  <Container>
-    {'Find me on  '}
-    <LinkContainer href={LINKEDIN_BIO}>
-      <img src="/LI-Logo-black.png" alt="linkedin" style={{ width: '75px' }} />
-    </LinkContainer>
-  </Container>
-);
+const Footer = () => <StyledFooter>Alex Parrott © 2020</StyledFooter>;
 
 export default Footer;
