@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Page from '../components/Page';
+import Button from '../components/Button';
 
 const Score = styled.span`
   background: rgba(255, 255, 255, 0.2);
@@ -10,13 +11,36 @@ const Score = styled.span`
   border-radius: 1rem;
 `;
 
+const GameControls = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const GameInfo = styled.div`
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 800px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
 const Game = styled.div`
   width: 600px;
-  height: 400px;
+  height: 600px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   opacity: ${({ isPlaying }) => (isPlaying ? '1' : '0.7')};
+
+  @media only screen and (max-width: 800px) {
+    width: 300px;
+    height: 300px;
+  }
 `;
 
 const Hole = styled.div`
@@ -35,6 +59,13 @@ const Hole = styled.div`
     z-index: 2;
     bottom: -30px;
   }
+
+  @media only screen and (max-width: 800px) {
+    :after {
+      height: 35px;
+      bottom: -15px;
+    }
+  }
 `;
 
 const Mole = styled.div`
@@ -45,17 +76,19 @@ const Mole = styled.div`
   height: 100%;
   transition: all 0.4s;
   top: ${({ isPeeping }) => (isPeeping ? '0' : '100%')};
+  cursor: pointer;
 `;
 
 let peepTimer = null;
 let gameTimer = null;
+const initalMoles = [false, false, false, false, false, false, false, false, false];
 
 const MolesPage = () => {
   const [score, setScore] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [lastHole, setLastHole] = useState(null);
-  const [moles, setMoles] = useState([false, false, false, false, false, false]);
+  const [moles, setMoles] = useState([...initalMoles]);
 
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -103,14 +136,14 @@ const MolesPage = () => {
 
     setGameOver(true);
     setIsPlaying(false);
-    setMoles([false, false, false, false, false, false]);
+    setMoles([...initalMoles]);
   }
 
   function startGame() {
     setScore(0);
     setGameOver(false);
     setIsPlaying(true);
-    setMoles([false, false, false, false, false, false]);
+    setMoles([...initalMoles]);
 
     peep();
     gameTimer = setTimeout(() => {
@@ -127,23 +160,19 @@ const MolesPage = () => {
 
   return (
     <Page>
-      <h1>Whack-a-mole!</h1>
+      <GameInfo>
+        <h1>Whack a mole!</h1>
 
-      {isPlaying ? (
-        <button type="button" onClick={endGame}>
-          Quit
-        </button>
-      ) : (
-        <button type="button" onClick={startGame}>
-          Start!
-        </button>
-      )}
+        <GameControls>
+          {isPlaying ? <Button onClick={endGame}>Quit</Button> : <Button onClick={startGame}>Start!</Button>}
+        </GameControls>
 
-      {gameOver && <h1>GAME OVER!</h1>}
-      <h2>
-        Your score
-        <Score>{score}</Score>
-      </h2>
+        {gameOver && <h1>GAME OVER!</h1>}
+        <h2>
+          Score
+          <Score>{score}</Score>
+        </h2>
+      </GameInfo>
 
       <Game isPlaying={isPlaying}>
         {moles.map((mole, index) => (

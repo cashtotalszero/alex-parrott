@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Link from 'next/link';
 import Modal from './Modal';
 import Emoji from './Emoji';
+
+import Button from './Button';
 
 import { SMILING_FACE, HALO as HALO_FACE, FLUSHED_FACE } from '../constants/emojis';
 
@@ -11,25 +11,10 @@ const ModalContent = styled.div`
   flex-direction: column;
 `;
 
-const StyledLink = styled.a`
-  font-family: 'Lexend Tera';
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  background-color: ${({ theme }) => theme.colors.black};
-  color: white;
-  cursor: pointer;
-  padding: 5px;
-  width: 75px;
-  text-align: center;
-  align-self: flex-end;
-`;
-
 const SkillsModal = ({ isOpen, setIsOpen }) => (
   <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
     <ModalContent>
-      <Link href="/tech">
-        <StyledLink onClick={() => setIsOpen(false)}>close</StyledLink>
-      </Link>
+      <Button onClick={() => setIsOpen(false)}>close</Button>
       <h2>Skill levels</h2>
       <ul>
         <li>
