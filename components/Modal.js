@@ -8,7 +8,7 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.26)',
+    borderLeft: 'solid 20px #3F84E5',
   },
   overlay: {
     backgroundColor: 'rgba(55,55,55,0.6)',

@@ -11,7 +11,7 @@ const OpinionPage = () => (
       Here are some resources that have really helped me in my journey as a developer. I think they are good, you might
       too...
     </p>
-    <Image imageSrc="/rant.jpg" imageAlt="alex" width="80%" />
+    <Image imageSrc="/rant.jpg" imageAlt="alex" />
 
     <h2>Online learning resources</h2>
     <ul>

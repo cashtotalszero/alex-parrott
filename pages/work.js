@@ -8,6 +8,11 @@ import Emoji from '../components/Emoji';
 import CV, { DEFAULT_CV_ITEM, CV_ITEM_FIRST, CV_ITEM_LAST } from '../components/CV';
 import { ROCKET } from '../constants/emojis';
 
+const StyledSliderWrapper = styled.div`
+  width: 90%;
+  margin: 50px auto 40px auto;
+`;
+
 const StyledSlider = styled(ReactSlider)`
   width: 100%;
   height: 35px;
@@ -67,7 +72,7 @@ const WorkPage = () => {
         ]}
       />
 
-      <div style={{ width: '90%', margin: '40px auto' }}>
+      <StyledSliderWrapper>
         <StyledSlider
           max={CV_ITEM_LAST}
           min={CV_ITEM_FIRST}
@@ -76,7 +81,7 @@ const WorkPage = () => {
           renderThumb={Thumb}
           onChange={handleChange}
         />
-      </div>
+      </StyledSliderWrapper>
 
       <CV year={selectedYear} />
     </Page>
