@@ -6,17 +6,19 @@ import Button from './Button';
 const StyledListItem = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledText = styled.span`
   text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
   opacity: ${({ completed }) => (completed ? '0.5' : '1')};
+  padding-right: 5px;
 `;
 
 const TodoItem = ({ onClick, completed, text }) => (
   <StyledListItem>
     <StyledText completed={completed}>{text}</StyledText>
-    <Button onClick={onClick} minWidth="150px">
+    <Button onClick={onClick} minWidth="120px" height="40px">
       Toggle Done
     </Button>
   </StyledListItem>

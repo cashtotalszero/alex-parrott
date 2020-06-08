@@ -9,6 +9,7 @@ const TodoLink = ({ active, children, onClick }) => (
       marginLeft: '4px',
     }}
     width="32%"
+    height="40px"
   >
     {children}
   </Button>

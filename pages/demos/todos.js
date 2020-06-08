@@ -1,5 +1,5 @@
-import TodoApp from '../components/TodoApp';
-import Page from '../components/Page';
+import TodoApp from '../../components/TodoApp';
+import Page from '../../components/Page';
 
 const DemosPage = () => (
   <Page>

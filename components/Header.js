@@ -1,4 +1,3 @@
-// import Link from 'next/link';
 import styled from 'styled-components';
 import Link from 'next/link';
 import NavLink from './NavLink';
@@ -16,32 +15,15 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-  /* background-color: red; */
   height: 4.5rem;
   width: 12rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  /* margin: 10px 0px; */
   padding: 10px;
   text-align: center;
-  /* background-color: ${({ theme }) => theme.colors.palette5}; */
-  /* border-radius: 5px; */
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); */
-  /* flex: 1; */
-  /* border-bottom: solid */
   position: relative;
-  /* border-left: solid 1px black;
-  border-right: solid 1px black;
-
-  :nth-child(1) {
-    border-left: solid 1px black;
-  }
-
-  :nth-last-child(1) {
-    border-right: solid 1px black;
-  } */
 
   @media only screen and (max-width: 1000px) {
     width: 6rem;
@@ -51,7 +33,6 @@ const StyledListItem = styled.li`
   }
 
   .selected {
-    /* background-color: green; */
     text-decoration: underline;
   }
 
@@ -61,12 +42,8 @@ const StyledListItem = styled.li`
   }
 
   a:hover {
-    /* text-decoration: underline; */
-    /* transform: scale(1.1); */
     transition: all 0.25s ease;
-    /* text-decoration: underline; */
     color: ${({ theme }) => `${theme.colors.palette5}`};
-
   }
 `;
 

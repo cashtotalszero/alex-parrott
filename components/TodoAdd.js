@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Button from './Button';
 
 const StyledInput = styled.div`
-  padding: 10px 0;
+  padding: 20px 0;
 `;
 
 const AddTodo = ({ onSubmit }) => {
@@ -24,9 +24,9 @@ const AddTodo = ({ onSubmit }) => {
     <>
       <form onSubmit={submitHandler}>
         <StyledInput>
-          <input ref={input} />
+          <input ref={input} placeholder="e.g. call Alex" />
         </StyledInput>
-        <Button type="submit" width="100%">
+        <Button type="submit" width="100%" height="40px">
           Add Todo
         </Button>
       </form>

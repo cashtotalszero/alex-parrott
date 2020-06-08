@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import Emoji from './Emoji';
@@ -6,6 +7,7 @@ import Emoji from './Emoji';
 export const TEXT = 'text';
 export const BOLD = 'boldText';
 export const LINK = 'link';
+export const NAV = 'nav';
 export const EMOJI = 'emoji';
 
 const StyledAnchor = styled.span`
@@ -21,11 +23,7 @@ const StyledAnchor = styled.span`
     content: '';
     width: 100%;
     bottom: -2px;
-    /* z-index: 0; */
     transform: skew(-20deg) rotate(-2deg);
-    /* transition: transform 0.1s ease 0s; */
-    /* color: red; */
-    /* background-color: red; */
     background-color: ${({ theme }) => theme.colors.palette5};
     opacity: 0.5;
   }
@@ -43,6 +41,14 @@ const TextBlock = ({ contents }) => (
           return (
             <StyledAnchor bold={bold}>
               <a href={href} onClick={onClick}>{`${text}`}</a>
+            </StyledAnchor>
+          );
+        case NAV:
+          return (
+            <StyledAnchor bold={bold}>
+              <Link href={href} onClick={onClick}>
+                <a>{`${text}`}</a>
+              </Link>
             </StyledAnchor>
           );
         case EMOJI:

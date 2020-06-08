@@ -7,7 +7,7 @@ const StyledButton = styled.button.attrs(({ type, disabled }) => ({
   font-family: 'Lexend Tera';
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.palette2};
   color: white;
   cursor: pointer;
   padding: ${({ padding }) => padding || '5px'};

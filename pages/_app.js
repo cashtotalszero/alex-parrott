@@ -5,7 +5,7 @@ import { Reset } from 'styled-reset';
 import PropTypes from 'prop-types';
 import { useStore } from '../store';
 import Header from '../components/Header';
-import Footer from '../components/AppFooter';
+import Footer from '../components/Footer';
 
 // const colour1 = '#3b66db';
 // const colour2 = '#715b81';
