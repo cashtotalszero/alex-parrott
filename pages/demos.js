@@ -1,9 +1,9 @@
-import App from '../components/App';
+import TodoApp from '../components/TodoApp';
 import Page from '../components/Page';
 
 const DemosPage = () => (
   <Page>
-    <App />
+    <TodoApp />
   </Page>
 );
 

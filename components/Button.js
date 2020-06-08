@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-// TODO: Add attrs for type button!!!
-
-const StyledButton = styled.button.attrs(() => ({
-  type: 'button',
+const StyledButton = styled.button.attrs(({ type, disabled }) => ({
+  type: type || 'button',
+  disabled: disabled || false,
 }))`
   font-family: 'Lexend Tera';
   border-radius: 5px;
@@ -11,10 +10,18 @@ const StyledButton = styled.button.attrs(() => ({
   background-color: ${({ theme }) => theme.colors.black};
   color: white;
   cursor: pointer;
-  padding: 5px;
-  width: 75px;
+  padding: ${({ padding }) => padding || '5px'};
+  width: ${({ width }) => width || '75px'};
+  min-width: ${({ minWidth }) => minWidth || ''};
+  height: ${({ height }) => height || ''};
+  font-size: ${({ fontSize }) => fontSize || ''};
   text-align: center;
   align-self: flex-end;
+
+  :disabled {
+    cursor: auto;
+    opacity: 0.6;
+  }
 `;
 
 export default StyledButton;

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Page from '../components/Page';
 import Button from '../components/Button';
 
+const GAME_LENGTH = 15000;
+
 const Score = styled.span`
   background: rgba(255, 255, 255, 0.2);
   padding: 0 3rem;
@@ -121,7 +123,7 @@ const MolesPage = () => {
     }, time);
   }
 
-  function bonk(e, index) {
+  function whack(e, index) {
     if (!e.isTrusted) return; // cheater!
     setScore(score + 1);
 
@@ -148,7 +150,7 @@ const MolesPage = () => {
     peep();
     gameTimer = setTimeout(() => {
       endGame();
-    }, 10000);
+    }, GAME_LENGTH);
   }
 
   useEffect(
@@ -161,23 +163,23 @@ const MolesPage = () => {
   return (
     <Page>
       <GameInfo>
-        <h1>Whack a mole!</h1>
-
         <GameControls>
-          {isPlaying ? <Button onClick={endGame}>Quit</Button> : <Button onClick={startGame}>Start!</Button>}
+          <Button onClick={isPlaying ? endGame : startGame} width="75%" fontSize="1.5rem" padding="10px">
+            {isPlaying ? "I'm done" : 'Play whack a mole!'}
+          </Button>
         </GameControls>
 
         {gameOver && <h1>GAME OVER!</h1>}
         <h2>
           Score
-          <Score>{score}</Score>
+          <Score score={score}>{score}</Score>
         </h2>
       </GameInfo>
 
       <Game isPlaying={isPlaying}>
         {moles.map((mole, index) => (
           <Hole>
-            <Mole isPeeping={moles[index]} onClick={(e) => bonk(e, index)} />
+            <Mole isPeeping={moles[index]} onClick={(e) => whack(e, index)} />
           </Hole>
         ))}
       </Game>
