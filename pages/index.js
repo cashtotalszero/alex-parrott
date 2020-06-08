@@ -32,12 +32,12 @@ const HomePage = () => (
 
     <TextBlock
       contents={[
-        { text: 'Find out more about ' },
+        { text: 'Here you can find out about ' },
         { type: LINK, href: 'about', text: 'who I am', bold: true },
-        { text: ', check out ' },
-        { type: LINK, href: 'work', text: 'my interactive C.V.', bold: true },
-        { text: ' or ' },
-        { type: LINK, href: 'tech', text: 'search my skills', bold: true },
+        { text: ', check out my interactive ' },
+        { type: LINK, href: 'work', text: 'C.V.', bold: true },
+        { text: ' or search my ' },
+        { type: LINK, href: 'tech', text: 'skills', bold: true },
         { text: ' to see if they match your needs. Alternatively, you can ' },
         { type: LINK, href: 'contact', text: 'contact me', bold: true },
         { text: ' to check my availability or discuss your project. ' },

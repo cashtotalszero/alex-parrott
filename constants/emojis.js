@@ -6,6 +6,7 @@ export const SMILING_FACE = '\u{1F642}';
 export const NEUTRAL_FACE = '\u{1F610}';
 export const HALO = '\u{1F607}';
 export const FLUSHED_FACE = '\u{1F633}';
+export const SWEAT_SMILE = '\u{1F605}';
 export const FIRE = '\u{1F525}';
 export const ROCKET = '\u{1F680}';
 

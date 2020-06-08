@@ -162,7 +162,7 @@ const getYearInfo = (year) => {
           <TextBlock
             contents={[
               { text: 'I joined the digital agency ' },
-              { type: LINK, text: 'Somo Global', href: SOMO_GLOBAL },
+              { type: LINK, text: 'Somo', href: SOMO_GLOBAL },
               { text: ' and start coding in React and Vue.' },
             ]}
           />
@@ -178,9 +178,9 @@ const getYearInfo = (year) => {
             contents={[
               {
                 text:
-                  'I was lead developer on the Audi VR virtual showroom app, built in Unity. The work was nominated for a ',
+                  'I was lead developer on the Audi VR virtual showroom app, built in Unity. The work was nominated for a DADI ',
               },
-              { type: LINK, text: 'DADI Award', href: VR_SHOWROOM },
+              { type: LINK, text: 'Award', href: VR_SHOWROOM },
               { text: '.' },
             ]}
           />
@@ -201,10 +201,10 @@ const getYearInfo = (year) => {
         text: (
           <TextBlock
             contents={[
-              { text: 'The Audi Beta Website was nominated for the Best Automotive Website ' },
+              { text: 'The Audi Beta Website was nominated for the Best Automotive Website DADI ' },
               {
                 type: LINK,
-                text: 'DADI Award',
+                text: 'Award',
                 href: AUDI_BETA,
               },
               {
