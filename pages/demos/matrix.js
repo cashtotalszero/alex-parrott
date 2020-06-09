@@ -17,18 +17,15 @@ const ButtonWrapper = styled.div`
 
   button {
     border: none;
+    margin: 0 10px;
   }
 `;
 
 const StyledCanvas = styled.div`
   opacity: ${({ done }) => (done ? '0' : '1')};
   transition: opacity 2s ease-in-out;
-
-  a {
-    position: absolute;
-    cursor: pointer;
-    color: white;
-  }
+  display: flex;
+  justify-content: center;
 `;
 
 const Quote = styled.h2`
@@ -43,10 +40,16 @@ const Quote = styled.h2`
   font-style: italic;
 `;
 
-const ANIMATION_LENGTH = 10000;
+const ANIMATION_LENGTH = 5000;
 const QUOTE_WAIT = 2500;
 
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/?$';
+const ENGLISH = 'English';
+const RUSSIAN = 'Russian';
+const CHINESE = 'Chinese';
+const english = '$ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/?$';
+const russian = '₽ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЁЯЧСМИТЬБЮ0123456789/?';
+const chinese = '¥手田水口廿卜山戈人心日尸木火土竹十大中重難金女月弓一二三四五六七八九十';
+
 const fontHeight = 11;
 const columnsSpacing = 8;
 const fps = 24;
@@ -56,6 +59,7 @@ let frameTimer = null;
 let quoteTimer = null;
 
 const matrixQuotes = [
+  '"The matrix is everywhere..."',
   '"Ever have that feeling where you’re not sure if you’re awake or dreaming?"',
   '"No one can be told what the Matrix is. You have to see it for yourself."',
   '"I know what you\'re thinking... Why oh why didn\'t I take the BLUE pill?"',
@@ -74,6 +78,7 @@ const MatrixPage = () => {
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [repeat, setRepeat] = useState(false);
   const [quote, setQuote] = useState(getMatrixQuote());
+  const [language, setLanguage] = useState({ name: ENGLISH, chars: english });
 
   function enterTheMatrix(ctx, grid, width, height, newSequence) {
     if (newSequence) {
@@ -92,7 +97,7 @@ const MatrixPage = () => {
       d.b == d.d
         ? ((d.b = 0),
           d.a.push({
-            c: letters.charAt(Math.floor(Math.random() * letters.length)),
+            c: language.chars.charAt(Math.floor(Math.random() * language.chars.length)),
             y: fontHeight + d.a[d.a.length - 1].y,
             alpha: 255,
           }))
@@ -132,7 +137,11 @@ const MatrixPage = () => {
         x: columnsSpacing * m,
         d: Math.floor(10 * Math.random()) + 2,
         b: 0,
-        a: Array({ c: letters.charAt(Math.floor(Math.random() * letters.length)), y: fontHeight, alpha: 255 }),
+        a: Array({
+          c: language.chars.charAt(Math.floor(Math.random() * language.chars.length)),
+          y: fontHeight,
+          alpha: 255,
+        }),
       });
     }
     enterTheMatrix(ctx, grid, width, height, true);
@@ -148,18 +157,35 @@ const MatrixPage = () => {
     };
   }, [repeat]);
 
+  const reset = () => {
+    setRepeat(!repeat);
+    setDone(false);
+  };
+
+  const switchLanguage = () => {
+    switch (language.name) {
+      case ENGLISH:
+        setLanguage({ name: RUSSIAN, chars: russian });
+        break;
+      case RUSSIAN:
+        setLanguage({ name: CHINESE, chars: chinese });
+        break;
+      case CHINESE:
+      default:
+        setLanguage({ name: ENGLISH, chars: english });
+    }
+    reset();
+  };
+
   return (
     <StyledPage>
       <CustomHead />
 
       <ButtonWrapper>
-        <Button
-          height="30px"
-          onClick={() => {
-            setRepeat(!repeat);
-            setDone(false);
-          }}
-        >
+        <Button height="30px" onClick={switchLanguage}>
+          {language.name}
+        </Button>
+        <Button height="30px" onClick={reset}>
           Reset
         </Button>
       </ButtonWrapper>
