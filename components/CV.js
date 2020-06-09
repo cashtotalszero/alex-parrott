@@ -202,19 +202,13 @@ const getYearInfo = (year) => {
           <TextBlock
             contents={[
               { text: 'The Audi Beta Website was nominated for the Best Automotive Website DADI ' },
-              {
-                type: LINK,
-                text: 'Award',
-                href: AUDI_BETA,
-              },
+              { type: LINK, text: 'Award', href: AUDI_BETA },
               {
                 text:
                   '. I worked extensively on this project as a senior developer at Somo. Find out more about this project ',
               },
               { type: LINK, text: 'here', href: AUDI_BETA_BLOG },
-              {
-                text: '.',
-              },
+              { text: '.' },
             ]}
           />
         ),
@@ -228,20 +222,10 @@ const getYearInfo = (year) => {
           <TextBlock
             contents={[
               { text: 'I worked closely with tech consultancy ' },
-              {
-                type: LINK,
-                text: 'BJSS',
-                href: BJSS,
-              },
+              { type: LINK, text: 'BJSS', href: BJSS },
               { text: ' and assisted in delivering the massive ' },
-              {
-                type: LINK,
-                text: 'NATS',
-                href: NATS,
-              },
-              {
-                text: ' aerospace project. Full stack JavaScript, of course.',
-              },
+              { type: LINK, text: 'NATS', href: NATS },
+              { text: ' aerospace project. Full stack JavaScript, of course.' },
             ]}
           />
         ),

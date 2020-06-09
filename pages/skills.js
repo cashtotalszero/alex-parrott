@@ -15,7 +15,7 @@ import Table from '../components/Table';
 import CustomHead from '../components/CustomHead';
 import Card from '../components/Card';
 import LoadingSpinner from '../components/LoadingSpinner';
-import TextBlock, { LINK, NAV, BUTTON } from '../components/TextBlock';
+import TextBlock, { LINK } from '../components/TextBlock';
 import Modal from '../components/SkillsModal';
 
 const Container = styled.div`
@@ -23,7 +23,7 @@ const Container = styled.div`
   justify-content: center;
   margin: 20px;
   position: relative;
-  min-height: 750px;
+  min-height: 1000px;
 `;
 
 const SpinnerWrapper = styled.div`
