@@ -3,16 +3,7 @@ import styled from 'styled-components';
 import Page from '../components/Page';
 import TextBlock, { LINK, EMOJI } from '../components/TextBlock';
 import { GB_FLAG } from '../constants/emojis';
-import {
-  HOME_PAGE,
-  ABOUT_PAGE,
-  CAREER_PAGE,
-  SKILLS_PAGE,
-  RANDOM_PAGE,
-  TIPS_PAGE,
-  CONTACT_PAGE,
-  CODE_PAGE,
-} from '../constants/urls';
+import { ABOUT_PAGE, CAREER_PAGE, SKILLS_PAGE, RANDOM_PAGE, CONTACT_PAGE } from '../constants/urls';
 
 const StyledHighlight = styled.p`
   margin: 40px;
