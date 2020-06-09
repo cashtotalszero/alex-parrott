@@ -1,3 +1,19 @@
+// Local pages
+export const HOME_PAGE = '/';
+export const ABOUT_PAGE = '/about';
+export const CAREER_PAGE = '/career';
+export const SKILLS_PAGE = '/skills';
+export const CODE_PAGE = '/code';
+export const RANDOM_PAGE = '/random';
+export const TIPS_PAGE = '/tips';
+export const CONTACT_PAGE = '/contact';
+
+// Demos
+export const WHACK_MOLES_DEMO = '/demos/moles';
+export const MATRIX_DEMO = '/demos/matrix';
+export const REDUX_DEMO = '/demos/todos';
+
+// External links
 export const CODE_REPO = 'https://github.com/cashtotalszero/alex-parrott';
 export const LINKEDIN_BIO = 'https://www.linkedin.com/in/alex-parrott-100613b1/';
 export const VR_SHOWROOM = 'https://www.dadiawards.com/dadi-2017/use-of-vr/audi-a4-virtual-showroom';

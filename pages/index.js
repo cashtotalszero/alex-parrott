@@ -3,6 +3,16 @@ import styled from 'styled-components';
 import Page from '../components/Page';
 import TextBlock, { LINK, EMOJI } from '../components/TextBlock';
 import { GB_FLAG } from '../constants/emojis';
+import {
+  HOME_PAGE,
+  ABOUT_PAGE,
+  CAREER_PAGE,
+  SKILLS_PAGE,
+  RANDOM_PAGE,
+  TIPS_PAGE,
+  CONTACT_PAGE,
+  CODE_PAGE,
+} from '../constants/urls';
 
 const StyledHighlight = styled.p`
   margin: 40px;
@@ -33,13 +43,13 @@ const HomePage = () => (
     <TextBlock
       contents={[
         { text: 'Here you can find out about ' },
-        { type: LINK, href: 'about', text: 'who I am', bold: true },
+        { type: LINK, href: ABOUT_PAGE, text: 'who I am', bold: true },
         { text: ', check out my interactive ' },
-        { type: LINK, href: 'career', text: 'C.V.', bold: true },
+        { type: LINK, href: CAREER_PAGE, text: 'C.V.', bold: true },
         { text: ' or search my ' },
-        { type: LINK, href: 'skills', text: 'skills', bold: true },
+        { type: LINK, href: SKILLS_PAGE, text: 'skills', bold: true },
         { text: ' to see if they match your needs. I also have a few ' },
-        { type: LINK, href: 'random', text: 'demos', bold: true },
+        { type: LINK, href: RANDOM_PAGE, text: 'demos', bold: true },
         { text: " of random web apps I've made." },
       ]}
     />
@@ -47,7 +57,7 @@ const HomePage = () => (
     <TextBlock
       contents={[
         { text: 'Feel free to ' },
-        { type: LINK, href: 'contact', text: 'contact me', bold: true },
+        { type: LINK, href: CONTACT_PAGE, text: 'contact me', bold: true },
         { text: ' to check my availability or discuss your project. ' },
       ]}
     />

@@ -7,6 +7,7 @@ import TextBlock, { LINK } from '../components/TextBlock';
 import Emoji from '../components/Emoji';
 import CV, { DEFAULT_CV_ITEM, CV_ITEM_FIRST, CV_ITEM_LAST } from '../components/CV';
 import { ROCKET } from '../constants/emojis';
+import { LINKEDIN_BIO } from '../constants/urls';
 
 const StyledSliderWrapper = styled.div`
   width: 90%;
@@ -65,7 +66,7 @@ const CareerPage = () => {
             text:
               "Here's my CV / résumé in slider form! Drag the handle to see my employment and education history. If you prefer to look at a more conventional list of jobs then you can find me on ",
           },
-          { type: LINK, href: '', text: 'LinkedIn' },
+          { type: LINK, href: LINKEDIN_BIO, text: 'LinkedIn' },
           {
             text: '.',
           },

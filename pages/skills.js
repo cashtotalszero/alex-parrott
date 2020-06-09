@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { fetchSkills as fetchSkillAction } from '../actions';
 
-import { CODE_REPO } from '../constants/urls';
+import { CODE_REPO, SKILLS_PAGE } from '../constants/urls';
 import { SMILING_FACE, HALO as HALO_FACE, FLUSHED_FACE } from '../constants/emojis';
 import { SKILL_LEVELS } from '../constants/skills';
 
@@ -89,18 +89,9 @@ const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
               that I know.
             </p>
 
-            {/* <TextBlock
-              contents={[
-                {
-                  text: 'Skill levels are described using the highly scientific emoji scale. I explain it ',
-                },
-                { type: BUTTON, text: 'here', onClick: () => setIsOpen(true), href: null },
-                { text: '.' },
-              ]}
-            /> */}
             <p>
               {'Skill levels are described using the highly scientific '}
-              <Link href="/tech">
+              <Link href={SKILLS_PAGE}>
                 <a onClick={() => setIsOpen(true)}>emoji scale</a>
               </Link>
               .

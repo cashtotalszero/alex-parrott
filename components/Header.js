@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+
 import NavLink from './NavLink';
+import {
+  HOME_PAGE,
+  ABOUT_PAGE,
+  CAREER_PAGE,
+  SKILLS_PAGE,
+  RANDOM_PAGE,
+  TIPS_PAGE,
+  CONTACT_PAGE,
+  CODE_PAGE,
+} from '../constants/urls';
 
 const StyledList = styled.ul`
   display: flex;
@@ -77,43 +88,43 @@ const StyledNav = styled.nav`
 const Header = () => (
   <StyledNav>
     <Title>
-      <Link href="/">
+      <Link href={HOME_PAGE}>
         <a>{'< ALEX PARROTT.js />'}</a>
       </Link>
     </Title>
     <StyledList>
       <StyledListItem>
-        <NavLink href="/about">
+        <NavLink href={ABOUT_PAGE}>
           <a>About</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/career">
+        <NavLink href={CAREER_PAGE}>
           <a>Career</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/skills">
+        <NavLink href={SKILLS_PAGE}>
           <a>Skills</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/code">
+        <NavLink href={CODE_PAGE}>
           <a>Code</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/random">
+        <NavLink href={RANDOM_PAGE}>
           <a>Random</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/tips">
+        <NavLink href={TIPS_PAGE}>
           <a>Tips</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/contact">
+        <NavLink href={CONTACT_PAGE}>
           <a>Contact</a>
         </NavLink>
       </StyledListItem>
