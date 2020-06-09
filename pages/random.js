@@ -36,7 +36,7 @@ const RandomPage = () => (
             { type: NAV, href: MATRIX_DEMO, text: 'Enter The Matrix', bold: true },
             {
               text:
-                ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript.',
+                ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript. Ok, so technically I reverse engineered if from some minified code I found. That still counts, right?',
             },
           ]}
         />
@@ -46,7 +46,7 @@ const RandomPage = () => (
           contents={[
             { type: NAV, href: REDUX_DEMO, text: 'Redux Todos', bold: true },
             {
-              text: " | The classic Redux demo. It's a to do list, build in Redux!",
+              text: " | The classic Redux demo. It's a to do list app, built in Redux!",
             },
           ]}
         />

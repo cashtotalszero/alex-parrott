@@ -23,6 +23,7 @@ const Container = styled.div`
   justify-content: center;
   margin: 20px;
   position: relative;
+  min-height: 750px;
 `;
 
 const SpinnerWrapper = styled.div`

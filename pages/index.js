@@ -19,6 +19,14 @@ const StyledHighlight = styled.p`
   font-style: italic;
   font-weight: 700;
   transform: skewY(-0.5deg);
+
+  @media only screen and (max-width: 800px) {
+    margin: 40px 20px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    margin: 40px 10px;
+  }
 `;
 
 const HomePage = () => (

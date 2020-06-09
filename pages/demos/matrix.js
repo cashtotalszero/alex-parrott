@@ -23,9 +23,10 @@ const Quote = styled.h2`
   background: black;
   text-align: center;
   padding: 30px;
+  font-style: italic;
 `;
 
-const ANIMATION_LENGTH = 5000;
+const ANIMATION_LENGTH = 10000;
 const FADE_OUT_WAIT = 3000;
 
 const MatrixPage = () => {
