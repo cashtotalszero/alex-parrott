@@ -1,7 +1,17 @@
-// import Link from 'next/link';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import NavLink from './NavLink';
+import {
+  HOME_PAGE,
+  ABOUT_PAGE,
+  CAREER_PAGE,
+  SKILLS_PAGE,
+  RANDOM_PAGE,
+  TIPS_PAGE,
+  CONTACT_PAGE,
+  CODE_PAGE,
+} from '../constants/urls';
 
 const StyledList = styled.ul`
   display: flex;
@@ -9,46 +19,42 @@ const StyledList = styled.ul`
   box-shadow: ${({ theme }) => `0px 5px ${theme.colors.palette2}`};
   flex-wrap: wrap;
   font-family: 'Lexend Tera';
+  background-color: ${({ theme }) => `${theme.colors.black}`};
+  color: white;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 `;
 
 const StyledListItem = styled.li`
-  /* background-color: red; */
   height: 4.5rem;
   width: 12rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  margin: 10px 5px;
   padding: 10px;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.palette5};
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  /* flex: 1; */
-  /* border-bottom: solid */
   position: relative;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     width: 6rem;
     height: 2rem;
     font-size: 1rem;
-    margin: 5px;
+    margin: 0;
   }
 
   .selected {
-    /* background-color: green; */
     text-decoration: underline;
   }
 
   a {
     text-decoration: none;
+    color: white;
   }
 
   a:hover {
-    /* text-decoration: underline; */
-    transform: scale(1.1);
-    transition: transform 0.25s ease;
+    transition: all 0.25s ease;
+    color: ${({ theme }) => `${theme.colors.palette5}`};
   }
 `;
 
@@ -58,8 +64,18 @@ const Title = styled.h1`
   margin-top: 0;
   padding-top: 20px;
 
-  @media only screen and (max-width: 800px) {
+  a {
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 1000px) {
     font-size: 1.5rem;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 1rem;
     padding-top: 10px;
     margin-bottom: 10px;
   }
@@ -71,30 +87,44 @@ const StyledNav = styled.nav`
 
 const Header = () => (
   <StyledNav>
-    <Title>{'< ALEX PARROTT.js />'}</Title>
+    <Title>
+      <Link href={HOME_PAGE}>
+        <a>{'< ALEX PARROTT.js />'}</a>
+      </Link>
+    </Title>
     <StyledList>
       <StyledListItem>
-        <NavLink href="/">
-          <a>Home</a>
+        <NavLink href={ABOUT_PAGE}>
+          <a>About</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/about">
-          <a>About me</a>
+        <NavLink href={CAREER_PAGE}>
+          <a>Career</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/">
-          <a>Work History</a>
+        <NavLink href={SKILLS_PAGE}>
+          <a>Skills</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/tech">
-          <a>Tech I use</a>
+        <NavLink href={CODE_PAGE}>
+          <a>Code</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/">
+        <NavLink href={RANDOM_PAGE}>
+          <a>Random</a>
+        </NavLink>
+      </StyledListItem>
+      <StyledListItem>
+        <NavLink href={TIPS_PAGE}>
+          <a>Tips</a>
+        </NavLink>
+      </StyledListItem>
+      <StyledListItem>
+        <NavLink href={CONTACT_PAGE}>
           <a>Contact</a>
         </NavLink>
       </StyledListItem>

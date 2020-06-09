@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useTable, useSortBy, useFilters, useGlobalFilter, usePagination } from 'react-table';
 import styled from 'styled-components';
 
 import Autosuggest from './Autosuggest';
 import Pagination from './TablePagination';
+import { SKILL_NAMES, SKILL_TYPES } from '../constants/skills';
 
 const TableStyles = styled.div`
   padding: 1rem;
@@ -21,8 +22,9 @@ const TableStyles = styled.div`
 
   th {
     font-family: 'Lexend Tera';
-    background-color: ${({ theme }) => `${theme.colors.palette5}`};
+    background-color: ${({ theme }) => `${theme.colors.palette2}`};
     line-height: 1.2rem;
+    color: white;
   }
 
   td,
@@ -34,11 +36,31 @@ const TableStyles = styled.div`
 `;
 
 // Define a default UI for filtering
-function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
+let debounceTimer = null;
+
+function GlobalFilter({ setGlobalFilter }) {
+  const suggestions = [...Object.values(SKILL_NAMES), ...Object.values(SKILL_TYPES)];
+
+  useEffect(
+    () => () => {
+      clearTimeout(debounceTimer);
+    },
+    [setGlobalFilter],
+  );
+
   return (
     <span>
       {'Search: '}
-      <Autosuggest onChange={(val) => setGlobalFilter(val || undefined)} placeholder="e.g. frontend" />
+      <Autosuggest
+        suggestions={suggestions}
+        onChange={(val) => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            setGlobalFilter(val || undefined);
+          }, 250);
+        }}
+        placeholder="e.g. React"
+      />
     </span>
   );
 }
@@ -69,9 +91,10 @@ const Table = ({ columnDefs, tableData, initialState }) => {
     prepareRow,
     state,
     visibleColumns,
+    // Filtering props
     preGlobalFilteredRows,
     setGlobalFilter,
-
+    // Pagination props
     canPreviousPage,
     canNextPage,
     pageCount,

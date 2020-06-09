@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import Emoji from './Emoji';
@@ -6,22 +7,26 @@ import Emoji from './Emoji';
 export const TEXT = 'text';
 export const BOLD = 'boldText';
 export const LINK = 'link';
+export const NAV = 'nav';
 export const EMOJI = 'emoji';
+export const BUTTON = 'button';
 
 const StyledAnchor = styled.span`
   position: relative;
 
+  button,
+  a {
+    font-weight: ${({ bold }) => (bold ? 700 : '')};
+  }
+
+  button,
   a:before {
     height: 5px;
     position: absolute;
     content: '';
     width: 100%;
     bottom: -2px;
-    /* z-index: 0; */
     transform: skew(-20deg) rotate(-2deg);
-    /* transition: transform 0.1s ease 0s; */
-    /* color: red; */
-    /* background-color: red; */
     background-color: ${({ theme }) => theme.colors.palette5};
     opacity: 0.5;
   }
@@ -29,7 +34,7 @@ const StyledAnchor = styled.span`
 
 const TextBlock = ({ contents }) => (
   <p style={{ position: 'relative' }}>
-    {contents.map(({ type, text, href, unicode, label }) => {
+    {contents.map(({ type, text, href, unicode, label, onClick, bold }) => {
       switch (type) {
         case TEXT:
           return `${text}`;
@@ -37,8 +42,24 @@ const TextBlock = ({ contents }) => (
           return <strong>{`${text}`}</strong>;
         case LINK:
           return (
-            <StyledAnchor>
-              <a href={href}>{`${text}`}</a>
+            <StyledAnchor bold={bold}>
+              <a href={href} onClick={onClick}>{`${text}`}</a>
+            </StyledAnchor>
+          );
+        case NAV:
+          return (
+            <StyledAnchor bold={bold}>
+              <Link href={href} onClick={onClick}>
+                <a>{`${text}`}</a>
+              </Link>
+            </StyledAnchor>
+          );
+        case BUTTON:
+          return (
+            <StyledAnchor bold={bold}>
+              <Link onClick={onClick}>
+                <a>{`${text}`}</a>
+              </Link>
             </StyledAnchor>
           );
         case EMOJI:

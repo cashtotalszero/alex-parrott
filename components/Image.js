@@ -8,6 +8,7 @@ const ImageContainer = styled.div`
 `;
 
 const StyledImage = styled.img`
+  width: ${({ width }) => width || 'auto'};
   max-width: ${({ width }) => width || '100%'};
 `;
 
@@ -18,9 +19,9 @@ const ImageSubtitle = styled.span`
   line-height: 1.2rem;
 `;
 
-const Image = ({ imageSrc, imageAlt, subtitle, width }) => (
+const Image = ({ imageSrc, imageAlt, subtitle, width, maxWidth }) => (
   <ImageContainer>
-    <StyledImage src={imageSrc} alt={imageAlt} width={width} />
+    <StyledImage src={imageSrc} alt={imageAlt} width={width} maxWidth={maxWidth} />
     <ImageSubtitle>{subtitle}</ImageSubtitle>
   </ImageContainer>
 );

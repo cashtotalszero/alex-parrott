@@ -5,15 +5,29 @@ import { Reset } from 'styled-reset';
 import PropTypes from 'prop-types';
 import { useStore } from '../store';
 import Header from '../components/Header';
-import Footer from '../components/AppFooter';
+import Footer from '../components/Footer';
 
-const colour1 = '#3b66db';
-const colour2 = '#715b81';
-const colour3 = '#8affea';
-const colour4 = '#ff0505';
-const colour5 = '#c5cae1';
-const black = '#000';
+// const colour1 = '#3b66db';
+// const colour2 = '#715b81';
+// const colour3 = '#8affea';
+// const colour4 = '#ff0505';
+// const colour5 = '#c5cae1';
+const black = '#0e1111';
 const white = '#fff';
+
+// const colour1 = '#476C9B';
+// const colour2 = '#468C98';
+// const colour3 = '#4F6D7A';
+// const colour4 = '#D1495B';
+// const colour5 = '#EAEBED';
+
+const colour4 = '#931621';
+const colour5 = '#3F84E5';
+const colour2 = '#373E40';
+const colour3 = '#B7D5D4';
+const colour1 = '#008080';
+// const white = '#F1FFFA';
+const colour6 = '#E8EEF2';
 
 const theme = {
   colors: {
@@ -23,6 +37,7 @@ const theme = {
     palette3: `${colour3}`,
     palette4: `${colour4}`,
     palette5: `${colour5}`,
+    palette6: `${colour6}`,
     black: `${black}`,
     white: `${white}`,
   },
@@ -146,6 +161,25 @@ const GlobalStyle = createGlobalStyle`
   select:disabled:hover {
     border-color: #aaa;
   }
+
+  .example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 0.5;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
 `;
 
 export default function App({ Component, pageProps }) {

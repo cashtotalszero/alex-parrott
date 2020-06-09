@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import { fetchSkills as fetchSkillAction } from '../actions';
 
-import { CODE_REPO } from '../constants/urls';
+import { CODE_REPO, SKILLS_PAGE } from '../constants/urls';
 import { SMILING_FACE, HALO as HALO_FACE, FLUSHED_FACE } from '../constants/emojis';
 import { SKILL_LEVELS } from '../constants/skills';
 
@@ -14,13 +15,15 @@ import Table from '../components/Table';
 import CustomHead from '../components/CustomHead';
 import Card from '../components/Card';
 import LoadingSpinner from '../components/LoadingSpinner';
-import TextBlock, { LINK, BOLD } from '../components/TextBlock';
+import TextBlock, { LINK, NAV, BUTTON } from '../components/TextBlock';
+import Modal from '../components/SkillsModal';
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px;
   position: relative;
+  min-height: 750px;
 `;
 
 const SpinnerWrapper = styled.div`
@@ -30,7 +33,9 @@ const SpinnerWrapper = styled.div`
   padding: 20px;
 `;
 
-const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
+const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   const columnDefs = [
     {
       Header: 'Name',
@@ -39,6 +44,10 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
     {
       Header: 'Type',
       accessor: 'type',
+    },
+    {
+      Header: 'Language',
+      accessor: 'lang',
     },
     {
       Header: 'Skill level',
@@ -56,51 +65,39 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
         }
       },
     },
-    {
-      Header: 'Keywords',
-      accessor: 'keywords',
-    },
   ];
 
   useEffect(() => {
-    fetchSkills();
+    if (!skills.length) {
+      fetchSkills();
+    }
   }, []);
 
-  const showTable = !isLoading && !hasError && skills.length;
+  const showTable = !isLoading && !hasError && !!skills.length;
   const showSpinner = isLoading && !hasError;
 
   return (
     <Container>
       <CustomHead />
 
-      <Card maxWidth="800px">
+      <Card maxWidth="950px">
         <h1>Tech I use</h1>
 
         {!hasError && (
           <>
-            <TextBlock
-              contents={[
-                { text: 'This is a ' },
-                { type: BOLD, text: 'sortable table' },
-                { text: ' of tech that I like and/or have used most often in projects.' },
-              ]}
-            />
+            <p>
+              Got a project that needs an engineer? I might be able to help. Search here for some of the technologies
+              that I know.
+            </p>
 
-            <p>Skill levels are using the highly scientific emoji scale:</p>
-            <ul>
-              <li>
-                <Emoji unicode={HALO_FACE} label="Smiling face with halo" />
-                <span> = I use it regularly and know it well.</span>
-              </li>
-              <li>
-                <Emoji unicode={SMILING_FACE} label="Smiling face" />
-                <span> = I have used it professionally or in personal projects at some point before.</span>
-              </li>
-              <li>
-                <Emoji unicode={FLUSHED_FACE} label="Flushed face" />
-                <span> = I have used it in a limited capacity or am in the process of learning it.</span>
-              </li>
-            </ul>
+            <p>
+              {'Skill levels are described using the highly scientific '}
+              <Link href={SKILLS_PAGE}>
+                <a onClick={() => setIsOpen(true)}>emoji scale</a>
+              </Link>
+              .
+            </p>
+            <Modal isOpen={modalIsOpen} setIsOpen={() => setIsOpen(false)} />
           </>
         )}
 
@@ -110,9 +107,7 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
           </SpinnerWrapper>
         )}
 
-        {showTable && (
-          <Table columnDefs={columnDefs} tableData={skills} initialState={{ hiddenColumns: ['keywords'] }} />
-        )}
+        {showTable && <Table columnDefs={columnDefs} tableData={skills} />}
 
         {hasError && (
           <TextBlock
@@ -143,11 +138,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-TechPage.propTypes = {
+SkillsPage.propTypes = {
   fetchSkills: PropTypes.func.isRequired,
   hasError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   skills: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TechPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SkillsPage);

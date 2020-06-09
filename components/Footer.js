@@ -1,17 +1,18 @@
-import FilterLink from '../containers/FilterLink';
-import { VisibilityFilters } from '../actions';
+import styled from 'styled-components';
 
-const Footer = () => {
-  const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = VisibilityFilters;
+const StyledFooter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: ${({ theme }) => `0px -5px ${theme.colors.palette2}`};
+  flex-wrap: wrap;
+  font-family: 'Lexend Tera';
+  background-color: ${({ theme }) => theme.colors.white};
+  font-size: 1rem;
+  line-height: 2rem;
+  height: 60px;
+`;
 
-  return (
-    <div>
-      <span>Show: </span>
-      <FilterLink filter={SHOW_ALL}>All</FilterLink>
-      <FilterLink filter={SHOW_ACTIVE}>Active</FilterLink>
-      <FilterLink filter={SHOW_COMPLETED}>Completed</FilterLink>
-    </div>
-  );
-};
+const Footer = () => <StyledFooter>Alex Parrott © 2020</StyledFooter>;
 
 export default Footer;

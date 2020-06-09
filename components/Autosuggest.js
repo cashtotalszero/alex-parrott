@@ -3,27 +3,27 @@ import styled from 'styled-components';
 
 const AutosuggestWrapper = styled.div`
   padding: 10px 0;
+
+  .react-autosuggest__suggestions-list {
+    background-color: ${({ theme }) => `${theme.colors.white}`};
+    border-radius: 5px;
+    border: ${({ theme }) => `solid 1px ${theme.colors.palette2}`};
+    cursor: pointer;
+  }
+
+  .react-autosuggest__suggestion {
+    color: ${({ theme }) => `${theme.colors.black}`};
+  }
+
+  .react-autosuggest__suggestion--highlighted {
+    background-color: ${({ theme }) => `${theme.colors.palette5}`};
+    color: ${({ theme }) => `${theme.colors.white}`};
+  }
 `;
-
-import { SKILL_NAMES, SKILL_TYPES } from '../constants/skills';
-
-const languages = [...Object.values(SKILL_NAMES), ...Object.values(SKILL_TYPES)];
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
 function escapeRegexCharacters(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function getSuggestions(value) {
-  const escapedValue = escapeRegexCharacters(value.trim());
-
-  if (escapedValue === '') {
-    return [];
-  }
-
-  const regex = new RegExp('^' + escapedValue, 'i');
-
-  return languages.filter((language) => regex.test(language));
 }
 
 function getSuggestionValue(suggestion) {
@@ -44,24 +44,29 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log('Mounted: ', this.state.value);
-  }
+  getSuggestions = (value) => {
+    const { suggestions } = this.props;
+    const escapedValue = escapeRegexCharacters(value.trim());
+
+    if (escapedValue === '') {
+      return [];
+    }
+
+    const regex = new RegExp('^' + escapedValue, 'i');
+
+    return suggestions.filter((option) => regex.test(option));
+  };
 
   onChange = (event, { newValue, method }) => {
-    console.log('Value = ');
-    console.log(newValue);
-
-    this.props.onChange(newValue);
-
     this.setState({
       value: newValue,
     });
+    this.props.onChange(newValue);
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
-      suggestions: getSuggestions(value),
+      suggestions: this.getSuggestions(value),
     });
   };
 

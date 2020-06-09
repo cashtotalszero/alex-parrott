@@ -9,12 +9,13 @@ const StyledPagination = styled.div`
 `;
 
 const StyledButtonsWrapper = styled.div`
-  padding: 10px 0;
+  padding: 20px 0;
 `;
 
 const StyledButton = styled.button`
   margin: 2px 4px;
   background-color: ${({ theme }) => `${theme.colors.palette5}`};
+  color: ${({ theme }) => `${theme.colors.white}`};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border: none;
   cursor: pointer;
