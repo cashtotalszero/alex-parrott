@@ -14,10 +14,14 @@ const TableStyles = styled.div`
     font-size: 0.75rem;
   }
 
+  @media only screen and (max-width: 500px) {
+    font-size: 0.6rem;
+    padding: 1rem 0;
+  }
+
   table {
     border-collapse: collapse;
     width: 100%;
-    transition: all 0.5 ease;
   }
 
   th {
@@ -25,6 +29,7 @@ const TableStyles = styled.div`
     background-color: ${({ theme }) => `${theme.colors.palette2}`};
     line-height: 1.2rem;
     color: white;
+    vertical-align: middle;
   }
 
   td,
@@ -32,6 +37,10 @@ const TableStyles = styled.div`
     border: ${({ theme }) => `1px solid ${theme.colors.palette2}`};
     text-align: left;
     padding: 8px;
+
+    @media only screen and (max-width: 500px) {
+      padding: 8px 5px;
+    }
   }
 `;
 

@@ -18,11 +18,12 @@ const StyledButton = styled.button`
   color: ${({ theme }) => `${theme.colors.white}`};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'auto' : 'pointer')};
   font-family: 'Lexend Tera';
   border-radius: 2px;
   font-size: 1rem;
   line-height: 1.5rem;
+  opacity: ${({ disabled }) => (disabled ? '0.7' : '1')};
 `;
 
 const StyledSelect = styled.select`
