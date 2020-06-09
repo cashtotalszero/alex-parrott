@@ -88,23 +88,28 @@ const Header = () => (
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/work">
-          <a>Work</a>
+        <NavLink href="/career">
+          <a>Career</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/tech">
-          <a>Tech</a>
+        <NavLink href="/skills">
+          <a>Skills</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/demos">
-          <a>Demos</a>
+        <NavLink href="/code">
+          <a>Code</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>
-        <NavLink href="/opinion">
-          <a>Opinion</a>
+        <NavLink href="/random">
+          <a>Random</a>
+        </NavLink>
+      </StyledListItem>
+      <StyledListItem>
+        <NavLink href="/tips">
+          <a>Tips</a>
         </NavLink>
       </StyledListItem>
       <StyledListItem>

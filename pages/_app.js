@@ -161,6 +161,25 @@ const GlobalStyle = createGlobalStyle`
   select:disabled:hover {
     border-color: #aaa;
   }
+
+  .example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 0.5;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
 `;
 
 export default function App({ Component, pageProps }) {

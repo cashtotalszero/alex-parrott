@@ -35,10 +35,18 @@ const HomePage = () => (
         { text: 'Here you can find out about ' },
         { type: LINK, href: 'about', text: 'who I am', bold: true },
         { text: ', check out my interactive ' },
-        { type: LINK, href: 'work', text: 'C.V.', bold: true },
+        { type: LINK, href: 'career', text: 'C.V.', bold: true },
         { text: ' or search my ' },
-        { type: LINK, href: 'tech', text: 'skills', bold: true },
-        { text: ' to see if they match your needs. Alternatively, you can ' },
+        { type: LINK, href: 'skills', text: 'skills', bold: true },
+        { text: ' to see if they match your needs. I also have a few ' },
+        { type: LINK, href: 'random', text: 'demos', bold: true },
+        { text: " of random web apps I've made." },
+      ]}
+    />
+
+    <TextBlock
+      contents={[
+        { text: 'Feel free to ' },
         { type: LINK, href: 'contact', text: 'contact me', bold: true },
         { text: ' to check my availability or discuss your project. ' },
       ]}

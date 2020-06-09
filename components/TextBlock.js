@@ -9,14 +9,17 @@ export const BOLD = 'boldText';
 export const LINK = 'link';
 export const NAV = 'nav';
 export const EMOJI = 'emoji';
+export const BUTTON = 'button';
 
 const StyledAnchor = styled.span`
   position: relative;
 
+  button,
   a {
     font-weight: ${({ bold }) => (bold ? 700 : '')};
   }
 
+  button,
   a:before {
     height: 5px;
     position: absolute;
@@ -47,6 +50,14 @@ const TextBlock = ({ contents }) => (
           return (
             <StyledAnchor bold={bold}>
               <Link href={href} onClick={onClick}>
+                <a>{`${text}`}</a>
+              </Link>
+            </StyledAnchor>
+          );
+        case BUTTON:
+          return (
+            <StyledAnchor bold={bold}>
+              <Link onClick={onClick}>
                 <a>{`${text}`}</a>
               </Link>
             </StyledAnchor>

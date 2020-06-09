@@ -4,14 +4,15 @@ import TextBlock, { LINK } from '../components/TextBlock';
 
 import { WES_BOS, DAN_ABRAMOV, STEPHEN_GRIDER, KRISTA_KING } from '../constants/urls';
 
-const OpinionPage = () => (
+const TipsPage = () => (
   <Page>
-    <h1>Opinion</h1>
+    <h1>Tips & Resources</h1>
+    <Image imageSrc="/rant.jpg" imageAlt="alex" />
+
     <p>
       Here are some resources that have really helped me in my journey as a developer. I think they are good, you might
       too...
     </p>
-    <Image imageSrc="/rant.jpg" imageAlt="alex" />
 
     <h2>Online learning resources</h2>
     <ul>
@@ -64,4 +65,4 @@ const OpinionPage = () => (
   </Page>
 );
 
-export default OpinionPage;
+export default TipsPage;

@@ -1,10 +1,10 @@
 import TodoApp from '../../components/TodoApp';
 import Page from '../../components/Page';
 
-const DemosPage = () => (
+const TodoAppPage = () => (
   <Page>
     <TodoApp />
   </Page>
 );
 
-export default DemosPage;
+export default TodoAppPage;

@@ -15,7 +15,7 @@ import Table from '../components/Table';
 import CustomHead from '../components/CustomHead';
 import Card from '../components/Card';
 import LoadingSpinner from '../components/LoadingSpinner';
-import TextBlock, { LINK } from '../components/TextBlock';
+import TextBlock, { LINK, NAV, BUTTON } from '../components/TextBlock';
 import Modal from '../components/SkillsModal';
 
 const Container = styled.div`
@@ -32,7 +32,7 @@ const SpinnerWrapper = styled.div`
   padding: 20px;
 `;
 
-const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
+const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const columnDefs = [
@@ -88,6 +88,16 @@ const TechPage = ({ fetchSkills, skills, isLoading, hasError }) => {
               Got a project that needs an engineer? I might be able to help. Search here for some of the technologies
               that I know.
             </p>
+
+            {/* <TextBlock
+              contents={[
+                {
+                  text: 'Skill levels are described using the highly scientific emoji scale. I explain it ',
+                },
+                { type: BUTTON, text: 'here', onClick: () => setIsOpen(true), href: null },
+                { text: '.' },
+              ]}
+            /> */}
             <p>
               {'Skill levels are described using the highly scientific '}
               <Link href="/tech">
@@ -136,11 +146,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-TechPage.propTypes = {
+SkillsPage.propTypes = {
   fetchSkills: PropTypes.func.isRequired,
   hasError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   skills: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TechPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SkillsPage);

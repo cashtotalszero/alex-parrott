@@ -49,7 +49,7 @@ const StyledTrack = styled.div`
 
 const Track = (props, state) => <StyledTrack {...props} index={state.index} />;
 
-const WorkPage = () => {
+const CareerPage = () => {
   const [selectedYear, setSelectedYear] = useState(DEFAULT_CV_ITEM);
 
   const handleChange = (val) => {
@@ -88,4 +88,4 @@ const WorkPage = () => {
   );
 };
 
-export default WorkPage;
+export default CareerPage;

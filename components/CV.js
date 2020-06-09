@@ -124,8 +124,8 @@ const getYearInfo = (year) => {
             contents={[
               { text: 'I obtained funding from ' },
               { type: LINK, text: 'ESA', href: ESA_SUMMER_OF_CODE },
-              { text: ' to build mission control software in Unity 3D for a Bristol start-up at the ' },
-              { type: LINK, text: 'Pervasive Media Studio', href: PERVASIVE_MEDIA },
+              { text: ' to build mission control software in Unity 3D for a Bristol start-up at the Pervasive Media ' },
+              { type: LINK, text: 'Studio', href: PERVASIVE_MEDIA },
               { text: '.' },
             ]}
           />
@@ -254,12 +254,12 @@ const getYearInfo = (year) => {
         text: (
           <TextBlock
             contents={[
-              { text: "I'm still coding! Let's work together... " },
+              { text: "I'm still coding and currently based in Bristol. Let's work together... " },
               { type: EMOJI, unicode: GRINNING_FACE, label: 'Grinning face' },
             ]}
           />
         ),
-        imgUrl: '/nathan.jpg',
+        imgUrl: '/bristol.jpg',
         imgAlt: 'Strange Planet comic',
       };
     default:
