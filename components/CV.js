@@ -63,7 +63,7 @@ const getYearInfo = (year) => {
       return {
         title: '2005-2007',
         text: <p>I co-founded and ran music promotion company Monkey! Knife! Fight!</p>,
-        imgUrl: '/monkey.jpg',
+        imgUrl: '/mkf.jpg',
         imageAlt: 'Monkey Knife Fight poster',
       };
     case CV_ITEM_3:
@@ -91,7 +91,7 @@ const getYearInfo = (year) => {
             />
           </>
         ),
-        imgUrl: '/Everest.jpg',
+        imgUrl: '/alex_everest.jpg',
         imgAlt: 'Me at Mt Everest',
       };
     case CV_ITEM_4:
@@ -185,7 +185,7 @@ const getYearInfo = (year) => {
             ]}
           />
         ),
-        imgUrl: '/alex_vr.jpg',
+        imgUrl: '/alex_in_vr.jpg',
         imgAlt: 'Me working in VR',
       };
     case CV_ITEM_11:
