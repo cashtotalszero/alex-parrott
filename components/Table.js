@@ -22,7 +22,6 @@ const TableStyles = styled.div`
   table {
     border-collapse: collapse;
     width: 100%;
-    transition: all 0.6 ease;
   }
 
   th {
