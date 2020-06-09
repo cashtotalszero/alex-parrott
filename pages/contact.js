@@ -27,7 +27,7 @@ const HomePage = () => (
     <h1>Contact Me</h1>
 
     <StyledHighlight>
-      <a href="mailto:cashtotalszero@gmail.com">cashtotalszero@gmail.com</a>
+      <a href="mailto:alex.parrott.dev@gmail.com">alex.parrott.dev@gmail.com</a>
     </StyledHighlight>
 
     <TextBlock

@@ -40,7 +40,7 @@ const Quote = styled.h2`
   font-style: italic;
 `;
 
-const ANIMATION_LENGTH = 5000;
+const ANIMATION_LENGTH = 10000;
 const QUOTE_WAIT = 2500;
 
 const ENGLISH = 'English';
@@ -65,9 +65,11 @@ const matrixQuotes = [
   '"I know what you\'re thinking... Why oh why didn\'t I take the BLUE pill?"',
   '"Have you ever had a dream, that you were so sure was real? What if you were unable to wake from that dream?"',
   '"How do you define real? If you’re talking about what you can feel, what you can smell, taste and see, then “real” is simply electrical signals interpreted by your brain."',
+  '"There is no spoon."',
+  '"Take the red pill and I show you how deep the rabbit hole goes."',
 ];
 
-const getMatrixQuote = () => {
+const getRandomQuote = () => {
   const quote = matrixQuotes[Math.floor(Math.random() * matrixQuotes.length)];
   return quote;
 };
@@ -77,7 +79,7 @@ const MatrixPage = () => {
   const [done, setDone] = useState(false);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [repeat, setRepeat] = useState(false);
-  const [quote, setQuote] = useState(getMatrixQuote());
+  const [quote, setQuote] = useState(getRandomQuote());
   const [language, setLanguage] = useState({ name: ENGLISH, chars: english });
 
   function enterTheMatrix(ctx, grid, width, height, newSequence) {
@@ -147,7 +149,7 @@ const MatrixPage = () => {
     enterTheMatrix(ctx, grid, width, height, true);
 
     quoteTimer = setTimeout(() => {
-      setQuote(getMatrixQuote());
+      setQuote(getRandomQuote());
     }, QUOTE_WAIT);
 
     return () => {
