@@ -75,7 +75,7 @@ const AboutPage = () => (
         { type: BOLD, text: 'tech that inspires' },
         {
           text:
-            " and believe that we should be building applications responsibly. Our goal should be to improve people's and I fully support Tim Berners-Lee's ",
+            " and believe that we should be building applications responsibly. Our goal should be to improve people's lives and I fully support Tim Berners-Lee's ",
         },
         { type: LINK, href: CONTRACT_FOR_THE_WEB, text: 'Contract for the Web' },
         { text: '.' },
