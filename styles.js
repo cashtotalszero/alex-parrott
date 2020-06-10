@@ -36,6 +36,7 @@ export const theme = {
     black: `${black}`,
     white: `${white}`,
     shadow: `${shadow}`,
+    highlight: `${selectionHighlight}`,
   },
   fonts: {
     header: `${headerFont}`,

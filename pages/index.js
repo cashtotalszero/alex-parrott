@@ -9,7 +9,9 @@ const StyledHighlight = styled.p`
   margin: 40px;
   font-style: italic;
   font-weight: 700;
+  background-color: ${({ theme }) => `${theme.colors.highlight}`};
   transform: skewY(-0.5deg);
+  padding: 5px;
 
   @media only screen and (max-width: 800px) {
     margin: 40px 20px;
