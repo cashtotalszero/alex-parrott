@@ -36,7 +36,7 @@ const RandomPage = () => (
             { type: NAV, href: MATRIX_DEMO, text: 'Enter The Matrix', bold: true },
             {
               text:
-                ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript. Ok, so technically I reverse engineered if from some minified code I found. That still counts, right?',
+                ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript. Ok, so technically I reverse engineered it from some minified code I found. That still counts, right?',
             },
           ]}
         />
