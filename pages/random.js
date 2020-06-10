@@ -6,7 +6,7 @@ import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO } from '../constants/urls';
 const RandomPage = () => (
   <Page>
     <h1>Random Stuff</h1>
-    <Image imageSrc="/nathan.jpg" imageAlt="Stange planet" />
+    <Image imageSrc="/nathan.jpg" imageAlt="Stange planet" maxWidth="500px" />
     <p>
       There are a bunch of little apps here. Just a few little games and apps that I have put together for demo
       purposes...

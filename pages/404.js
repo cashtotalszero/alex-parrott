@@ -14,7 +14,7 @@ const NotFoundPage = () => (
   <Page>
     <Container>
       <TextBlock contents={[{ type: BOLD, text: '404' }, { text: ' | This page could not be found' }]} />
-      <Image imageSrc="/rant.jpg" imageAlt="alex" width="100%" />
+      <Image imageSrc="/rant.jpg" imageAlt="Page not found" maxWidth="500px" />
     </Container>
   </Page>
 );

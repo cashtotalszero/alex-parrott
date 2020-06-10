@@ -19,7 +19,7 @@ const IconsWrapper = styled.div`
 const CodePage = () => (
   <Page>
     <h1>My Code</h1>
-    <Image imageSrc="/Octocat.jpg" imageAlt="Octocat" />
+    <Image imageSrc="/Octocat.jpg" imageAlt="Octocat" maxWidth="500px" />
 
     <TextBlock
       contents={[

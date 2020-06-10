@@ -7,7 +7,7 @@ import { WES_BOS, DAN_ABRAMOV, STEPHEN_GRIDER, KRISTA_KING } from '../constants/
 const TipsPage = () => (
   <Page>
     <h1>Tips & Resources</h1>
-    <Image imageSrc="/rant.jpg" imageAlt="alex" />
+    <Image imageSrc="/rant.jpg" imageAlt="Alex rants" maxWidth="500px" />
 
     <p>
       Here are some resources that have really helped me in my journey as a developer. I think they are good, you might

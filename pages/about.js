@@ -47,7 +47,7 @@ const AboutPage = () => (
       imageAlt="my office"
       subtitle="I spend a lot of my days hanging out with Mr Peanutbutter and Lying
             Cat..."
-      width="100%"
+      maxWidth="500px"
     />
 
     <h2>Tell me more...</h2>
