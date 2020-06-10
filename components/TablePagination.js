@@ -16,10 +16,10 @@ const StyledButton = styled.button`
   margin: 2px 4px;
   background-color: ${({ theme }) => `${theme.colors.palette5}`};
   color: ${({ theme }) => `${theme.colors.white}`};
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
   border: none;
   cursor: ${({ disabled }) => (disabled ? 'auto' : 'pointer')};
-  font-family: 'Lexend Tera';
+  font-family: ${({ theme }) => theme.fonts.header};
   border-radius: 2px;
   font-size: 1rem;
   line-height: 1.5rem;

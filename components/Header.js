@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components';
 import Link from 'next/link';
-
 import NavLink from './NavLink';
 import {
   HOME_PAGE,
@@ -16,13 +16,11 @@ import {
 const StyledList = styled.ul`
   display: flex;
   justify-content: center;
-  box-shadow: ${({ theme }) => `0px 5px ${theme.colors.palette2}`};
   flex-wrap: wrap;
-  font-family: 'Lexend Tera';
+  font-family: ${({ theme }) => theme.fonts.header};
   background-color: ${({ theme }) => `${theme.colors.black}`};
   color: white;
-
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
 `;
 
 const StyledListItem = styled.li`

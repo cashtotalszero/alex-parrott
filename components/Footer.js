@@ -6,7 +6,7 @@ const StyledFooter = styled.div`
   align-items: center;
   box-shadow: ${({ theme }) => `0px -5px ${theme.colors.palette2}`};
   flex-wrap: wrap;
-  font-family: 'Lexend Tera';
+  font-family: ${({ theme }) => theme.fonts.header};
   background-color: ${({ theme }) => theme.colors.white};
   font-size: 1rem;
   line-height: 2rem;

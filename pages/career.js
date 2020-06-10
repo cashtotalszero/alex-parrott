@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useState } from 'react';
 import ReactSlider from 'react-slider';
 import styled from 'styled-components';
@@ -5,7 +6,7 @@ import styled from 'styled-components';
 import Page from '../components/Page';
 import TextBlock, { LINK } from '../components/TextBlock';
 import Emoji from '../components/Emoji';
-import CV, { DEFAULT_CV_ITEM, CV_ITEM_FIRST, CV_ITEM_LAST } from '../components/CV';
+import CvItem, { DEFAULT_CV_ITEM, CV_ITEM_FIRST, CV_ITEM_LAST } from '../components/CV';
 import { ROCKET } from '../constants/emojis';
 import { LINKEDIN_BIO } from '../constants/urls';
 
@@ -25,28 +26,28 @@ const StyledThumb = styled.div`
   width: 25px;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.black};
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   cursor: grab;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
 `;
 
-const Thumb = (props, state) => (
-  <StyledThumb {...props}>
-    <Emoji unicode={ROCKET} label="Rocket" />
-  </StyledThumb>
-);
-
 const StyledTrack = styled.div`
   top: 0;
   bottom: 0;
   background: ${({ index, theme }) => (index === 1 ? theme.colors.palette1 : theme.colors.palette6)};
   border-radius: 99px;
-  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: ${({ theme }) => `0 0px 8px ${theme.colors.shadow}`};
 `;
+
+const Thumb = (props) => (
+  <StyledThumb {...props}>
+    <Emoji unicode={ROCKET} label="Rocket" />
+  </StyledThumb>
+);
 
 const Track = (props, state) => <StyledTrack {...props} index={state.index} />;
 
@@ -84,7 +85,7 @@ const CareerPage = () => {
         />
       </StyledSliderWrapper>
 
-      <CV year={selectedYear} />
+      <CvItem year={selectedYear} />
     </Page>
   );
 };

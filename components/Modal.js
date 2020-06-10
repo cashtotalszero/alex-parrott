@@ -1,4 +1,6 @@
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
+import { palette5, shadowLighter } from '../styles';
 
 const customStyles = {
   content: {
@@ -8,16 +10,16 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    borderLeft: 'solid 20px #3F84E5',
+    borderLeft: `solid 20px ${palette5}`,
   },
   overlay: {
-    backgroundColor: 'rgba(55,55,55,0.6)',
+    backgroundColor: `${shadowLighter}`,
   },
 };
 
 Modal.setAppElement('#__next');
 
-function App({ isOpen, children, onClose, label }) {
+function AppModal({ isOpen, children, onClose, label }) {
   function closeModal() {
     onClose();
   }
@@ -29,4 +31,11 @@ function App({ isOpen, children, onClose, label }) {
   );
 }
 
-export default App;
+AppModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+export default AppModal;

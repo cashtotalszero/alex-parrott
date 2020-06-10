@@ -35,9 +35,9 @@ const AboutPage = () => (
       contents={[
         {
           text:
-            'My tech interests vary widely and I have worked on a wide variety of projects. These include - Vue.js apps, React Native mobile apps, Node/Express servers, ',
+            'My tech interests vary widely and I have worked on a wide variety of projects. These include - Vue.js apps, React Native mobile apps, Node/Express servers, VR ',
         },
-        { type: LINK, href: VR_SHOWROOM, text: 'VR experiences' },
+        { type: LINK, href: VR_SHOWROOM, text: 'experiences' },
         { text: ' and Unity 3D games.' },
       ]}
     />

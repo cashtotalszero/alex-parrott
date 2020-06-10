@@ -25,10 +25,10 @@ const TableStyles = styled.div`
   }
 
   th {
-    font-family: 'Lexend Tera';
+    font-family: ${({ theme }) => theme.fonts.header};
     background-color: ${({ theme }) => `${theme.colors.palette2}`};
     line-height: 1.2rem;
-    color: white;
+    color: ${({ theme }) => `${theme.colors.white}`};
     vertical-align: middle;
   }
 

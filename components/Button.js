@@ -4,11 +4,11 @@ const StyledButton = styled.button.attrs(({ type, disabled }) => ({
   type: type || 'button',
   disabled: disabled || false,
 }))`
-  font-family: 'Lexend Tera';
+  font-family: ${({ theme }) => theme.fonts.header};
   border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
   background-color: ${({ theme }) => theme.colors.palette2};
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   padding: ${({ padding }) => padding || '5px'};
   width: ${({ width }) => width || '75px'};

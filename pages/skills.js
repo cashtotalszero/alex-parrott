@@ -12,17 +12,12 @@ import { SKILL_LEVELS } from '../constants/skills';
 
 import Emoji from '../components/Emoji';
 import Table from '../components/Table';
-import CustomHead from '../components/CustomHead';
-import Card from '../components/Card';
+import Page from '../components/Page';
 import LoadingSpinner from '../components/LoadingSpinner';
 import TextBlock, { LINK } from '../components/TextBlock';
 import Modal from '../components/SkillsModal';
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-  position: relative;
   min-height: 1000px;
 `;
 
@@ -33,39 +28,41 @@ const SpinnerWrapper = styled.div`
   padding: 20px;
 `;
 
+const LevelCell = ({ value }) => {
+  switch (value) {
+    case SKILL_LEVELS.HALO:
+      return <Emoji unicode={HALO_FACE} label="Smiling face with halo" />;
+    case SKILL_LEVELS.SMILE:
+      return <Emoji unicode={SMILING_FACE} label="Smiling face" />;
+    case SKILL_LEVELS.FLUSHED:
+      return <Emoji unicode={FLUSHED_FACE} label="Flushed face" />;
+    default:
+      return <Emoji unicode={SMILING_FACE} label="Smiling face" />;
+  }
+};
+
+const columnDefs = [
+  {
+    Header: 'Name',
+    accessor: 'name',
+  },
+  {
+    Header: 'Type',
+    accessor: 'type',
+  },
+  {
+    Header: 'Language',
+    accessor: 'lang',
+  },
+  {
+    Header: 'Skill level',
+    accessor: 'level',
+    Cell: LevelCell,
+  },
+];
+
 const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  const columnDefs = [
-    {
-      Header: 'Name',
-      accessor: 'name',
-    },
-    {
-      Header: 'Type',
-      accessor: 'type',
-    },
-    {
-      Header: 'Language',
-      accessor: 'lang',
-    },
-    {
-      Header: 'Skill level',
-      accessor: 'level',
-      Cell: ({ value }) => {
-        switch (value) {
-          case SKILL_LEVELS.HALO:
-            return <Emoji unicode={HALO_FACE} label="Smiling face with halo" />;
-          case SKILL_LEVELS.SMILE:
-            return <Emoji unicode={SMILING_FACE} label="Smiling face" />;
-          case SKILL_LEVELS.FLUSHED:
-            return <Emoji unicode={FLUSHED_FACE} label="Flushed face" />;
-          default:
-            return <Emoji unicode={SMILING_FACE} label="Smiling face" />;
-        }
-      },
-    },
-  ];
 
   useEffect(() => {
     if (!skills.length) {
@@ -77,10 +74,8 @@ const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
   const showSpinner = isLoading && !hasError;
 
   return (
-    <Container>
-      <CustomHead />
-
-      <Card maxWidth="950px">
+    <Page>
+      <Container>
         <h1>Tech I use</h1>
 
         {!hasError && (
@@ -121,9 +116,20 @@ const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
             ]}
           />
         )}
-      </Card>
-    </Container>
+      </Container>
+    </Page>
   );
+};
+
+LevelCell.propTypes = {
+  value: PropTypes.string.isRequired,
+};
+
+SkillsPage.propTypes = {
+  fetchSkills: PropTypes.func.isRequired,
+  hasError: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -137,12 +143,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchSkillAction());
   },
 });
-
-SkillsPage.propTypes = {
-  fetchSkills: PropTypes.func.isRequired,
-  hasError: PropTypes.bool.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  skills: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SkillsPage);
