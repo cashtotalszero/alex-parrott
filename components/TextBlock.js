@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Fragment } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
@@ -34,39 +36,48 @@ const StyledAnchor = styled.span`
 
 const TextBlock = ({ contents }) => (
   <p style={{ position: 'relative' }}>
-    {contents.map(({ type, text, href, unicode, label, onClick, bold }) => {
+    {contents.map(({ type, text, href, unicode, label, onClick, bold }, index) => {
+      let content = '';
       switch (type) {
         case TEXT:
-          return `${text}`;
+          content = `${text}`;
+          break;
         case BOLD:
-          return <strong>{`${text}`}</strong>;
+          content = <strong>{`${text}`}</strong>;
+          break;
         case LINK:
-          return (
+          content = (
             <StyledAnchor bold={bold}>
               <a href={href} onClick={onClick} target="_blank" rel="noreferrer">{`${text}`}</a>
             </StyledAnchor>
           );
+          break;
         case NAV:
-          return (
-            <StyledAnchor bold={bold}>
-              <Link href={href} onClick={onClick}>
+          content = (
+            <StyledAnchor bold={bold} onClick={onClick}>
+              <Link href={href}>
                 <a>{`${text}`}</a>
               </Link>
             </StyledAnchor>
           );
+          break;
         case BUTTON:
-          return (
-            <StyledAnchor bold={bold}>
-              <Link onClick={onClick}>
+          content = (
+            <StyledAnchor bold={bold} onClick={onClick}>
+              <Link>
                 <a>{`${text}`}</a>
               </Link>
             </StyledAnchor>
           );
+          break;
         case EMOJI:
-          return <Emoji label={label} unicode={unicode} />;
+          content = <Emoji label={label} unicode={unicode} />;
+          break;
         default:
-          return `${text || ''}`;
+          content = `${text || ''}`;
       }
+      // eslint-disable-next-line react/no-array-index-key
+      return <Fragment key={`${type}${index}`}>{content}</Fragment>;
     })}
   </p>
 );

@@ -83,7 +83,17 @@ const Mole = styled.div`
 
 let peepTimer = null;
 let gameTimer = null;
-const initalMoles = [false, false, false, false, false, false, false, false, false];
+const initalMoles = [
+  { id: 'mole0', isPeeping: false },
+  { id: 'mole1', isPeeping: false },
+  { id: 'mole2', isPeeping: false },
+  { id: 'mole3', isPeeping: false },
+  { id: 'mole4', isPeeping: false },
+  { id: 'mole5', isPeeping: false },
+  { id: 'mole6', isPeeping: false },
+  { id: 'mole7', isPeeping: false },
+  { id: 'mole8', isPeeping: false },
+];
 
 const MolesPage = () => {
   const [score, setScore] = useState(0);
@@ -108,7 +118,7 @@ const MolesPage = () => {
 
   const setPeeper = (index, isPeeping) => {
     const updateMoles = [...moles];
-    updateMoles[index] = isPeeping;
+    updateMoles[index] = { ...updateMoles[index], isPeeping };
     setMoles(updateMoles);
   };
 
@@ -128,7 +138,7 @@ const MolesPage = () => {
     setScore(score + 1);
 
     const newPeepers = [...moles];
-    newPeepers[index] = false;
+    newPeepers[index] = { ...newPeepers[index], isPeeping: false };
     setMoles(newPeepers);
   }
 
@@ -177,11 +187,14 @@ const MolesPage = () => {
       </GameInfo>
 
       <Game isPlaying={isPlaying}>
-        {moles.map((mole, index) => (
-          <Hole>
-            <Mole isPeeping={moles[index]} onClick={(e) => whack(e, index)} />
-          </Hole>
-        ))}
+        {moles.map((mole, index) => {
+          const { id, isPeeping } = moles[index];
+          return (
+            <Hole key={id}>
+              <Mole isPeeping={isPeeping} onClick={(e) => whack(e, index)} />
+            </Hole>
+          );
+        })}
       </Game>
     </Page>
   );
