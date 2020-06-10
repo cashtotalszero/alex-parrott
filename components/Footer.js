@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledFooter = styled.div`
+const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,10 @@ const StyledFooter = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   font-size: 1rem;
   line-height: 2rem;
-  height: 60px;
+  height: ${({ theme }) => theme.display.footerHeight};
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 `;
 
 const Footer = () => <StyledFooter>Alex Parrott © 2020</StyledFooter>;

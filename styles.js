@@ -22,6 +22,8 @@ export const shadowLighter = 'rgba(55,55,55,0.6)';
 export const headerFont = 'Lexend Tera';
 export const contentFont = 'Montserrat';
 
+export const footerHeight = '60px';
+
 export const theme = {
   colors: {
     primary: `${primaryColour}`,
@@ -38,6 +40,9 @@ export const theme = {
   fonts: {
     header: `${headerFont}`,
     content: `${contentFont}`,
+  },
+  display: {
+    footerHeight: `${footerHeight}`,
   },
 };
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import CustomHead from './CustomHead';
 
-const StyledPage = styled.div`
+const StyledPage = styled.main`
   display: flex;
   justify-content: center;
   margin: 20px;
