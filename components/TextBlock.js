@@ -43,7 +43,7 @@ const TextBlock = ({ contents }) => (
         case LINK:
           return (
             <StyledAnchor bold={bold}>
-              <a href={href} onClick={onClick}>{`${text}`}</a>
+              <a href={href} onClick={onClick} target="_blank" rel="noreferrer">{`${text}`}</a>
             </StyledAnchor>
           );
         case NAV:
