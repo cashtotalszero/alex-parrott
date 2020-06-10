@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ImageContainer = styled.div`
   display: flex;
@@ -8,8 +9,8 @@ const ImageContainer = styled.div`
 `;
 
 const StyledImage = styled.img`
-  width: ${({ width }) => width || 'auto'};
-  max-width: ${({ width }) => width || '100%'};
+  width: ${({ width }) => width};
+  max-width: ${({ width }) => width};
 `;
 
 const ImageSubtitle = styled.span`
@@ -25,5 +26,19 @@ const Image = ({ imageSrc, imageAlt, subtitle, width, maxWidth }) => (
     <ImageSubtitle>{subtitle}</ImageSubtitle>
   </ImageContainer>
 );
+
+Image.defaultProps = {
+  subtitle: '',
+  width: 'auto',
+  maxWidth: '100%',
+};
+
+Image.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  width: PropTypes.string,
+  maxWidth: PropTypes.string,
+};
 
 export default Image;

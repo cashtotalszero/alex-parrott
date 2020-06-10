@@ -47,7 +47,7 @@ const StyledListItem = styled.li`
 
   a {
     text-decoration: none;
-    color: white;
+    color: ${({ theme }) => `${theme.colors.white}`};
   }
 
   a:hover {
@@ -80,7 +80,7 @@ const Title = styled.h1`
 `;
 
 const StyledNav = styled.nav`
-  background-color: white;
+  background-color: ${({ theme }) => `${theme.colors.white}`};
 `;
 
 const Header = () => (

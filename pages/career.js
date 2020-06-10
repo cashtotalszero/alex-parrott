@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Page from '../components/Page';
 import TextBlock, { LINK } from '../components/TextBlock';
 import Emoji from '../components/Emoji';
-import CvItem, { DEFAULT_CV_ITEM, CV_ITEM_FIRST, CV_ITEM_LAST } from '../components/CV';
+import CvItem, { DEFAULT_CV_ITEM, CV_ITEM_FIRST, CV_ITEM_LAST } from '../components/CvItem';
 import { ROCKET } from '../constants/emojis';
 import { LINKEDIN_BIO } from '../constants/urls';
 

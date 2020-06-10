@@ -2,6 +2,7 @@
 import { useMemo, useEffect } from 'react';
 import { useTable, useSortBy, useFilters, useGlobalFilter, usePagination } from 'react-table';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Autosuggest from './Autosuggest';
 import Pagination from './TablePagination';
@@ -205,6 +206,20 @@ const Table = ({ columnDefs, tableData, initialState }) => {
       />
     </>
   );
+};
+
+GlobalFilter.propTypes = {
+  setGlobalFilter: PropTypes.func.isRequired,
+};
+
+Table.defaultProps = {
+  initialState: {},
+};
+
+Table.propTypes = {
+  columnDefs: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  tableData: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  initialState: PropTypes.shape({}),
 };
 
 export default Table;

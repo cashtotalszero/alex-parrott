@@ -1,5 +1,7 @@
+import { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const AutosuggestWrapper = styled.div`
   padding: 10px 0;
@@ -34,7 +36,7 @@ function renderSuggestion(suggestion) {
   return <span>{suggestion}</span>;
 }
 
-class App extends React.Component {
+class AutosuggestApp extends Component {
   constructor() {
     super();
 
@@ -53,7 +55,6 @@ class App extends React.Component {
     }
 
     const regex = new RegExp('^' + escapedValue, 'i');
-
     return suggestions.filter((option) => regex.test(option));
   };
 
@@ -80,7 +81,7 @@ class App extends React.Component {
     const { placeholder } = this.props;
     const { value, suggestions } = this.state;
     const inputProps = {
-      placeholder: placeholder || 'Type something...',
+      placeholder,
       value,
       onChange: this.onChange,
     };
@@ -100,4 +101,15 @@ class App extends React.Component {
   }
 }
 
-export default App;
+AutosuggestApp.defaultProps = {
+  placeholder: 'Type something...',
+  suggestions: [],
+};
+
+AutosuggestApp.propTypes = {
+  placeholder: PropTypes.string,
+  suggestions: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func.isRequired,
+};
+
+export default AutosuggestApp;

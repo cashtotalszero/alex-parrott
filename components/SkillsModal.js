@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import Modal from './Modal';
 import Emoji from './Emoji';
-
 import Button from './Button';
-
 import { SMILING_FACE, HALO as HALO_FACE, FLUSHED_FACE } from '../constants/emojis';
 
 const ModalContent = styled.div`
@@ -12,7 +12,7 @@ const ModalContent = styled.div`
 `;
 
 const SkillsModal = ({ isOpen, setIsOpen }) => (
-  <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} label="Skills description modal">
     <ModalContent>
       <Button onClick={() => setIsOpen(false)}>close</Button>
       <h2>Skill levels</h2>
@@ -33,5 +33,10 @@ const SkillsModal = ({ isOpen, setIsOpen }) => (
     </ModalContent>
   </Modal>
 );
+
+SkillsModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+};
 
 export default SkillsModal;

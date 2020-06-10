@@ -7,7 +7,6 @@ import Button from '../components/Button';
 const GAME_LENGTH = 15000;
 
 const Score = styled.span`
-  background: rgba(255, 255, 255, 0.2);
   padding: 0 3rem;
   line-height: 1;
   border-radius: 1rem;

@@ -127,14 +127,14 @@ LevelCell.propTypes = {
 
 SkillsPage.propTypes = {
   fetchSkills: PropTypes.func.isRequired,
-  hasError: PropTypes.bool.isRequired,
+  hasError: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   skills: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const mapStateToProps = (state) => ({
   skills: state.skills.data,
-  isLoading: state.skills.isLoading,
+  isLoading: state.skills.isFetching,
   hasError: state.skills.error,
 });
 

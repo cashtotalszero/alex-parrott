@@ -1,6 +1,6 @@
 import Page from '../components/Page';
 import Image from '../components/Image';
-import TextBlock, { NAV, BOLD, EMOJI, LINK } from '../components/TextBlock';
+import TextBlock, { NAV, BOLD } from '../components/TextBlock';
 import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO } from '../constants/urls';
 
 const RandomPage = () => (

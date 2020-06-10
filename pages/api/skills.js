@@ -8,6 +8,7 @@ const GQL = 'GraphQL';
 const CSS = 'CSS';
 const HTML = 'HTML';
 
+// TODO: Move this into MongoDB!
 const dataDefs = [
   {
     name: SKILL_NAMES.JS,

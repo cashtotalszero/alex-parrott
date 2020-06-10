@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import TextBlock, { LINK, EMOJI } from './TextBlock';
 import { INDIA, JAPAN, CHINA, NEPAL, CANADA, USA, MEXICO, GRINNING_FACE } from '../constants/emojis';
@@ -253,7 +254,7 @@ const getYearInfo = (year) => {
   }
 };
 
-const WorkPage = ({ year }) => {
+const CvItem = ({ year }) => {
   const { title, text, imgUrl, imgAlt } = getYearInfo(year);
 
   if (!text) return null;
@@ -270,4 +271,8 @@ const WorkPage = ({ year }) => {
   );
 };
 
-export default WorkPage;
+CvItem.propTypes = {
+  year: PropTypes.number.isRequired,
+};
+
+export default CvItem;
