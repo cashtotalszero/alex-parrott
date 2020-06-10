@@ -10,7 +10,7 @@ const ImageContainer = styled.div`
 
 const StyledImage = styled.img`
   width: ${({ width }) => width};
-  max-width: ${({ width }) => width};
+  max-width: ${({ maxWidth }) => maxWidth};
 `;
 
 const ImageSubtitle = styled.span`
@@ -26,10 +26,9 @@ const Image = ({ imageSrc, imageAlt, subtitle, width, maxWidth }) => (
     <ImageSubtitle>{subtitle}</ImageSubtitle>
   </ImageContainer>
 );
-
 Image.defaultProps = {
   subtitle: '',
-  width: 'auto',
+  width: '100%',
   maxWidth: '100%',
 };
 

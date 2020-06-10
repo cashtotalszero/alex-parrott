@@ -48,19 +48,19 @@ const CodePage = () => (
     </p>
     <IconsWrapper>
       <a href={CODE_REPO}>
-        <Image imageSrc="/next-icon.png" imageAlt="Next.js" width="50px" />
+        <Image imageSrc="/next-icon.png" imageAlt="Next.js" width="40px" />
       </a>
       <a href={CODE_REPO}>
-        <Image imageSrc="/react-icon.png" imageAlt="React.js" width="50px" />
+        <Image imageSrc="/react-icon.png" imageAlt="React.js" width="40px" />
       </a>
       <a href={CODE_REPO}>
-        <Image imageSrc="/redux-icon.png" imageAlt="Redux" width="50px" />
+        <Image imageSrc="/redux-icon.png" imageAlt="Redux" width="40px" />
       </a>
       <a href={CODE_REPO}>
-        <Image imageSrc="/styled-components.png" imageAlt="Styled Components" width="50px" />
+        <Image imageSrc="/styled-components.png" imageAlt="Styled Components" width="40px" />
       </a>
       <a href={CODE_REPO}>
-        <Image imageSrc="/mongo-icon.png" imageAlt="MongoDB" width="50px" />
+        <Image imageSrc="/mongo-icon.png" imageAlt="MongoDB" width="40px" />
       </a>
     </IconsWrapper>
   </Page>

@@ -23,6 +23,10 @@ export const headerFont = 'Lexend Tera';
 export const contentFont = 'Montserrat';
 
 export const footerHeight = '60px';
+export const screenXS = '400px';
+export const screenS = '500px';
+export const screenM = '800px';
+export const screenL = '1000px';
 
 export const theme = {
   colors: {
@@ -44,6 +48,10 @@ export const theme = {
   },
   display: {
     footerHeight: `${footerHeight}`,
+    xsScreen: `max-width: ${screenXS}`,
+    sScreen: `max-width: ${screenS}`,
+    mScreen: `max-width: ${screenM}`,
+    lScreen: `max-width: ${screenL}`,
   },
 };
 
@@ -63,6 +71,11 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 3rem;
     margin: 20px 0;
     font-weight: 600;
+
+    @media only screen and (max-width: 400px) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
   }
 
   h2 {
@@ -70,6 +83,11 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 2.5rem;
     margin: 20px 0;
     font-weight: 600;
+
+    @media only screen and (max-width: 400px) {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
   }
 
   p {

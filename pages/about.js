@@ -8,7 +8,7 @@ import { GB_FLAG, MAN_SHRUGGING, WINKING_FACE } from '../constants/emojis';
 const AboutPage = () => (
   <Page>
     <h1>About Me</h1>
-    <Image imageSrc="/alex.png" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" />
+    <Image imageSrc="/alex.png" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" maxWidth="500px" />
 
     <h2>In short...</h2>
 

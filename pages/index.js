@@ -13,11 +13,11 @@ const StyledHighlight = styled.p`
   transform: skewY(-0.5deg);
   padding: 5px;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (${({ theme }) => `${theme.display.mScreen}`}) {
     margin: 40px 20px;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (${({ theme }) => `${theme.display.sScreen}`}) {
     margin: 40px 10px;
   }
 `;

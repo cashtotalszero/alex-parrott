@@ -11,11 +11,11 @@ import { SKILL_NAMES, SKILL_TYPES } from '../constants/skills';
 const TableStyles = styled.div`
   padding: 1rem;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (${({ theme }) => `${theme.display.mScreen}`}) {
     font-size: 0.75rem;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (${({ theme }) => `${theme.display.sScreen}`}) {
     font-size: 0.6rem;
     padding: 1rem 0;
   }
@@ -39,7 +39,7 @@ const TableStyles = styled.div`
     text-align: left;
     padding: 8px;
 
-    @media only screen and (max-width: 500px) {
+    @media only screen and (${({ theme }) => `${theme.display.sScreen}`}) {
       padding: 8px 5px;
     }
   }

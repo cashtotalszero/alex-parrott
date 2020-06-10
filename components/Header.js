@@ -34,7 +34,7 @@ const StyledListItem = styled.li`
   text-align: center;
   position: relative;
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (${({ theme }) => `${theme.display.lScreen}`}) {
     width: 6rem;
     height: 2rem;
     font-size: 1rem;
@@ -66,13 +66,13 @@ const Title = styled.h1`
     text-decoration: none;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (${({ theme }) => `${theme.display.lScreen}`}) {
     font-size: 1.5rem;
     padding-top: 10px;
     margin-bottom: 10px;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (${({ theme }) => `${theme.display.xsScreen}`}) {
     font-size: 1rem;
     padding-top: 10px;
     margin-bottom: 10px;

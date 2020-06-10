@@ -24,7 +24,7 @@ const GameInfo = styled.div`
     text-align: center;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (${({ theme }) => `${theme.display.mScreen}`}) {
     h2 {
       font-size: 1.5rem;
     }
@@ -39,7 +39,7 @@ const Game = styled.div`
   margin: 0 auto;
   opacity: ${({ isPlaying }) => (isPlaying ? '1' : '0.7')};
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (${({ theme }) => `${theme.display.mScreen}`}) {
     width: 300px;
     height: 300px;
   }
@@ -62,7 +62,7 @@ const Hole = styled.div`
     bottom: -30px;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (${({ theme }) => `${theme.display.mScreen}`}) {
     :after {
       height: 35px;
       bottom: -15px;
