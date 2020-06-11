@@ -1,7 +1,7 @@
 import Page from '../components/Page';
 import Image from '../components/Image';
-import TextBlock, { NAV, BOLD } from '../components/TextBlock';
-import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO } from '../constants/urls';
+import TextBlock, { NAV, BOLD, LINK } from '../components/TextBlock';
+import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO, PUZZLE_DEMO } from '../constants/urls';
 
 const RandomPage = () => (
   <Page>
@@ -14,6 +14,17 @@ const RandomPage = () => (
 
     <h2>Games</h2>
     <ul>
+      <li>
+        <TextBlock
+          contents={[
+            { type: NAV, href: PUZZLE_DEMO, text: 'Jigsaw Puzzle', bold: true },
+            {
+              text:
+                ' | Adding drag and drop functionality usually becomes a UX rabbit hole. However, if I can look at Giant Days artwork then I will use it all day long...',
+            },
+          ]}
+        />
+      </li>
       <li>
         <TextBlock
           contents={[
