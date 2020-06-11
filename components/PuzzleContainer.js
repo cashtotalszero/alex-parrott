@@ -48,6 +48,7 @@ const StyledDropZone = styled.div`
 
   @media only screen and (${`${SCREEN_BREAK_POINT}`}) {
     width: ${`${FRAME_WIDTH_MOBILE}px`};
+    height: 500px;
   }
 `;
 
