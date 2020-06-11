@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Image from './Image';
 
 import {
@@ -27,5 +28,9 @@ const PuzzlePiece = ({ title }) => (
     <Image imageSrc={title} imageAlt="Puzzle piece missing" maxWidth="100px" />
   </StyledPuzzlePiece>
 );
+
+PuzzlePiece.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default PuzzlePiece;

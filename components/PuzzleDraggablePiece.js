@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDrag } from 'react-dnd';
-
-// FIXME: DO I need to use the touch back end???
+import PropTypes from 'prop-types';
 import { getEmptyImage } from 'react-dnd-html5-backend';
 
 import PuzzlePiece from './PuzzlePiece';
@@ -20,7 +19,7 @@ function getStyles(left, top, isDragging) {
   };
 }
 
-const DraggableBox = (props) => {
+const DraggablePiece = (props) => {
   const { id, title, left, top } = props;
 
   const [{ isDragging }, drag, preview] = useDrag({
@@ -41,4 +40,11 @@ const DraggableBox = (props) => {
   );
 };
 
-export default DraggableBox;
+DraggablePiece.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  left: PropTypes.number.isRequired,
+  top: PropTypes.number.isRequired,
+};
+
+export default DraggablePiece;

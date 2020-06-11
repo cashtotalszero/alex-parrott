@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Image from './Image';
 
 import {
@@ -33,5 +34,9 @@ const PuzzleSolution = ({ show }) => (
     <button onClick={() => alert('Boom!')}>See the original?</button>
   </StyledSolution>
 );
+
+PuzzleSolution.propTypes = {
+  show: PropTypes.bool.isRequired,
+};
 
 export default PuzzleSolution;
