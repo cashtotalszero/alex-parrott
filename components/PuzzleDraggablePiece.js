@@ -4,8 +4,8 @@ import { useDrag } from 'react-dnd';
 // FIXME: DO I need to use the touch back end???
 import { getEmptyImage } from 'react-dnd-html5-backend';
 
-import ItemTypes from './PuzzleItemTypes';
 import PuzzlePiece from './PuzzlePiece';
+import { ItemTypes } from '../constants/puzzle';
 
 function getStyles(left, top, isDragging) {
   const transform = `translate3d(${left}px, ${top}px, 0)`;
@@ -24,7 +24,7 @@ const DraggableBox = (props) => {
   const { id, title, left, top } = props;
 
   const [{ isDragging }, drag, preview] = useDrag({
-    item: { type: ItemTypes.BOX, id, left, top, title },
+    item: { type: ItemTypes.PUZZLE, id, left, top, title },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),

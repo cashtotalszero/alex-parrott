@@ -1,8 +1,8 @@
 import { useDragLayer } from 'react-dnd';
 import styled from 'styled-components';
 
-import ItemTypes from './PuzzleItemTypes';
 import PuzzleDragPreview from './PuzzleDragPreview';
+import { ItemTypes } from '../constants/puzzle';
 
 const StyledLayer = styled.div`
   position: fixed;
@@ -38,7 +38,7 @@ const PuzzleDragLayer = () => {
   }));
   function renderItem() {
     switch (itemType) {
-      case ItemTypes.BOX:
+      case ItemTypes.PUZZLE:
         return <PuzzleDragPreview title={item.title} />;
       default:
         return null;

@@ -4,12 +4,12 @@ import update from 'immutability-helper';
 import styled from 'styled-components';
 
 import useWindowSize from '../hooks/useWindowSize';
-import ItemTypes from './PuzzleItemTypes';
 import DraggableBox from './PuzzleDraggablePiece';
 import Description from './PuzzleDescription';
 import Solution from './PuzzleSolution';
 import {
   getInitialState,
+  ItemTypes,
   ERROR_MARGIN,
   ERROR_MARGIN_MOBILE,
   FRAME_HEIGHT,
@@ -22,6 +22,7 @@ import {
   MAX_LEFT,
   MAX_TOP_MOBILE,
   MAX_LEFT_MOBILE,
+  SCREEN_BREAK_POINT,
 } from '../constants/puzzle';
 
 const StyledFrame = styled.div`
@@ -33,7 +34,7 @@ const StyledFrame = styled.div`
   background-repeat: no-repeat;
   background-size: 33%;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (${`${SCREEN_BREAK_POINT}`}) {
     width: ${`${FRAME_WIDTH_MOBILE}px`};
     height: ${`${FRAME_HEIGHT_MOBILE}px`};
   }
@@ -45,7 +46,7 @@ const StyledDropZone = styled.div`
   border: 1px solid black;
   position: relative;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (${`${SCREEN_BREAK_POINT}`}) {
     width: ${`${FRAME_WIDTH_MOBILE}px`};
   }
 `;
@@ -113,7 +114,7 @@ const PuzzleContainer = () => {
   );
 
   const [, drop] = useDrop({
-    accept: ItemTypes.BOX,
+    accept: ItemTypes.PUZZLE,
     drop(item, monitor) {
       const delta = monitor.getDifferenceFromInitialOffset();
       const left = Math.round(item.left + delta.x);

@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import Image from './Image';
 
-import { FRAME_HEIGHT, FRAME_WIDTH, FRAME_HEIGHT_MOBILE, FRAME_WIDTH_MOBILE } from '../constants/puzzle';
+import {
+  FRAME_HEIGHT,
+  FRAME_WIDTH,
+  FRAME_HEIGHT_MOBILE,
+  FRAME_WIDTH_MOBILE,
+  SCREEN_BREAK_POINT,
+} from '../constants/puzzle';
 
 const StyledSolution = styled.div`
   display: ${({ show }) => (show ? 'block' : 'none')};
@@ -12,7 +18,7 @@ const SolvedImageContainer = styled.div`
   width: ${`${FRAME_WIDTH}px`};
   background-color: black;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (${`${SCREEN_BREAK_POINT}`}) {
     width: ${`${FRAME_WIDTH_MOBILE}px`};
     height: ${`${FRAME_HEIGHT_MOBILE}px`};
   }

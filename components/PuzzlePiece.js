@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import Image from './Image';
 
-import { PIECE_HEIGHT, PIECE_HEIGHT_MOBILE, PIECE_WIDTH, PIECE_WIDTH_MOBILE } from '../constants/puzzle';
+import {
+  PIECE_HEIGHT,
+  PIECE_HEIGHT_MOBILE,
+  PIECE_WIDTH,
+  PIECE_WIDTH_MOBILE,
+  SCREEN_BREAK_POINT,
+} from '../constants/puzzle';
 
 const StyledPuzzlePiece = styled.div`
   border: 1px dashed gray;
@@ -10,7 +16,7 @@ const StyledPuzzlePiece = styled.div`
   width: ${`${PIECE_WIDTH}px`};
   height: ${`${PIECE_HEIGHT}px`};
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (${`${SCREEN_BREAK_POINT}`}) {
     width: ${`${PIECE_WIDTH_MOBILE}px`};
     height: ${`${PIECE_HEIGHT_MOBILE}px`};
   }

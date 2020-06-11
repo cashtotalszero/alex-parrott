@@ -20,8 +20,10 @@ export const MAX_LEFT = FRAME_WIDTH;
 export const MAX_TOP_MOBILE = FRAME_HEIGHT_MOBILE + PIECE_HEIGHT_MOBILE;
 export const MAX_LEFT_MOBILE = FRAME_WIDTH_MOBILE;
 
+export const SCREEN_BREAK_POINT = 'max-width: 600px';
+
 export const ItemTypes = {
-  BOX: 'box',
+  PUZZLE: 'puzzle',
 };
 
 export const getInitialState = (isMobile = false) => {
