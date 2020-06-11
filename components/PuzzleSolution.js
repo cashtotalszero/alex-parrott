@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Image from './Image';
+import TextBlock, { LINK } from './TextBlock';
+import { GIANT_DAYS } from '../constants/urls';
 
 import {
   FRAME_HEIGHT,
@@ -11,7 +13,15 @@ import {
 } from '../constants/puzzle';
 
 const StyledSolution = styled.div`
-  display: ${({ show }) => (show ? 'block' : 'none')};
+  display: ${({ show }) => (show ? 'flex' : 'none')};
+  flex-direction: column;
+  align-items: center;
+
+  h2,
+  p {
+    text-align: center;
+    margin: 10px;
+  }
 `;
 
 const SolvedImageContainer = styled.div`
@@ -31,7 +41,9 @@ const PuzzleSolution = ({ show }) => (
       <Image imageSrc="/jigsaw/Giant_Days_Finished.jpg" imageAlt="Jigsaw piece missing" maxWidth="500px" />
     </SolvedImageContainer>
     <h2>You got it!</h2>
-    <button onClick={() => alert('Boom!')}>See the original?</button>
+    <TextBlock
+      contents={[{ text: 'See more Giant Days ' }, { type: LINK, href: GIANT_DAYS, text: 'here' }, { text: '.' }]}
+    />
   </StyledSolution>
 );
 
