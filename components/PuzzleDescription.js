@@ -1,6 +1,15 @@
 import styled from 'styled-components';
-
 import Image from './Image';
+
+const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: center;
+    color: ${({ theme }) => `${theme.colors.shadowLighter}`};
+  }
+`;
 
 const ArrowsWrapper = styled.div`
   display: flex;
@@ -9,15 +18,24 @@ const ArrowsWrapper = styled.div`
 `;
 
 const PuzzleDescription = () => (
-  <div>
+  <DescriptionWrapper>
     <ArrowsWrapper>
-      <Image imageSrc="/jigsaw/arrow.png" imageAlt="Jigsaw piece missing" maxWidth="50px" />
-      <Image imageSrc="/jigsaw/arrow.png" imageAlt="Jigsaw piece missing" maxWidth="50px" />
-      <Image imageSrc="/jigsaw/arrow.png" imageAlt="Jigsaw piece missing" maxWidth="50px" />
+      <Image imageSrc="/jigsaw/arrow.png" imageAlt="arrow" maxWidth="50px" />
+      <Image imageSrc="/jigsaw/arrow.png" imageAlt="arrow" maxWidth="50px" />
+      <Image imageSrc="/jigsaw/arrow.png" imageAlt="arrow" maxWidth="50px" />
+      <Image imageSrc="/jigsaw/arrow.png" imageAlt="arrow" maxWidth="50px" />
     </ArrowsWrapper>
 
-    <p>Move the pieces from the pile to the frame above.</p>
-  </div>
+    <p>
+      DRAG
+      <br />
+      PIECES
+      <br />
+      FROM
+      <br />
+      PILE
+    </p>
+  </DescriptionWrapper>
 );
 
 export default PuzzleDescription;

@@ -40,6 +40,7 @@ export const theme = {
     black: `${black}`,
     white: `${white}`,
     shadow: `${shadow}`,
+    shadowLighter: `${shadowLighter}`,
     highlight: `${selectionHighlight}`,
   },
   fonts: {

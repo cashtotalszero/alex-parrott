@@ -9,13 +9,19 @@ import DraggableBox from './PuzzleDraggablePiece';
 import Description from './PuzzleDescription';
 import Solution from './PuzzleSolution';
 import {
-  // initialState,
   getInitialState,
   ERROR_MARGIN,
+  ERROR_MARGIN_MOBILE,
   FRAME_HEIGHT,
   FRAME_WIDTH,
   FRAME_HEIGHT_MOBILE,
   FRAME_WIDTH_MOBILE,
+  SHRINK_MULTIPLIER,
+  GROW_MULTIPLIER,
+  MAX_TOP,
+  MAX_LEFT,
+  MAX_TOP_MOBILE,
+  MAX_LEFT_MOBILE,
 } from '../constants/puzzle';
 
 const StyledFrame = styled.div`
@@ -44,28 +50,55 @@ const StyledDropZone = styled.div`
   }
 `;
 
-function renderBox(item, key) {
-  return <DraggableBox key={key} id={key} {...item} />;
-}
+const renderBox = (item, key) => <DraggableBox key={key} id={key} {...item} />;
+
+const calculateUpdatedPosition = (value, max, mulitplier) => {
+  let newValue = Math.round(value * mulitplier);
+  if (newValue > max) {
+    newValue = max;
+  }
+  return newValue;
+};
+
+const getResizedPieces = (pieces, shrink = false) => {
+  const updated = {};
+  const multiplier = shrink ? SHRINK_MULTIPLIER : GROW_MULTIPLIER;
+  const keys = Object.keys(pieces);
+
+  const initialState = getInitialState(shrink);
+
+  keys.forEach((key) => {
+    const { top, left } = pieces[key];
+    const { expectedTop, expectedLeft } = initialState[key];
+
+    const maxTop = shrink ? MAX_TOP_MOBILE : MAX_TOP;
+    const maxLeft = shrink ? MAX_LEFT_MOBILE : MAX_LEFT;
+
+    updated[key] = {
+      ...pieces[key],
+      top: calculateUpdatedPosition(top, maxTop, multiplier),
+      left: calculateUpdatedPosition(left, maxLeft, multiplier),
+      expectedTop,
+      expectedLeft,
+    };
+  });
+
+  return updated;
+};
 
 const PuzzleContainer = () => {
   const windowSize = useWindowSize();
   const [isSmall, setIsSmall] = useState(windowSize.width < 600);
   const [isSolved, setIsSolved] = useState(false);
-
-  // TODO: RE-calc peice positions if peice sizes change (screen re-size!)
-
-  // console.log('Window size = ', windowSize);
-  // console.log('Is small = ', isSmall);
-
   const [boxes, setBoxes] = useState(getInitialState(isSmall));
 
   const moveBox = useCallback(
     (id, left, top) => {
       const { expectedTop, expectedLeft } = boxes[id];
+      const errorMargin = isSmall ? ERROR_MARGIN_MOBILE : ERROR_MARGIN;
 
-      const topCorrect = top < expectedTop + ERROR_MARGIN && top > expectedTop - ERROR_MARGIN;
-      const leftCorrect = left < expectedLeft + ERROR_MARGIN && left > expectedLeft - ERROR_MARGIN;
+      const topCorrect = top < expectedTop + errorMargin && top > expectedTop - errorMargin;
+      const leftCorrect = left < expectedLeft + errorMargin && left > expectedLeft - errorMargin;
       const solved = topCorrect && leftCorrect;
 
       setBoxes(
@@ -105,23 +138,14 @@ const PuzzleContainer = () => {
   }, [boxes]);
 
   useEffect(() => {
-    // console.log('Check...');
     if (windowSize.width >= 600 && isSmall) {
-      console.log('GO UP!!!!!');
       setIsSmall(false);
-      // TODO: Multiply box sizes by 1.33333 (round up)
+      setBoxes(getResizedPieces(boxes));
     } else if (windowSize.width < 600 && !isSmall) {
-      console.log('Do down....');
       setIsSmall(true);
-      // TODO: Multiply box sizes by 0.75 (round up)
-    } else {
-      // console.log('Nope');
+      setBoxes(getResizedPieces(boxes, true));
     }
   }, [windowSize]);
-
-  // console.log('BOXES be landed!!!!');
-  // console.log(boxes);
-  // console.log('Solved = ', isSolved);
 
   return (
     <div>
