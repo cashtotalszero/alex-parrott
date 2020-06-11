@@ -184,10 +184,10 @@ const MatrixPage = () => {
       <CustomHead />
 
       <ButtonWrapper>
-        <Button height="30px" onClick={switchLanguage}>
+        <Button height="30px" width="100px" onClick={switchLanguage}>
           {language.name}
         </Button>
-        <Button height="30px" onClick={reset}>
+        <Button height="30px" width="100px" onClick={reset}>
           Reset
         </Button>
       </ButtonWrapper>
