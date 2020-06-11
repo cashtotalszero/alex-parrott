@@ -32,7 +32,11 @@ This was built using the `react-slider` library.
 
 #### Skills Searcher
 
-This is is put together using a combination of `react-table` and `react-autosuggest`.
+This is put together using a combination of `react-table` and `react-autosuggest`.
+
+#### Drag and Drop Jigsaw
+
+This is a demo I made using the `react-dnd` library. I used one of the demos from their docs as a starting point. Getting it to look even halfway decent on mobile screens was a challenge...
 
 #### Whack a Mole!
 
