@@ -57,12 +57,13 @@ const AboutPage = () => (
         { text: 'I have a bit of an ' },
         { type: BOLD, text: 'unusual career history' },
         {
-          text: '! I originally went to university to study Sociology. Afterwards I spent several years working as a ',
+          text:
+            '! I originally went to university to study Sociology. Afterwards I spent several years working as a music ',
         },
-        { type: LINK, href: MONKEY_KNIFE_FIGHT, text: 'music promoter' },
+        { type: LINK, href: MONKEY_KNIFE_FIGHT, text: 'promoter' },
         {
           text:
-            ' and then banking. After a stint travelling I ended up back at university doing a masters degree in computer science... I like to think it makes me well rounded ',
+            ' and then in banking. After a stint travelling I ended up back at university doing a masters degree in computer science... I like to think it makes me well rounded ',
         },
         { type: EMOJI, unicode: MAN_SHRUGGING, label: 'shrug emoji' },
         { text: '.' },

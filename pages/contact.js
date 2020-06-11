@@ -48,15 +48,15 @@ const HomePage = () => (
 
         { type: LINK, href: LINKEDIN_BIO, text: 'LinkedIn', bold: true },
         {
-          text:
-            '. If you email me directly then you are likely to end up in my spam folder and I am unlikely to reply!',
+          text: '. A lot of recruitment company emails end up in my spam folder so I am unlikely to reply!',
         },
       ]}
     />
 
     <TextBlock
       contents={[
-        { type: BOLD, text: 'If you would like me to work with you', bold: true },
+        { text: 'Otherwise, ' },
+        { type: BOLD, text: 'if you have a project and would like me to work with you', bold: true },
         {
           text: ' or want to contact me for any other reason then feel free to email me. ',
         },

@@ -20,7 +20,7 @@ const RandomPage = () => (
             { type: NAV, href: PUZZLE_DEMO, text: 'Jigsaw Puzzle', bold: true },
             {
               text:
-                ' | Adding drag and drop functionality usually becomes a UX rabbit hole. However, if I can look at Giant Days artwork then I will use it all day long...',
+                ' | Adding drag and drop functionality to a web site usually becomes a UX rabbit hole. However, you add Giant Days artwork into the mix then down the rabbit hole I go...',
             },
           ]}
         />

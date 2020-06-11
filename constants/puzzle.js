@@ -26,132 +26,111 @@ export const ItemTypes = {
   PUZZLE: 'puzzle',
 };
 
-export const getInitialState = (isMobile = false) => {
+const getJigsawPieces = (isMobile) => {
   const WIDTH = isMobile ? PIECE_WIDTH_MOBILE : PIECE_WIDTH;
   const HEIGHT = isMobile ? PIECE_HEIGHT_MOBILE : PIECE_HEIGHT;
-  const initialTop = 400;
-  const initialLeft = 10;
 
-  return {
-    a: {
-      top: initialTop,
-      left: initialLeft,
+  const pieces = [
+    {
       title: '/jigsaw/Giant_Days_1.jpg',
       expectedTop: 0,
       expectedLeft: 0,
-      solved: false,
     },
-    b: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_2.jpg',
       expectedTop: 0,
       expectedLeft: WIDTH * 1,
-      solved: false,
     },
-    c: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_3.jpg',
       expectedTop: 0,
       expectedLeft: WIDTH * 2,
-      solved: false,
     },
-    d: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_4.jpg',
       expectedTop: 0,
       expectedLeft: WIDTH * 3,
-      solved: false,
     },
-    e: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_5.jpg',
       expectedTop: 0,
       expectedLeft: WIDTH * 4,
-      solved: false,
     },
-    f: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_6.jpg',
       expectedTop: HEIGHT * 1,
       expectedLeft: 0,
-      solved: false,
     },
-    g: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_7.jpg',
       expectedTop: HEIGHT * 1,
       expectedLeft: WIDTH * 1,
-      solved: false,
     },
-    h: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_8.jpg',
       expectedTop: HEIGHT * 1,
       expectedLeft: WIDTH * 2,
-      solved: false,
     },
-    i: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_9.jpg',
       expectedTop: HEIGHT * 1,
       expectedLeft: WIDTH * 3,
-      solved: false,
     },
-    j: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_10.jpg',
       expectedTop: HEIGHT * 1,
       expectedLeft: WIDTH * 4,
-      solved: false,
     },
-    k: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_11.jpg',
       expectedTop: HEIGHT * 2,
       expectedLeft: 0,
-      solved: false,
     },
-    l: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_12.jpg',
       expectedTop: HEIGHT * 2,
       expectedLeft: WIDTH * 1,
-      solved: false,
     },
-    m: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_13.jpg',
       expectedTop: HEIGHT * 2,
       expectedLeft: WIDTH * 2,
-      solved: false,
     },
-    n: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_14.jpg',
       expectedTop: HEIGHT * 2,
       expectedLeft: WIDTH * 3,
-      solved: false,
     },
-    o: {
-      top: initialTop,
-      left: initialLeft,
+    {
       title: '/jigsaw/Giant_Days_15.jpg',
       expectedTop: HEIGHT * 2,
       expectedLeft: WIDTH * 4,
-      solved: false,
     },
+  ];
+  return pieces;
+};
+
+export const getInitialState = (isMobile = false) => {
+  const initialTop = 400;
+  const initialLeft = 10;
+  const puzzlePieces = getJigsawPieces(isMobile);
+  const sharedData = { top: initialTop, left: initialLeft, solved: false };
+
+  return {
+    a: { ...sharedData, ...puzzlePieces[8] },
+    b: { ...sharedData, ...puzzlePieces[2] },
+    c: { ...sharedData, ...puzzlePieces[12] },
+    d: { ...sharedData, ...puzzlePieces[3] },
+    e: { ...sharedData, ...puzzlePieces[1] },
+    f: { ...sharedData, ...puzzlePieces[5] },
+    g: { ...sharedData, ...puzzlePieces[13] },
+    h: { ...sharedData, ...puzzlePieces[0] },
+    i: { ...sharedData, ...puzzlePieces[4] },
+    j: { ...sharedData, ...puzzlePieces[10] },
+    k: { ...sharedData, ...puzzlePieces[7] },
+    l: { ...sharedData, ...puzzlePieces[6] },
+    m: { ...sharedData, ...puzzlePieces[14] },
+    n: { ...sharedData, ...puzzlePieces[11] },
+    o: { ...sharedData, ...puzzlePieces[9] },
   };
 };
