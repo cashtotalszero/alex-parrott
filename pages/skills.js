@@ -98,7 +98,7 @@ const SkillsPage = ({ fetchSkills, skills, isLoading, hasError }) => {
 
         {showSpinner && (
           <SpinnerWrapper>
-            <LoadingSpinner size={25} isLoading={isLoading} />
+            <LoadingSpinner size={60} isLoading={isLoading} />
           </SpinnerWrapper>
         )}
 

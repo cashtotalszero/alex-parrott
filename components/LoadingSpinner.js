@@ -1,13 +1,13 @@
 import { withTheme } from 'styled-components';
-import PacmanLoader from 'react-spinners/PacmanLoader';
+import RingLoader from 'react-spinners/RingLoader';
 import PropTypes from 'prop-types';
 
 const Spinner = ({ size, isLoading, theme }) => (
-  <PacmanLoader size={size} color={theme.colors.palette1} loading={isLoading} />
+  <RingLoader size={size} color={theme.colors.palette2} loading={isLoading} />
 );
 
 Spinner.defaultProps = {
-  size: 25,
+  size: 60,
 };
 
 Spinner.propTypes = {
@@ -15,7 +15,7 @@ Spinner.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   theme: PropTypes.shape({
     colors: PropTypes.shape({
-      palette1: PropTypes.string,
+      palette2: PropTypes.string,
     }),
   }).isRequired,
 };
