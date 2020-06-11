@@ -41,10 +41,10 @@ const TipsPage = () => (
       <li>
         <TextBlock
           contents={[
-            { type: LINK, href: STEPHEN_GRIDER, text: 'Sthepen Grider', bold: true },
+            { type: LINK, href: STEPHEN_GRIDER, text: 'Stephen Grider', bold: true },
             {
               text:
-                " | This is another great online learning resourse. I have done a lot of Stephen's courses! He has courses on a wide variety of topics - JS, Go, Typescript, Docker, Blockchain and more. They are usually a decent intro when you are learning something new.",
+                " | This is another great online learning resource. I have done a lot of Stephen's courses! He has courses on a wide variety of topics - JS, Go, Typescript, Docker, Blockchain and more. They are usually a decent intro when you are learning something new.",
             },
           ]}
         />

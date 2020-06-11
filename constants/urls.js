@@ -12,6 +12,7 @@ export const CONTACT_PAGE = '/contact';
 export const WHACK_MOLES_DEMO = '/demos/moles';
 export const MATRIX_DEMO = '/demos/matrix';
 export const REDUX_DEMO = '/demos/todos';
+export const PUZZLE_DEMO = '/demos/puzzle';
 
 // External links
 export const CODE_REPO = 'https://github.com/cashtotalszero/alex-parrott';
@@ -36,3 +37,4 @@ export const WES_BOS = 'https://wesbos.com/';
 export const DAN_ABRAMOV = 'https://overreacted.io/';
 export const STEPHEN_GRIDER = 'https://www.udemy.com/user/sgslo/';
 export const KRISTA_KING = 'https://www.kristakingmath.com/';
+export const GIANT_DAYS = 'https://www.boom-studios.com/series/giant-days/';
