@@ -24,6 +24,8 @@ const StyledButton = styled.button`
   font-size: 1rem;
   line-height: 1.5rem;
   opacity: ${({ disabled }) => (disabled ? '0.7' : '1')};
+  height: 30px;
+  min-width: 40px;
 `;
 
 const StyledSelect = styled.select`
