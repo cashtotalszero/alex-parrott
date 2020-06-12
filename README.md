@@ -14,7 +14,6 @@ This website is designed to double of an example of my own personal coding style
 2. **React.js** - frontend framework.
 3. **Redux** - app state container.
 4. **Styled Components** - CSS in JS library.
-5. **MongoDB** - NoSQL Database.
 
 These were selected in order to demonstrate use of my personal tech preferences.
 
