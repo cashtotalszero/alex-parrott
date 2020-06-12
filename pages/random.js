@@ -1,7 +1,7 @@
 import Page from '../components/Page';
 import Image from '../components/Image';
 import TextBlock, { NAV, BOLD, LINK } from '../components/TextBlock';
-import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO, PUZZLE_DEMO } from '../constants/urls';
+import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO, PUZZLE_DEMO, VR_DEMO } from '../constants/urls';
 
 const RandomPage = () => (
   <Page>
@@ -62,8 +62,19 @@ const RandomPage = () => (
           ]}
         />
       </li>
+    </ul>
+
+    <h2>Beyond the Web</h2>
+    <ul>
       <li>
-        <TextBlock contents={[{ type: BOLD, text: 'More coming soon...' }]} />
+        <TextBlock
+          contents={[
+            { type: NAV, href: VR_DEMO, text: 'Virtual Reality', bold: true },
+            {
+              text: ' | While I was working at Somo I had some adventures making VR apps. Find out more here.',
+            },
+          ]}
+        />
       </li>
     </ul>
   </Page>

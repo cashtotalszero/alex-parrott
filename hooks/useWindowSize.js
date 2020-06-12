@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-// Hook
 function useWindowSize() {
   const isClient = typeof window === 'object';
 
@@ -24,7 +23,7 @@ function useWindowSize() {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, []);
 
   return windowSize;
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import TextBlock, { LINK, EMOJI } from './TextBlock';
+import TextBlock, { LINK, NAV, EMOJI } from './TextBlock';
 import { INDIA, JAPAN, CHINA, NEPAL, CANADA, USA, MEXICO, GRINNING_FACE } from '../constants/emojis';
 import {
   BJSS,
@@ -11,7 +11,7 @@ import {
   NATS,
   ESA_SUMMER_OF_CODE,
   PERVASIVE_MEDIA,
-  VR_SHOWROOM,
+  VR_DEMO,
   AUDI_BETA,
   AUDI_BETA_BLOG,
 } from '../constants/urls';
@@ -179,9 +179,9 @@ const getYearInfo = (year) => {
             contents={[
               {
                 text:
-                  'I was lead developer on the Audi VR virtual showroom app, built in Unity. The work was nominated for a DADI ',
+                  'I was lead developer on the Audi VR virtual showroom app, built in Unity. The work was nominated for a DADI Award. Find out more ',
               },
-              { type: LINK, text: 'Award', href: VR_SHOWROOM },
+              { type: NAV, href: VR_DEMO, text: 'here' },
               { text: '.' },
             ]}
           />
