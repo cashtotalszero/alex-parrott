@@ -33,6 +33,8 @@ export const SKILL_NAMES = {
   HTML: 'HTML',
   CSS: 'CSS',
   NEXT: 'Next.js',
+  GOOGLE_VR: 'Google VR',
+  STEAM_VR: 'SteamVR',
 };
 
 export const SKILL_TYPES = {

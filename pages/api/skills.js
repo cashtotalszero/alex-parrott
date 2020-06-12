@@ -177,6 +177,18 @@ const dataDefs = [
     type: SKILL_TYPES.LANGUAGES,
     lang: CSS,
   },
+  {
+    name: SKILL_NAMES.GOOGLE_VR,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.LIB,
+    lang: C_SHARP,
+  },
+  {
+    name: SKILL_NAMES.STEAM_VR,
+    level: SKILL_LEVELS.SMILE,
+    type: SKILL_TYPES.LIB,
+    lang: C_SHARP,
+  },
 ];
 
 export default (req, res) => {
