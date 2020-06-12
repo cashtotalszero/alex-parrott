@@ -95,7 +95,7 @@ const VrPage = () => (
     <LogoContainer>
       <Image imageSrc="/steam_vr.png" imageAlt="Steam VR" maxWidth="200px" />
       <Image imageSrc="/unity_logo.png" imageAlt="Unity 3D" maxWidth="200px" />
-      <Image imageSrc="/google_vr.png" imageAlt="Google VR" maxWidth="200px" />
+      <Image imageSrc="/google_VR.png" imageAlt="Google VR" maxWidth="200px" />
     </LogoContainer>
 
     <TextBlock
