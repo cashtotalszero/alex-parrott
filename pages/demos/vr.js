@@ -118,7 +118,7 @@ const VrPage = () => (
             'The second project was larger and designed as a fully immersive HTC Vive experience. This app was later nominated for a DADI ',
         },
         { type: LINK, href: VR_SHOWROOM, text: 'award' },
-        { text: '. Somo made a little demo video of it in action which you can view below.' },
+        { text: '. Somo produced a little demo video of it in action which you can view below.' },
       ]}
     />
 
