@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 import Page from '../components/Page';
 import Image from '../components/Image';
-import TextBlock, { EMOJI, LINK } from '../components/TextBlock';
+import TextBlock, { EMOJI, LINK, NAV } from '../components/TextBlock';
 import { SWEAT_SMILE } from '../constants/emojis';
-import { CODE_REPO } from '../constants/urls';
+import { CODE_REPO, RANDOM_PAGE } from '../constants/urls';
 
 const IconsWrapper = styled.div`
   display: flex;
@@ -40,11 +40,25 @@ const CodePage = () => (
       ]}
     />
 
+    <TextBlock
+      contents={[
+        {
+          text: 'You can also check out a few other mini apps and demos I have put together on my random ',
+        },
+        {
+          type: NAV,
+          href: RANDOM_PAGE,
+          text: 'demos',
+        },
+        { text: ' page.' },
+      ]}
+    />
+
     <h2>About this site</h2>
     <p>
       The tech stack selected for this project was primarily chosen to showcase my personal coding style. The backend is
-      a Next.js server with a Mongo database. The front end is a React and Redux app, while the CSS is created using
-      Styled Components.
+      a Next.js server and the front end is a React and Redux app. Meanwhile, the CSS is created using Styled
+      Components.
     </p>
     <IconsWrapper>
       <a href={CODE_REPO}>
@@ -58,9 +72,6 @@ const CodePage = () => (
       </a>
       <a href={CODE_REPO}>
         <Image imageSrc="/styled-components.png" imageAlt="Styled Components" width="40px" />
-      </a>
-      <a href={CODE_REPO}>
-        <Image imageSrc="/mongo-icon.png" imageAlt="MongoDB" width="40px" />
       </a>
     </IconsWrapper>
   </Page>
