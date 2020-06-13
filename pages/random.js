@@ -1,6 +1,6 @@
 import Page from '../components/Page';
 import Image from '../components/Image';
-import TextBlock, { NAV, BOLD, LINK } from '../components/TextBlock';
+import TextBlock, { NAV } from '../components/TextBlock';
 import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO, PUZZLE_DEMO, VR_DEMO } from '../constants/urls';
 
 const RandomPage = () => (
@@ -47,7 +47,7 @@ const RandomPage = () => (
             { type: NAV, href: MATRIX_DEMO, text: 'Enter The Matrix', bold: true },
             {
               text:
-                ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript. Ok, so technically I reverse engineered it from some minified code I found. That still counts, right?',
+                ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript. Ok, so technically I reverse engineered and converted it from some minified code I found. That still counts, right?',
             },
           ]}
         />

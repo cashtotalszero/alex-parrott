@@ -104,7 +104,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: black;
-    text-decoration-color: ${palette1};
+    text-decoration-color: ${palette2};
   }
 
   ul {

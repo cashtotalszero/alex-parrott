@@ -102,7 +102,7 @@ const VrPage = () => (
       contents={[
         {
           text:
-            'The first app a simple A4 showroom experience built with Google VR library. At the time of writing (spring 2020) you can still download a copy of the app for both ',
+            'The first app a simple A4 showroom experience built with Google VR library. At the time of writing you can still download a copy of the app for both ',
         },
         { type: LINK, href: A4_APP_IOS, text: 'iOS' },
         { text: ' and ' },

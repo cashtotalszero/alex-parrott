@@ -96,6 +96,9 @@ const MatrixPage = () => {
     for (let f = 0; f < grid.length; f += 1) {
       const d = grid[f];
 
+      // The algorithm code below is not mine...
+
+      /* eslint-disable */
       d.b == d.d
         ? ((d.b = 0),
           d.a.push({
@@ -118,6 +121,9 @@ const MatrixPage = () => {
           }00`),
           ctx.fillText(b.c, columnsSpacing * f, b.y));
       }
+      /* eslint-enable */
+
+      // ...but the rest of the code is!
     }
     frameTimer = setTimeout(() => {
       enterTheMatrix(ctx, grid, width, height);
