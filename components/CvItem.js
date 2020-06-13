@@ -72,18 +72,7 @@ const getYearInfo = (year) => {
         title: '2006-08',
         text: (
           <>
-            <TextBlock
-              contents={[
-                { text: 'I went traveling and worked abroad. A lot. ' },
-                { type: EMOJI, unicode: INDIA, label: 'India' },
-                { type: EMOJI, unicode: JAPAN, label: 'Japan' },
-                { type: EMOJI, unicode: CHINA, label: 'China' },
-                { type: EMOJI, unicode: NEPAL, label: 'Nepal' },
-                { type: EMOJI, unicode: USA, label: 'Usa' },
-                { type: EMOJI, unicode: CANADA, label: 'Canada' },
-                { type: EMOJI, unicode: MEXICO, label: 'Mexico' },
-              ]}
-            />
+            <TextBlock contents={[{ text: 'I went traveling and worked abroad. A lot. ' }]} />
             <TextBlock
               contents={[
                 { text: 'Here I am at Mount Everest ' },
