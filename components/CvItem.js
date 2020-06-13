@@ -72,7 +72,7 @@ const getYearInfo = (year) => {
         title: '2006-08',
         text: (
           <>
-            <TextBlock contents={[{ text: 'I went traveling and worked abroad. A lot. ' }]} />
+            <TextBlock contents={[{ text: 'I went travelling and worked abroad. A lot. ' }]} />
             <TextBlock
               contents={[
                 { text: 'Here I am at Mount Everest ' },
