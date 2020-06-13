@@ -1,8 +1,8 @@
 import Page from '../components/Page';
 import Image from '../components/Image';
-import TextBlock, { BOLD, EMOJI, LINK } from '../components/TextBlock';
+import TextBlock, { BOLD, EMOJI, LINK, NAV } from '../components/TextBlock';
 
-import { VR_SHOWROOM, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB } from '../constants/urls';
+import { VR_DEMO, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB } from '../constants/urls';
 import { GB_FLAG, MAN_SHRUGGING, WINKING_FACE } from '../constants/emojis';
 
 const AboutPage = () => (
@@ -37,7 +37,7 @@ const AboutPage = () => (
           text:
             'My tech interests vary widely and I have worked on a wide variety of projects. These include - Vue.js apps, React Native mobile apps, Node/Express servers, VR ',
         },
-        { type: LINK, href: VR_SHOWROOM, text: 'experiences' },
+        { type: NAV, href: VR_DEMO, text: 'experiences', bold: true },
         { text: ' and Unity 3D games.' },
       ]}
     />
