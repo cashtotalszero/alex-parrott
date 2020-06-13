@@ -1,13 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import Button from './Button';
-
-const StyledListItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+import Checkbox from './Checkbox';
 
 const StyledText = styled.span`
   text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
@@ -16,12 +9,11 @@ const StyledText = styled.span`
 `;
 
 const TodoItem = ({ onClick, completed, text }) => (
-  <StyledListItem>
-    <StyledText completed={completed}>{text}</StyledText>
-    <Button onClick={onClick} minWidth="120px" height="40px">
-      Toggle Done
-    </Button>
-  </StyledListItem>
+  <li>
+    <Checkbox checked={completed} onChange={onClick}>
+      <StyledText completed={completed}>{text}</StyledText>
+    </Checkbox>
+  </li>
 );
 
 TodoItem.propTypes = {
