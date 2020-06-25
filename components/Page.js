@@ -26,9 +26,9 @@ const Card = styled.div`
   }
 `;
 
-const Page = ({ children }) => (
+const Page = ({ children, metatags }) => (
   <StyledPage>
-    <CustomHead />
+    <CustomHead metatags={metatags} />
     <Card maxWidth="950px">{children}</Card>
   </StyledPage>
 );

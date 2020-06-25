@@ -14,6 +14,8 @@ export const MATRIX_DEMO = '/demos/matrix';
 export const REDUX_DEMO = '/demos/todos';
 export const PUZZLE_DEMO = '/demos/puzzle';
 export const VR_DEMO = '/demos/vr';
+export const CRYPTO_PAGE = '/demos/crypto';
+export const CRYPTO_DETAILS_PAGE = '/demos/crypto/[name]';
 
 // External links
 export const CODE_REPO = 'https://github.com/cashtotalszero/alex-parrott';
@@ -45,3 +47,7 @@ export const A4_APP_IOS = 'https://apps.apple.com/gb/app/audi-a4-virtual-showroo
 export const A4_APP_ANDROID = 'https://apps.apple.com/gb/app/audi-a4-virtual-showroom/id1172980354';
 export const VIVE_DEMO_EMBED = 'https://www.youtube.com/embed/txtz-TYUOmQ';
 export const AUDI_UK = 'https://www.audi.co.uk/';
+
+// Crypto compare API
+export const CRYPTO_LIST_API = 'https://min-api.cryptocompare.com/data/top/mktcapfull';
+export const CRYPTO_ITEM_API = 'https://min-api.cryptocompare.com/data/pricemultifull';

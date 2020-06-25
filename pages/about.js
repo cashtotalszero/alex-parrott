@@ -5,8 +5,17 @@ import TextBlock, { BOLD, EMOJI, LINK, NAV } from '../components/TextBlock';
 import { VR_DEMO, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB } from '../constants/urls';
 import { GB_FLAG, MAN_SHRUGGING, WINKING_FACE } from '../constants/emojis';
 
+const Metatags = () => (
+  <>
+    <meta property="og:title" content="Alex Parrott | Web Developer" />
+    <meta property="og:image" content="https://www.alex-parrott.com/rantOriginal.jpg" />
+    <meta property="og:description" content="I'm a full stack web developer based in Bristol, UK" />
+    <meta property="og:url" content="https://www.alex-parrott.com/about" />
+  </>
+);
+
 const AboutPage = () => (
-  <Page>
+  <Page metatags={Metatags}>
     <h1>About Me</h1>
     <Image imageSrc="/alex.png" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" maxWidth="500px" />
 
