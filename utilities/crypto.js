@@ -1,5 +1,10 @@
 import { GBP, USD, EUR, JPY, KRW } from '../constants/crypto';
 
+export function formatTimestamp(timestamp) {
+  const date = new Date(timestamp);
+  return date.toLocaleTimeString();
+}
+
 export function numberWithCommas(x) {
   const parts = x.toString().split('.');
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');

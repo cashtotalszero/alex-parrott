@@ -6,6 +6,9 @@ export const white = '#fff';
 export const gray = '#444';
 export const greyLighter = '#888';
 export const greyLightest = '#aaa';
+export const green = '#008000';
+export const red = '#B22222';
+export const blue = '#0070f3';
 
 export const primaryColour = '#0070f3';
 export const palette1 = '#008080';
@@ -40,6 +43,9 @@ export const theme = {
     black: `${black}`,
     white: `${white}`,
     gray: `${gray}`,
+    red: `${red}`,
+    green: `${green}`,
+    blue: `${blue}`,
     greyLighter: `${greyLighter}`,
     greyLightest: `${greyLightest}`,
     shadow: `${shadow}`,

@@ -24,6 +24,21 @@ const StyledHeader = styled.header`
   @media only screen and (${({ theme }) => `${theme.display.lScreen}`}) {
     padding-right: 20px;
   }
+
+  h1 {
+    padding-right: 20px;
+  }
+`;
+
+const LastUpdate = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  span {
+    margin: 10px 0;
+    color: ${({ theme }) => `${theme.colors.greyLighter}`};
+    font-size: 0.75rem;
+  }
 `;
 
 const Index = () => {
@@ -31,17 +46,17 @@ const Index = () => {
   const dispatch = useDispatch();
   const listLoading = useSelector(({ crypto }) => crypto.listLoading);
   const listError = useSelector(({ crypto }) => crypto.listError);
+  const lastUpdated = useSelector(({ crypto }) => crypto.listLastUpdate);
   const tableData = useSelector(({ crypto }) => crypto.cryptoData);
   const currency = useSelector(({ crypto }) => crypto.currency);
 
   useRefetch(fetchAllData(currency));
 
-  // TODO: Add last updated time stamp
-
   return (
     <Page>
       <StyledHeader>
-        <h1>Crypto Compare</h1>
+        <h1>Top 10 Crypto Currencies</h1>
+
         <CurrencySelector
           disabled={listLoading}
           onChange={(val) => {
@@ -63,6 +78,12 @@ const Index = () => {
           router.push(CRYPTO_DETAILS_PAGE, getDetailsUrl(original.name, currency));
         }}
       />
+
+      {!listLoading && (
+        <LastUpdate>
+          <span>{`Last updated: ${lastUpdated}`}</span>
+        </LastUpdate>
+      )}
     </Page>
   );
 };

@@ -22,9 +22,10 @@ const TableStyles = styled.div`
 
   th {
     font-family: ${({ theme }) => theme.fonts.header};
-    background-color: ${({ theme }) => `${theme.colors.greyLightest}`};
+    /* background-color: ${({ theme }) => `${theme.colors.greyLightest}`}; */
+    background-color: ${({ theme }) => `${theme.colors.palette2}`};
     line-height: 1.2rem;
-    color: ${({ theme }) => `${theme.colors.greyLighter}`};
+    color: ${({ theme }) => `${theme.colors.white}`};
     vertical-align: middle;
     border-top: ${({ theme }) => `1px solid ${theme.colors.greyLighter}`};
     height: 25px;
@@ -48,33 +49,21 @@ const TableStyles = styled.div`
 
   tr {
     transition: background-color 0.25s ease-in-out;
-    padding: 0 10px;
+    /* padding: 0 10px; */
   }
-
-  /* th:first-child,
-  td:first-child {
-    padding-left: 200px;
-
-    @media only screen and (${({ theme }) => `${theme.display.lScreen}`}) {
-      padding-left: 20px;
-    }
-  } */
-
-  /* th:last-child,
-  td:last-child {
-    padding-right: 200px;
-    text-align: right;
-
-    @media only screen and (${({ theme }) => `${theme.display.lScreen}`}) {
-      padding-right: 20px;
-    }
-  } */
 
   tr:hover {
     background-color: blue;
-    background-color: ${({ theme }) => `${theme.colors.greyLighter}`};
+    background-color: ${({ theme }) => `${theme.colors.palette6}`};
     cursor: pointer;
   }
+`;
+
+const StyledSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
 `;
 
 const Table = ({ data, columnDefs, isLoading, hasError, onRowClick }) => {
@@ -90,7 +79,7 @@ const Table = ({ data, columnDefs, isLoading, hasError, onRowClick }) => {
   const bodyProps = getTableBodyProps();
 
   if (hasError) {
-    return <ErrorMessage headline="There was a problem loading this table..." />;
+    return <ErrorMessage headline="There was a problem loading this table." />;
   }
 
   return (
@@ -146,7 +135,12 @@ const Table = ({ data, columnDefs, isLoading, hasError, onRowClick }) => {
             </tbody>
           )}
         </table>
-        {isLoading && <Spinner isLoading />}
+
+        {isLoading && (
+          <StyledSpinner>
+            <Spinner isLoading />
+          </StyledSpinner>
+        )}
       </TableStyles>
     </>
   );
