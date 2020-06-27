@@ -1,12 +1,12 @@
 import Page from '../components/Page';
 import Image from '../components/Image';
 import TextBlock, { NAV } from '../components/TextBlock';
-import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO, PUZZLE_DEMO, VR_DEMO } from '../constants/urls';
+import { WHACK_MOLES_DEMO, REDUX_DEMO, MATRIX_DEMO, PUZZLE_DEMO, VR_DEMO, CRYPTO_PAGE } from '../constants/urls';
 
 const RandomPage = () => (
   <Page>
     <h1>Random Stuff</h1>
-    <Image imageSrc="/nathan.jpg" imageAlt="Stange planet" maxWidth="500px" />
+    <Image imageSrc="/nathan.jpg" imageAlt="Strange planet" maxWidth="500px" />
     <p>
       There are a bunch of little apps here. Just a few little games and apps that I have put together for demo
       purposes...
@@ -48,6 +48,17 @@ const RandomPage = () => (
             {
               text:
                 ' | You\'re not a real developer until you recreate the "digital rain" sequence from The Matrix in JavaScript. Ok, so technically I reverse engineered and converted it from some minified code I found. That still counts, right?',
+            },
+          ]}
+        />
+      </li>
+      <li>
+        <TextBlock
+          contents={[
+            { type: NAV, href: CRYPTO_PAGE, text: 'Crypto Currency API', bold: true },
+            {
+              text:
+                ' | This is a little API demo where you can check out the latest crypto currency prices. I built this one using Redux Sagas instead of Thunk, just to keep it interesting...',
             },
           ]}
         />

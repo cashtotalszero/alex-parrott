@@ -9,20 +9,20 @@ const StyledCoinInfo = styled.div`
 
 const Image = styled.img`
   width: 40px;
-  padding: 0 10px 0 50px;
+  padding: 0 10px;
 `;
 
 const Title = styled.div`
-  padding: 0 20px 0 10px;
+  padding: 0 10px;
 
   h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     margin: 0;
   }
   h2 {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     margin: 0;
   }
 `;
@@ -37,7 +37,7 @@ const CoinHeader = ({ name, id, price }) => (
       <h1>{name}</h1>
       <h2>{id}</h2>
     </Title>
-    <span>{price}</span>
+    {/* <span>{price}</span> */}
   </StyledCoinInfo>
 );
 

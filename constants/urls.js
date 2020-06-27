@@ -51,3 +51,4 @@ export const AUDI_UK = 'https://www.audi.co.uk/';
 // Crypto compare API
 export const CRYPTO_LIST_API = 'https://min-api.cryptocompare.com/data/top/mktcapfull';
 export const CRYPTO_ITEM_API = 'https://min-api.cryptocompare.com/data/pricemultifull';
+export const CRYPTO_COMPARE_API = 'https://min-api.cryptocompare.com/';

@@ -11,9 +11,14 @@ import CurrencySelector from '../../../components/CryptoCurrencySelector';
 import { getCurrencyRouteParam, getDetailsUrl } from '../../../utilities/crypto';
 import coinTableDefs from '../../../components/CryptoTableDefs';
 import { DEFAULT_CURRENCY } from '../../../constants/crypto';
-import { CRYPTO_PAGE, CRYPTO_DETAILS_PAGE } from '../../../constants/urls';
+import { CRYPTO_PAGE, CRYPTO_DETAILS_PAGE, CRYPTO_COMPARE_API } from '../../../constants/urls';
+import TextBlock, { LINK } from '../../../components/TextBlock';
 
 import Page from '../../../components/Page';
+
+const Container = styled.div`
+  min-height: 1000px;
+`;
 
 const StyledHeader = styled.header`
   display: flex;
@@ -46,7 +51,7 @@ const Index = () => {
   const dispatch = useDispatch();
   const listLoading = useSelector(({ crypto }) => crypto.listLoading);
   const listError = useSelector(({ crypto }) => crypto.listError);
-  const lastUpdated = useSelector(({ crypto }) => crypto.listLastUpdate);
+  const lastUpdated = useSelector(({ crypto }) => crypto.lastUpdate);
   const tableData = useSelector(({ crypto }) => crypto.cryptoData);
   const currency = useSelector(({ crypto }) => crypto.currency);
 
@@ -54,36 +59,46 @@ const Index = () => {
 
   return (
     <Page>
-      <StyledHeader>
-        <h1>Top 10 Crypto Currencies</h1>
+      <Container>
+        <StyledHeader>
+          <h1>Top 10 Crypto Currencies</h1>
 
-        <CurrencySelector
-          disabled={listLoading}
-          onChange={(val) => {
-            const updatedRoute = getCurrencyRouteParam(router.asPath, val);
-            router.replace(CRYPTO_PAGE, updatedRoute);
-            dispatch(fetchAllData(val));
+          <CurrencySelector
+            disabled={listLoading}
+            onChange={(val) => {
+              const updatedRoute = getCurrencyRouteParam(router.asPath, val);
+              router.replace(CRYPTO_PAGE, updatedRoute);
+              dispatch(fetchAllData(val));
+            }}
+          />
+        </StyledHeader>
+
+        <TextBlock
+          contents={[
+            { text: 'Check out the latest crypto currency prices! All data is taken from the ' },
+            { type: LINK, text: 'CryptoCompare', href: CRYPTO_COMPARE_API },
+            { text: ' API.' },
+          ]}
+        />
+
+        <Table
+          data={tableData}
+          columnDefs={coinTableDefs}
+          isLoading={listLoading}
+          hasError={!!listError}
+          onRowClick={(row) => {
+            const { original } = row;
+            dispatch(setSelection(original));
+            router.push(CRYPTO_DETAILS_PAGE, getDetailsUrl(original.name, currency));
           }}
         />
-      </StyledHeader>
 
-      <Table
-        data={tableData}
-        columnDefs={coinTableDefs}
-        isLoading={listLoading}
-        hasError={!!listError}
-        onRowClick={(row) => {
-          const { original } = row;
-          dispatch(setSelection(original));
-          router.push(CRYPTO_DETAILS_PAGE, getDetailsUrl(original.name, currency));
-        }}
-      />
-
-      {!listLoading && (
-        <LastUpdate>
-          <span>{`Last updated: ${lastUpdated}`}</span>
-        </LastUpdate>
-      )}
+        {!listLoading && (
+          <LastUpdate>
+            <span>{`Last updated: ${lastUpdated}`}</span>
+          </LastUpdate>
+        )}
+      </Container>
     </Page>
   );
 };

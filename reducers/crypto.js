@@ -19,13 +19,12 @@ const initialState = {
   currency: DEFAULT_CURRENCY,
   name: '',
   cryptoData: [],
-  listLastUpdate: 0,
   listLoading: false,
   listError: '',
   selected: null,
-  itemLastUpdate: 0,
   itemLoading: false,
   itemError: '',
+  lastUpdate: 0,
 };
 
 const fetchListSuccess = (state, action) => {
@@ -33,9 +32,9 @@ const fetchListSuccess = (state, action) => {
     const coinList = action.data.Data;
     const { currency } = state;
     const parsedData = coinList.map((coin, index) => parseCoinInfo(coin, currency, index + 1));
-    const listLastUpdate = formatTimestamp(Date.now());
+    const lastUpdate = formatTimestamp(Date.now());
 
-    return { ...state, listLoading: false, cryptoData: parsedData, listLastUpdate };
+    return { ...state, listLoading: false, cryptoData: parsedData, lastUpdate };
   } catch (e) {
     return { ...state, listLoading: false, listError: 'Data parse failed.' };
   }
@@ -45,11 +44,12 @@ const fetchItemSuccess = (state, action) => {
   try {
     const { coinId, currency } = action.payload;
     const data = action.payload.data.RAW[coinId][currency];
-    const parsedPrices = parseCoinPrices(data, coinId, currency);
-    const selected = { ...state.selected, ...parsedPrices };
-    const itemLastUpdate = formatTimestamp(Date.now());
+    const parsedPrices = parseCoinPrices(data, currency);
 
-    return { ...state, itemLoading: false, selected, itemLastUpdate };
+    const selected = { ...state.selected, ...parsedPrices };
+    const lastUpdate = formatTimestamp(Date.now());
+
+    return { ...state, itemLoading: false, selected, lastUpdate };
   } catch (e) {
     return { ...state, itemLoading: false, itemError: 'Data parse failed.' };
   }
@@ -79,7 +79,7 @@ function reducer(state = initialState, action) {
         listLoading: true,
         cryptoData: [],
         listError: '',
-        listLastUpdate: 0,
+        lastUpdate: 0,
       };
 
     case LOAD_LIST_SUCCESS:
@@ -97,7 +97,7 @@ function reducer(state = initialState, action) {
         ...state,
         itemLoading: true,
         itemError: '',
-        itemLastUpdate: 0,
+        lastUpdate: 0,
       };
 
     case LOAD_ITEM_SUCCESS:

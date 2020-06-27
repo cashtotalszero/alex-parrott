@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useMemo } from 'react';
-import { useTable, useSortBy } from 'react-table';
+import { useTable } from 'react-table';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Spinner from './LoadingSpinner';
@@ -22,13 +22,13 @@ const TableStyles = styled.div`
 
   th {
     font-family: ${({ theme }) => theme.fonts.header};
-    /* background-color: ${({ theme }) => `${theme.colors.greyLightest}`}; */
     background-color: ${({ theme }) => `${theme.colors.palette2}`};
     line-height: 1.2rem;
     color: ${({ theme }) => `${theme.colors.white}`};
     vertical-align: middle;
     border-top: ${({ theme }) => `1px solid ${theme.colors.greyLighter}`};
     height: 25px;
+    cursor: auto;
   }
 
   td,
@@ -49,7 +49,6 @@ const TableStyles = styled.div`
 
   tr {
     transition: background-color 0.25s ease-in-out;
-    /* padding: 0 10px; */
   }
 
   tr:hover {
@@ -68,18 +67,20 @@ const StyledSpinner = styled.div`
 
 const Table = ({ data, columnDefs, isLoading, hasError, onRowClick }) => {
   const columns = useMemo(() => columnDefs, []);
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, visibleColumns } = useTable(
-    {
-      columns,
-      data,
-    },
-    useSortBy,
-  );
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, visibleColumns } = useTable({
+    columns,
+    data,
+  });
   const tableProps = getTableProps();
   const bodyProps = getTableBodyProps();
 
   if (hasError) {
-    return <ErrorMessage headline="There was a problem loading this table." />;
+    return (
+      <ErrorMessage
+        headline="There was a problem fetching the currency list"
+        advice="There may be a problem with the API. Please try again later."
+      />
+    );
   }
 
   return (
@@ -93,20 +94,10 @@ const Table = ({ data, columnDefs, isLoading, hasError, onRowClick }) => {
               return (
                 <tr {...getHeaderGroupProps()}>
                   {headers.map((column) => {
-                    const { render, getHeaderProps, isSorted, isSortedDesc, getSortByToggleProps } = column;
-                    const headerProps = getHeaderProps(getSortByToggleProps());
+                    const { render, getHeaderProps } = column;
+                    const headerProps = getHeaderProps();
 
-                    let sortIndicator = '';
-                    if (isSorted) {
-                      sortIndicator = isSortedDesc ? ' 🔽' : ' 🔼';
-                    }
-
-                    return (
-                      <th {...headerProps}>
-                        {render('Header')}
-                        <span>{sortIndicator}</span>
-                      </th>
-                    );
+                    return <th {...headerProps}>{render('Header')}</th>;
                   })}
                 </tr>
               );

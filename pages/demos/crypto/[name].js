@@ -28,15 +28,34 @@ const PageWrapper = styled.div`
 
 const StyledHeader = styled.header`
   display: flex;
-  padding: 20px 40px;
+  padding: 20px 10px;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => `${theme.colors.white}`};
+  background-color: ${({ theme }) => `${theme.colors.palette6}`};
 `;
 
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const LastUpdate = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+
+  span {
+    margin: 10px 0;
+    color: ${({ theme }) => `${theme.colors.greyLighter}`};
+    font-size: 0.75rem;
+  }
+`;
+
+const LoadingSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
 `;
 
 const DetailsPage = ({ theme }) => {
@@ -48,6 +67,7 @@ const DetailsPage = ({ theme }) => {
   const itemLoading = useSelector(({ crypto }) => crypto.itemLoading);
   const listError = useSelector(({ crypto }) => crypto.listError);
   const itemError = useSelector(({ crypto }) => crypto.itemError);
+  const lastUpdated = useSelector(({ crypto }) => crypto.lastUpdate);
 
   const isLoading = listLoading || itemLoading;
   const { fullName, marketCap, rank, supplyTotal, volume24H, name, price } = data || '';
@@ -80,22 +100,31 @@ const DetailsPage = ({ theme }) => {
           />
         </StyledHeader>
 
-        {showSpinner && <Spinner color={theme.colors.blue} />}
+        {showSpinner && (
+          <LoadingSpinner>
+            <Spinner color={theme.colors.blue} />
+          </LoadingSpinner>
+        )}
         {contentReady && (
-          <CoinDetailsGrid
-            name={name}
-            rank={rank}
-            marketCap={marketCap}
-            volume24H={volume24H}
-            supplyTotal={supplyTotal}
-          />
+          <>
+            <CoinDetailsGrid
+              name={name}
+              rank={rank}
+              price={price}
+              marketCap={marketCap}
+              volume24H={volume24H}
+              supplyTotal={supplyTotal}
+            />
+            <LastUpdate>
+              <span>{`Last updated: ${lastUpdated}`}</span>
+            </LastUpdate>
+          </>
         )}
 
-        {hasError && (
+        {!!hasError && (
           <ErrorMessage
-            headline="There was a problem loading this coin data"
+            headline="There was a problem loading this currency data"
             advice="Please go back and select a currency from the list."
-            textColour={theme.colors.blue}
           />
         )}
       </PageWrapper>

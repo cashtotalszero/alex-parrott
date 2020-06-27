@@ -5,7 +5,6 @@ import { getCoinImageSrc } from '../utilities/crypto';
 
 const Image = styled.img`
   width: 30px;
-  /* padding: 0 10px 0 30px; */
   padding-right: 10px;
 `;
 

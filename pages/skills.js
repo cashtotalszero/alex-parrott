@@ -11,7 +11,7 @@ import { SMILING_FACE, HALO as HALO_FACE, FLUSHED_FACE } from '../constants/emoj
 import { SKILL_LEVELS } from '../constants/skills';
 
 import Emoji from '../components/Emoji';
-import Table from '../components/Table';
+import Table from '../components/SkillsTable';
 import Page from '../components/Page';
 import LoadingSpinner from '../components/LoadingSpinner';
 import TextBlock, { LINK } from '../components/TextBlock';

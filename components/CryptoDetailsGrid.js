@@ -1,44 +1,53 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Rank from './CryptoRank';
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  padding: 30px;
+  padding: 20px;
+  column-gap: 5px;
+  row-gap: 5px;
+`;
+
+const GridHeader = styled.div`
+  grid-area: span 1 / span 2;
+  text-align: center;
 `;
 
 const GridItem = styled.div`
   padding: 30px;
   font-size: 30px;
-  text-align: center;
   text-align: left;
+  background-color: ${({ theme }) => `${theme.colors.palette6}`};
 
   h2 {
     color: ${({ theme }) => `${theme.colors.blue}`};
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 10px 0;
     margin: 0;
   }
 
   p {
-    color: ${({ theme }) => `${theme.colors.white}`};
-    font-size: 1.5rem;
+    color: ${({ theme }) => `${theme.colors.black}`};
+    font-size: 1rem;
   }
 
   span {
     color: ${({ theme }) => `${theme.colors.green}`};
-    font-size: 1rem;
-    vertical-align: middle;
+    font-weight: bold;
   }
 `;
 
-const CoinDetailsGrid = ({ name, rank, marketCap, volume24H, supplyTotal }) => (
+const CoinDetailsGrid = ({ name, rank, marketCap, volume24H, supplyTotal, price }) => (
   <Grid>
+    <GridHeader>
+      <h1>{price}</h1>
+    </GridHeader>
     <GridItem>
-      <Rank rank={rank} />
+      <h2>Rank</h2>
+      <p>{rank}</p>
     </GridItem>
     <GridItem>
       <h2>Market Cap</h2>
@@ -60,6 +69,7 @@ const CoinDetailsGrid = ({ name, rank, marketCap, volume24H, supplyTotal }) => (
 CoinDetailsGrid.propTypes = {
   name: PropTypes.string.isRequired,
   rank: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
   marketCap: PropTypes.string.isRequired,
   volume24H: PropTypes.string.isRequired,
   supplyTotal: PropTypes.string.isRequired,

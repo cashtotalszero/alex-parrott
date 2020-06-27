@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledError = styled.div`
-  color: ${({ theme, textColour }) => (textColour ? `${textColour}` : `${theme.colors.black}`)};
-  margin: 30px;
+  color: ${({ theme }) => `${theme.colors.black}`};
+  margin: 30px 0;
+  padding: 30px;
   text-align: center;
+  background-color: ${({ theme }) => `${theme.colors.palette6}`};
 `;
 
 const ErrorMessage = ({ headline, advice, textColour }) => (
