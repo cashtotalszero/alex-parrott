@@ -2,7 +2,7 @@ import Page from '../components/Page';
 import Image from '../components/Image';
 import TextBlock, { BOLD, EMOJI, LINK, NAV } from '../components/TextBlock';
 
-import { VR_DEMO, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB } from '../constants/urls';
+import { VR_DEMO, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB, RANDOM_PAGE } from '../constants/urls';
 import { GB_FLAG, MAN_SHRUGGING, WINKING_FACE } from '../constants/emojis';
 
 const Metatags = () => (
@@ -17,7 +17,7 @@ const Metatags = () => (
 const AboutPage = () => (
   <Page metatags={Metatags}>
     <h1>About Me</h1>
-    <Image imageSrc="/alex.png" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" maxWidth="500px" />
+    <Image imageSrc="/alex2.jpg" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" maxWidth="400px" />
 
     <h2>In short...</h2>
 
@@ -27,7 +27,7 @@ const AboutPage = () => (
         { type: EMOJI, unicode: GB_FLAG, label: 'GB flag emoji' },
         {
           text:
-            '. I have been making websites since 2012 after a chance meeting on a Thai beach inspired me to go back to university to study computer science.',
+            '. I have been making apps and websites since 2012 after a chance meeting on a Thai beach inspired me to go back to university to study computer science.',
         },
       ]}
     />
@@ -36,7 +36,9 @@ const AboutPage = () => (
       contents={[
         { text: 'I mainly use HTML, CSS and JavaScript. While ' },
         { type: BOLD, text: 'I specialise in making React.js applications,' },
-        { text: ' I can work effectively on any JavaScript project.' },
+        { text: ' I can work effectively on any JavaScript project. I have a few mini apps and demos right ' },
+        { type: NAV, href: RANDOM_PAGE, text: 'here', bold: true },
+        { text: ' if you want to check out some examples of my work.' },
       ]}
     />
 

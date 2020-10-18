@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Page from '../components/Page';
+import Image from '../components/Image';
 import TextBlock, { LINK, BOLD, EMOJI } from '../components/TextBlock';
 import { LINKEDIN_BIO } from '../constants/urls';
 import { GRINNING_FACE } from '../constants/emojis';
@@ -26,44 +27,26 @@ const HomePage = () => (
   <Page>
     <h1>Contact Me</h1>
 
-    <StyledHighlight>
-      <a href="mailto:alex.parrott.dev@gmail.com">alex.parrott.dev@gmail.com</a>
-    </StyledHighlight>
+    <Image
+      imageSrc="/alex.png"
+      imageAlt="my linkedin profile"
+      subtitle="My LinkedIn profile picture. There are a surprising number of Alex Parrotts out there!"
+      maxWidth="500px"
+    />
 
     <TextBlock
       contents={[
         {
           text:
-            'I am available to work remotely with you anywhere in the world! If you need me to work regularly on site then projects in the South West of the UK will take priority. That said, depending on the project I am happy to travel within reason.',
+            'I am not currently available to take on any additional full time work. Despite the pandemic I am very busy! However, I am always looking for fun projects... ',
         },
-      ]}
-    />
-
-    <TextBlock
-      contents={[
-        { type: BOLD, text: 'Recruiters!', bold: true },
+        { type: BOLD, text: 'If you have a project and would like me to work with you', bold: true },
         {
-          text: ' Please contact me on ',
+          text: ' or want to contact me for any other reason then feel free to reach out on ',
         },
-
         { type: LINK, href: LINKEDIN_BIO, text: 'LinkedIn', bold: true },
         {
-          text: '. A lot of recruitment company emails end up in my spam folder so I am unlikely to reply!',
-        },
-      ]}
-    />
-
-    <TextBlock
-      contents={[
-        { text: 'Otherwise, ' },
-        { type: BOLD, text: 'if you have a project and would like me to work with you', bold: true },
-        {
-          text: ' or want to contact me for any other reason then feel free to email me. ',
-        },
-        {
-          type: EMOJI,
-          unicode: GRINNING_FACE,
-          label: 'Grinning face',
+          text: '. ',
         },
       ]}
     />

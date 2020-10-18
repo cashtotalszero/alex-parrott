@@ -228,13 +228,13 @@ const getYearInfo = (year) => {
         text: (
           <TextBlock
             contents={[
-              { text: "I'm still coding and currently based in Bristol. Let's work together... " },
+              { text: "I'm still coding and currently based in Bristol. " },
               { type: EMOJI, unicode: GRINNING_FACE, label: 'Grinning face' },
             ]}
           />
         ),
         imgUrl: '/bristol.jpg',
-        imgAlt: 'Strange Planet comic',
+        imgAlt: 'Bristol',
       };
     default:
       return {
