@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import Page from '../components/Page';
 import Image from '../components/Image';
-import TextBlock, { EMOJI, LINK, NAV } from '../components/TextBlock';
-import { SWEAT_SMILE } from '../constants/emojis';
+import TextBlock, { EMOJI, LINK, NAV, BOLD } from '../components/TextBlock';
+import { SWEAT_SMILE, JOY } from '../constants/emojis';
 import { CODE_REPO, RANDOM_PAGE } from '../constants/urls';
 
 const IconsWrapper = styled.div`
@@ -54,9 +54,17 @@ const CodePage = () => (
       ]}
     />
 
+    <TextBlock
+      contents={[
+        { type: BOLD, text: 'Disclaimer!' },
+        { text: ' The codebase is a couple of years old and it in need of some love. I have plans to re-write it in TypeScript. I just need to find the time... ' },
+        { type: EMOJI, unicode: JOY, label: 'joy' },
+      ]}
+    />
+
     <h2>About this site</h2>
     <p>
-      The tech stack selected for this project was primarily chosen to showcase my personal coding style. The backend is
+      The tech stack selected for this project was primarily chosen to showcase my personal coding style (circa 2020). The backend is
       a Next.js server and the front end is a React and Redux app. Meanwhile, the CSS is created using Styled
       Components.
     </p>

@@ -9,6 +9,7 @@ export const FLUSHED_FACE = '\u{1F633}';
 export const SWEAT_SMILE = '\u{1F605}';
 export const FIRE = '\u{1F525}';
 export const ROCKET = '\u{1F680}';
+export const JOY = '\u{1F602}';
 
 export const INDIA = '\u{1F1EE}\u{1F1F3}';
 export const JAPAN = '\u{1F1EF}\u{1F1F5}';

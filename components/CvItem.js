@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import TextBlock, { LINK, NAV, EMOJI } from './TextBlock';
-import { INDIA, JAPAN, CHINA, NEPAL, CANADA, USA, MEXICO, GRINNING_FACE } from '../constants/emojis';
+import { GRINNING_FACE } from '../constants/emojis';
 import {
+  AFORZA,
+  AFORZA_SERIES_A,
   BJSS,
   LLOYDS_BANK,
   SOMO_GLOBAL,
@@ -30,9 +32,11 @@ const CV_ITEM_11 = 11;
 const CV_ITEM_12 = 12;
 const CV_ITEM_13 = 13;
 const CV_ITEM_14 = 14;
+const CV_ITEM_15 = 15;
+
 export const DEFAULT_CV_ITEM = CV_ITEM_5;
 export const CV_ITEM_FIRST = CV_ITEM_1;
-export const CV_ITEM_LAST = CV_ITEM_14;
+export const CV_ITEM_LAST = CV_ITEM_15;
 
 const ImgContainer = styled.div`
   max-width: 80%;
@@ -153,7 +157,7 @@ const getYearInfo = (year) => {
             contents={[
               { text: 'I joined the digital agency ' },
               { type: LINK, text: 'Somo', href: SOMO_GLOBAL },
-              { text: ' and start coding in React and Vue.' },
+              { text: ' and started coding in React and Vue.' },
             ]}
           />
         ),
@@ -224,7 +228,24 @@ const getYearInfo = (year) => {
       };
     case CV_ITEM_14:
       return {
-        title: 'Now',
+        title: 'Since 2020',
+        text: (
+          <TextBlock
+            contents={[
+              { text: 'I have been working with ' },
+              { type: LINK, text: 'Aforza', href: AFORZA },
+              { text: ' as Lead React Native Developer in recent years. We won $22 million of ' },
+              { type: LINK, text: 'series A', href: AFORZA_SERIES_A },
+              { text: ' investment in summer 2021.' },
+            ]}
+          />
+        ),
+        imgUrl: '/aforzaLogo.png',
+        imgAlt: 'Aforza logo',
+      };
+    case CV_ITEM_15:
+      return {
+        title: 'The future...',
         text: (
           <TextBlock
             contents={[
@@ -234,7 +255,7 @@ const getYearInfo = (year) => {
           />
         ),
         imgUrl: '/bristol.jpg',
-        imgAlt: 'Strange Planet comic',
+        imgAlt: 'Bristol',
       };
     default:
       return {
