@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading, react/forbid-prop-types */
 import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
-// import { Reset } from 'styled-reset';
 import PropTypes from 'prop-types';
 
 import { GlobalStyle, theme, footerHeight } from '../styles';
 import { useStore } from '../store';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { CssReset } from '../css-reset'
 
 const PageContainer = styled.div`
   position: relative;
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
           </PageWrapper>
         </PageContainer>
       </ThemeProvider>
-      {/* <Reset /> */}
+      <CssReset />
       <GlobalStyle />
     </Provider>
   );
