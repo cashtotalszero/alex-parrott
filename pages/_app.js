@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading, react/forbid-prop-types */
 import { Provider } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
-import { Reset } from 'styled-reset';
+// import { Reset } from 'styled-reset';
 import PropTypes from 'prop-types';
 
 import { GlobalStyle, theme, footerHeight } from '../styles';
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
           </PageWrapper>
         </PageContainer>
       </ThemeProvider>
-      <Reset />
+      {/* <Reset /> */}
       <GlobalStyle />
     </Provider>
   );
