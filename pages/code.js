@@ -57,7 +57,7 @@ const CodePage = () => (
     <TextBlock
       contents={[
         { type: BOLD, text: 'Disclaimer!' },
-        { text: ' The codebase is a couple of years old and it in need of some love. I have plans to re-write it in TypeScript. I just need to find the time... ' },
+        { text: ' The codebase is a couple of years old and it in need of some love. I have plans to update all the libraries and re-write it in TypeScript. I just need to find the time... ' },
         { type: EMOJI, unicode: JOY, label: 'joy' },
       ]}
     />

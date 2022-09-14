@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import Page from '../components/Page';
-import TextBlock, { NAV, EMOJI } from '../components/TextBlock';
-import { GB_FLAG } from '../constants/emojis';
+import TextBlock, { NAV, EMOJI, BOLD, ITA } from '../components/TextBlock';
+import { GB_FLAG, CONSTRUCTION } from '../constants/emojis';
 import { ABOUT_PAGE, CAREER_PAGE, SKILLS_PAGE, RANDOM_PAGE, CONTACT_PAGE } from '../constants/urls';
 
 const StyledHighlight = styled.p`
@@ -60,6 +60,17 @@ const HomePage = () => (
         { text: 'Feel free to ' },
         { type: NAV, href: CONTACT_PAGE, text: 'contact me', bold: true },
         { text: ' to check my availability or discuss your project. ' },
+      ]}
+    />
+
+<TextBlock
+      contents={[
+        { text: "WARNING! ", type: BOLD },
+        { type: EMOJI, unicode: CONSTRUCTION, label: 'Under construction' },
+        {
+          text: ' This site is currently in the process of being updated.... Well, this is awkward - if you are reading this then you have caught me in the middle of an job! Please excuse any styling bugs in the meantime. Certain older browsers may experience odd behaviour.',
+        },
+  
       ]}
     />
     <div />
