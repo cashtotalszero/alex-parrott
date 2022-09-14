@@ -4,6 +4,8 @@ import Page from '../components/Page';
 import TextBlock, { LINK, BOLD, EMOJI } from '../components/TextBlock';
 import { LINKEDIN_BIO } from '../constants/urls';
 import { GRINNING_FACE } from '../constants/emojis';
+import Image from '../components/Image';
+
 
 const StyledHighlight = styled.div`
   margin: 40px 0;
@@ -25,6 +27,8 @@ const StyledHighlight = styled.div`
 const HomePage = () => (
   <Page>
     <h1>Contact Me</h1>
+
+    <Image imageSrc="/alex.png" imageAlt="alex" subtitle="My LinkedIn profile photo" maxWidth="300px" />
 
     <StyledHighlight>
       <a href="mailto:alex.parrott.dev@gmail.com">alex.parrott.dev@gmail.com</a>

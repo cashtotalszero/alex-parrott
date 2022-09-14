@@ -2,13 +2,13 @@ import Page from '../components/Page';
 import Image from '../components/Image';
 import TextBlock, { BOLD, EMOJI, LINK, NAV } from '../components/TextBlock';
 
-import { VR_DEMO, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB } from '../constants/urls';
+import { VR_DEMO, MONKEY_KNIFE_FIGHT, CONTRACT_FOR_THE_WEB, CAREER_PAGE } from '../constants/urls';
 import { GB_FLAG, MAN_SHRUGGING, WINKING_FACE } from '../constants/emojis';
 
 const AboutPage = () => (
   <Page>
     <h1>About Me</h1>
-    <Image imageSrc="/alex.png" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" maxWidth="500px" />
+    <Image imageSrc="/alex_dolomites.jpg" imageAlt="alex" subtitle="Hey, I'm Alex Parrott" maxWidth="500px" />
 
     <h2>In short...</h2>
 
@@ -18,16 +18,16 @@ const AboutPage = () => (
         { type: EMOJI, unicode: GB_FLAG, label: 'GB flag emoji' },
         {
           text:
-            '. I have been making websites since 2012 after a chance meeting on a Thai beach inspired me to go back to university to study computer science.',
+            '. I have been making apps and websites since 2012 after a chance meeting with some developers working abroad inspired me to go back to university to study computer science. ',
         },
       ]}
     />
 
     <TextBlock
       contents={[
-        { text: 'I mainly use HTML, CSS and JavaScript. While ' },
-        { type: BOLD, text: 'I specialise in making React.js applications,' },
-        { text: ' I can work effectively on any JavaScript project.' },
+        { text: 'I have wide experience working as both a permanent employee and an independent freelancer. While ' },
+        { type: BOLD, text: 'I specialise in making React and React Native applications,' },
+        { text: ' I can work effectively on any JavaScript or TypeScript project as a lead or senior engineer.' },
       ]}
     />
 
@@ -35,7 +35,7 @@ const AboutPage = () => (
       contents={[
         {
           text:
-            'My tech interests vary widely and I have worked on a wide variety of projects. These include - Vue.js apps, React Native mobile apps, Node/Express servers, VR ',
+            'My tech interests vary widely and I have worked on a wide variety of projects. These include - Vue.js apps, React Native AR apps, Node/Express servers, VR ',
         },
         { type: NAV, href: VR_DEMO, text: 'experiences', bold: true },
         { text: ' and Unity 3D games.' },
@@ -89,7 +89,7 @@ const AboutPage = () => (
         { type: BOLD, text: 'love to learn' },
         {
           text:
-            " and am constantly trying to learn something new. At the moment I'm playing with Golang. Tomorrow, it'll be blockchain...",
+            " and am constantly trying to learn something new. At the moment I'm playing with AR. Tomorrow, it'll be blockchain...",
         },
       ]}
     />
@@ -104,6 +104,16 @@ const AboutPage = () => (
         },
         { type: EMOJI, unicode: WINKING_FACE, label: 'wink emoji' },
         { text: '.' },
+      ]}
+    />
+
+    <TextBlock
+      contents={[
+        { text: 'Right now I am ' },
+        { type: BOLD, text: 'Lead Developer' },
+        { text: ' at a rising consumer goods management company. Check out my ' },
+        { type: LINK, href: CAREER_PAGE, text: 'interactive CV' },
+        { text: ' for some more info.' },
       ]}
     />
   </Page>
