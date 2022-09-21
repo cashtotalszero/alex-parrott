@@ -2,19 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { isDesktop } from 'react-device-detect';
 
 type AnchorProps = {
     shadowWidth: number;
 };
 
 const StyledAnchor = styled.a<AnchorProps>`
-    box-shadow: ${({ theme }) => {
-        if (isDesktop) {
-            return `inset 0 0 0 0 ${theme.colors.palette5}`;
-        }
-        return '';
-    }};
+    box-shadow: ${({ theme }) => `inset 0 0 0 0 ${theme.colors.palette5}`};
     display: inline-block;
     color: ${({ theme }) => theme.colors.black};
     margin: 0 -0.25rem;
@@ -23,16 +17,15 @@ const StyledAnchor = styled.a<AnchorProps>`
     font-weight: bold;
     text-decoration-color: ${({ theme }) => theme.colors.palette5};
 
-    :hover {
-        box-shadow: ${({ theme, shadowWidth }) => {
-            if (isDesktop) {
+    @media (hover: hover) {
+        :hover {
+            box-shadow: ${({ theme, shadowWidth }) => {
                 const { palette5 } = theme.colors;
                 return `inset ${shadowWidth}px 0 0 0 ${palette5}`;
-            }
-            return '';
-        }};
-        color: ${({ theme }) => theme.colors.white};
-        text-decoration: none;
+            }};
+            color: ${({ theme }) => theme.colors.white};
+            text-decoration: none;
+        }
     }
 `;
 
