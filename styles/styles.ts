@@ -112,6 +112,9 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    
     li {
       line-height: 1.5rem;
       padding: 10px;
