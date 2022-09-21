@@ -31,6 +31,7 @@
     "react/function-component-definition": ["error", {
       "namedComponents": "arrow-function",
       "unnamedComponents": "arrow-function"
-    }]
+    }],
+    "implicit-arrow-linebreak": "warn"
   }
 }
