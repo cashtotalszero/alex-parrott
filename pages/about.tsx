@@ -43,36 +43,37 @@ const AboutPage = () => (
 
         <p>
             After <strong>10 years in the industry</strong>, my experience is pretty wide:
-            <ul>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Leading teams
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Working in a digital agency environment
-                    (4 years+)
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Managing long term projects within a
-                    product company (3 years+)
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Freelance contracting (2 years+)
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Building greenfield projects from the
-                    ground up (multiple projects)
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Designing technical architecture
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Building test suites
-                </li>
-                <li>
-                    <Emoji label="Check" unicode={CHECK} /> Managing deployments
-                </li>
-            </ul>
         </p>
+
+        <ul>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Leading teams
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Working in a digital agency environment (4
+                years+)
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Managing long term projects within a product
+                company (3 years+)
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Freelance contracting (2 years+)
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Building greenfield projects from the ground
+                up (multiple projects)
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Designing technical architecture
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Building test suites
+            </li>
+            <li>
+                <Emoji label="Check" unicode={CHECK} /> Managing deployments
+            </li>
+        </ul>
 
         <p>
             I am a big believer in writing <strong>clean, robust and maintainable code</strong> and
