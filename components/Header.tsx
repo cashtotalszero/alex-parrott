@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { isDesktop } from 'react-device-detect';
 
 import NavLink from './ui/NavLink';
 import { HOME_PAGE, ABOUT_PAGE, CAREER_PAGE, SKILLS_PAGE, CONTACT_PAGE } from '../constants/urls';
@@ -13,7 +12,7 @@ const StyledList = styled.ul`
     flex-wrap: wrap;
     font-family: ${({ theme }) => theme.fonts.header};
     background-color: ${({ theme }) => `${theme.colors.black}`};
-    color: white;
+    color: ${({ theme }) => `${theme.colors.white}`};
     box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
     padding: 0;
 `;
@@ -37,6 +36,7 @@ const StyledListItem = styled.li`
     }
 
     .selected {
+        color: ${({ theme }) => `${theme.colors.white}`};
         text-decoration: underline;
     }
 
@@ -45,14 +45,11 @@ const StyledListItem = styled.li`
         color: ${({ theme }) => `${theme.colors.white}`};
     }
 
-    a:hover {
-        transition: all 0.25s ease;
-        color: ${({ theme }) => {
-            if (isDesktop) {
-                return `${theme.colors.palette5}`;
-            }
-            return `${theme.colors.white}`;
-        }};
+    @media (hover: hover) {
+        a:hover {
+            transition: all 0.25s ease;
+            color: ${({ theme }) => `${theme.colors.palette5}`};
+        }
     }
 `;
 
