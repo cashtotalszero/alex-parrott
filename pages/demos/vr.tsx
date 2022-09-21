@@ -78,8 +78,8 @@ const VrPage = () => (
 
         <p>
             One of Somo&apos;s major clients at the time was{' '}
-            <AppLink label="Audi UK" href={AUDI_UK} />. They had given us a bunch of very cool 3D
-            models of a car showroom and an Audi A4.
+            <AppLink label="Audi UK" href={AUDI_UK} shadowWidth={110} />. They had given us a bunch
+            of very cool 3D models of a car showroom and an Audi A4.
         </p>
 
         <p>
@@ -112,13 +112,14 @@ const VrPage = () => (
             The first app a simple A4 showroom experience built with Google VR library. At the time
             of writing you can still download a copy of the app for both{' '}
             <AppLink label="iOS" href={A4_APP_IOS} /> and{' '}
-            <AppLink label="Android" href={A4_APP_ANDROID} /> devices.
+            <AppLink label="Android" href={A4_APP_ANDROID} shadowWidth={110} /> devices.
         </p>
 
         <p>
             The second project was larger and designed as a fully immersive HTC Vive experience.
-            This app was later nominated for a <AppLink label="DADI award" href={VR_SHOWROOM} />.
-            Somo produced a little demo video of it in action which you can view below.
+            This app was later nominated for a{' '}
+            <AppLink label="DADI award" href={VR_SHOWROOM} shadowWidth={160} />. Somo produced a
+            little demo video of it in action which you can view below.
         </p>
 
         <VideoContainer>

@@ -241,7 +241,7 @@ export const getYearInfo = (year: number) => {
                 title: 'Summer 2021',
                 description: (
                     <p>
-                        18 months after I joined the company Aforza won $22 million of{' '}
+                        18 months after I joined the company, Aforza won $22 million of{' '}
                         <AppLink
                             label="series A investment"
                             href={AFORZA_SERIES_A}
