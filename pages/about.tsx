@@ -30,47 +30,49 @@ const AboutPage = () => (
 
         <p>
             I am a <strong>full stack JavaScript developer</strong> based in Bristol, UK. I have
-            been making apps and websites since 2012 after a chance meeting with some coders working
-            abroad inspired me to go back to university to study computer science.
+            been making apps and websites since a chance meeting with some coders working abroad
+            inspired me to go back to university to study computer science.
         </p>
 
         <p>
             I specialise in making <AppLink label="React" href={REACT_SITE} /> and{' '}
             <AppLink label="React Native" href={REACT_NATIVE_SITE} shadowWidth={170} /> apps as I
-            have been using the library since 2015. However, I can work effectively on any
-            JavaScript or TypeScript project as a lead or senior engineer. After{' '}
-            <strong>10 years in the industry</strong>, my experience is pretty wide:
+            have been using the framework since 2015. However, I can work effectively on any
+            JavaScript or TypeScript project you have.
         </p>
 
-        <ul>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Working in a digital agency environment (4
-                years+)
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Managing long term projects within a product
-                company (3 years+)
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Freelance contracting (2 years+)
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Building greenfield projects from the ground
-                up (multiple projects)
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Leading teams
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Designing technical architecture
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Building test suites
-            </li>
-            <li>
-                <Emoji label="Check" unicode={CHECK} /> Managing deployments
-            </li>
-        </ul>
+        <p>
+            After <strong>10 years in the industry</strong>, my experience is pretty wide:
+            <ul>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Leading teams
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Working in a digital agency environment
+                    (4 years+)
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Managing long term projects within a
+                    product company (3 years+)
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Freelance contracting (2 years+)
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Building greenfield projects from the
+                    ground up (multiple projects)
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Designing technical architecture
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Building test suites
+                </li>
+                <li>
+                    <Emoji label="Check" unicode={CHECK} /> Managing deployments
+                </li>
+            </ul>
+        </p>
 
         <p>
             I am a big believer in writing <strong>clean, robust and maintainable code</strong> and
@@ -81,7 +83,15 @@ const AboutPage = () => (
             My tech interests vary widely and I have worked on a great variety of projects. These
             include - corporate websites, digital asset management software, React Native AR apps,
             Alexa Skills, Node/Express servers,{' '}
-            <AppLink label="VR experiences" href={VR_DEMO} shadowWidth={200} /> and Unity 3D games.
+            <AppLink label="VR experiences" href={VR_DEMO} shadowWidth={200} />, Unity 3D games and
+            more!
+        </p>
+
+        <p>
+            Right now I am <strong>Lead Developer</strong> at a rising consumer goods management
+            company. Check out my{' '}
+            <AppLink label="interactive CV" href={CAREER_PAGE} shadowWidth={185} /> for some more
+            info.
         </p>
 
         <TitledImage
@@ -119,13 +129,6 @@ const AboutPage = () => (
             I prefer <strong>agile working</strong> practises and think that a happy work
             environment counts for a lot. I&apos;ve been told that I&apos;m fun to work with. Take
             from that what you will <Emoji label="wink" unicode={WINKING_FACE} />.
-        </p>
-
-        <p>
-            Right now I am <strong>Lead Developer</strong> at a rising consumer goods management
-            company. Check out my{' '}
-            <AppLink label="interactive CV" href={CAREER_PAGE} shadowWidth={185} /> for some more
-            info.
         </p>
     </Page>
 );
