@@ -15,7 +15,11 @@ const NavLink = ({ href, children }: Props) => {
         className = 'selected';
     }
 
-    return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+    return (
+        <Link href={href} passHref>
+            {React.cloneElement(children, { className })}
+        </Link>
+    );
 };
 
 export default NavLink;

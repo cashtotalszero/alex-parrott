@@ -79,7 +79,7 @@ const StyledNav = styled.nav`
 export const Header = () => (
     <StyledNav>
         <Title>
-            <Link href={HOME_PAGE}>
+            <Link href={HOME_PAGE} passHref>
                 <a>{'< ALEX PARROTT.js />'}</a>
             </Link>
         </Title>
