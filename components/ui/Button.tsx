@@ -1,9 +1,21 @@
 import styled from 'styled-components';
 
-const StyledButton = styled.button.attrs(({ type, disabled }) => ({
-    type: type || 'button',
-    disabled: disabled || false,
-}))`
+type Props = {
+    type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
+    padding?: string;
+    width?: string;
+    minWidth?: string;
+    height?: string;
+    fontSize?: string;
+};
+
+const StyledButton = styled.button.attrs(
+    ({ type, disabled }): Props => ({
+        type: type || 'button',
+        disabled: disabled || false,
+    }),
+)`
     font-family: ${({ theme }) => theme.fonts.header};
     border-radius: 5px;
     box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
