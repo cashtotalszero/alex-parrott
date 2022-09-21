@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { isDesktop } from 'react-device-detect';
+
 import NavLink from './ui/NavLink';
 import { HOME_PAGE, ABOUT_PAGE, CAREER_PAGE, SKILLS_PAGE, CONTACT_PAGE } from '../constants/urls';
 
@@ -45,7 +47,12 @@ const StyledListItem = styled.li`
 
     a:hover {
         transition: all 0.25s ease;
-        color: ${({ theme }) => `${theme.colors.palette5}`};
+        color: ${({ theme }) => {
+            if (isDesktop) {
+                return `${theme.colors.palette5}`;
+            }
+            return `${theme.colors.white}`;
+        }};
     }
 `;
 

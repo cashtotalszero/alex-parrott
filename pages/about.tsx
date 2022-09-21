@@ -73,10 +73,14 @@ const AboutPage = () => (
         </ul>
 
         <p>
-            I am a big believer in writing clean, robust and maintainable code and that good UX goes
-            a long way! My tech interests vary widely and I have worked on a great variety of
-            projects. These include - corporate websites, digital asset management software, React
-            Native AR apps, Alexa Skills, Node/Express servers,{' '}
+            I am a big believer in writing <strong>clean, robust and maintainable code</strong> and
+            that good UX goes a long way!
+        </p>
+
+        <p>
+            My tech interests vary widely and I have worked on a great variety of projects. These
+            include - corporate websites, digital asset management software, React Native AR apps,
+            Alexa Skills, Node/Express servers,{' '}
             <AppLink label="VR experiences" href={VR_DEMO} shadowWidth={200} /> and Unity 3D games.
         </p>
 
