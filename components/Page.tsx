@@ -15,7 +15,7 @@ const Card = styled.div`
     padding: 1rem;
     border-radius: 5px;
     box-shadow: ${({ theme }) => `0 2px 8px ${theme.colors.shadow}`};
-    max-width: '950px';
+    max-width: 1020px;
     background-color: ${({ theme }) => theme.colors.white};
 
     @media only screen and (${({ theme }) => `${theme.display.xsScreen}`}) {
